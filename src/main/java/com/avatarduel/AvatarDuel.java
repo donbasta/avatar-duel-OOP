@@ -24,6 +24,8 @@ public class AvatarDuel extends Application {
     landReader.setSkipHeader(true);
     List<String[]> landRows = landReader.read();
     for (String[] row : landRows) {
+      System.out.println(row[1]);
+      System.out.println(row[3]);
       Land l = new Land(row[1], row[3], Element.valueOf(row[2]));
     }
   }
@@ -46,7 +48,7 @@ public class AvatarDuel extends Application {
 
     try {
       this.loadCards();
-      text.setText("Avatar Duel!");
+      text.setText("Avatar sssDuel!");
     } catch (Exception e) {
       text.setText("Failed to load cards: " + e);
     }
