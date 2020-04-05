@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import com.avatarduel.cards.Card;
 import com.avatarduel.model.Element;
 import com.avatarduel.model.Land;
 import com.avatarduel.util.CSVReader;
