@@ -1,5 +1,5 @@
 package com.avatarduel;
-
+import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -53,9 +53,15 @@ public class AvatarDuel extends Application {
     } catch (Exception e) {
       text.setText("Failed to load cards: " + e);
     }
+
+    Scanner input = new Scanner(System.in);
+    String response = input.nextLine();
+    System.out.println(response + " ganteng");
+
   }
 
   public static void main(String[] args) {
     launch();
+    
   }
 }
