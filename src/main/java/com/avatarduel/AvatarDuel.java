@@ -21,7 +21,7 @@ public class AvatarDuel extends Application {
 
   public void loadCards() throws IOException, URISyntaxException {
     File landCSVFile = new File(getClass().getResource(LAND_CSV_FILE_PATH).toURI());
-    CSVReader landReader = new CSVReader(landCSVFile, "\t");
+    CSVReader landReader = new CSVReader(landCSVFile, ";");
     landReader.setSkipHeader(true);
     List<String[]> landRows = landReader.read();
     for (String[] row : landRows) {
