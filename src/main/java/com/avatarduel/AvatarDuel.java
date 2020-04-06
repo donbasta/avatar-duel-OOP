@@ -18,6 +18,7 @@ import com.avatarduel.util.CSVReader;
 
 public class AvatarDuel extends Application {
   private static final String LAND_CSV_FILE_PATH = "card/data/land.csv";
+  private static final String CHARACTER_CSV_FILE_PATH = "card/data/character.csv";
 
   public void loadCards() throws IOException, URISyntaxException {
     File landCSVFile = new File(getClass().getResource(LAND_CSV_FILE_PATH).toURI());
