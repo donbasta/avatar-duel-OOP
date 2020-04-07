@@ -212,6 +212,9 @@ public class Controller {
     	cardDrawAText[5] = cardDrawA5Text;
     	cardDrawAText[6] = cardDrawA6Text;
     	cardDrawAText[7] = cardDrawA7Text;
+
+        cardViewImage.setImage(new Image("file:src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png"));
+
     	
     }
 
@@ -219,7 +222,7 @@ public class Controller {
     void drawCard(MouseEvent event) {
     	System.out.println("test"); //debug
     	cardDrawA[1].setFill(Color.ANTIQUEWHITE);
-//    	cardDrawAText[1].setText("dd"); //ini somehow null pointer exception
+    	cardDrawAText[1].setText("dd"); //ini somehow null pointer exception
 //    	deck1.setFill(Color.GREEN);
     }
 
@@ -231,7 +234,7 @@ public class Controller {
         
         switch (id) {
         case "cardDrawA1" :
-//        	cardViewImage.setImage(new Image(getClass().getResource("card/image/land/Omashu.png").toString(), true));
+        	cardViewImage.setImage(new Image("file:src/main/resources/com/avatarduel/card/image/land/Omashu.png"));
         	cardViewName.setText("Omashu");
         	cardViewId.setText("Land");
         //TO DO

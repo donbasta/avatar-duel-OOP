@@ -87,105 +87,105 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="2">
                            <children>
-                              <Rectangle fx:id="cardBattleA9" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA10" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA11" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA12" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA13" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA14" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA15" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA16" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA9" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA10" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA11" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA12" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA13" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA14" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA15" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA16" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="3">
                            <children>
-                              <Rectangle fx:id="cardBattleB9" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB10" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB11" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB12" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB13" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB14" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB15" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB16" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB9" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB10" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB11" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB12" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB13" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB14" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB15" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB16" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="4">
                            <children>
-                              <Rectangle fx:id="cardBattleB1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB7" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleB8" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB7" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleB8" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="189.0" prefWidth="686.0" spacing="10.0" GridPane.rowIndex="5">
                            <children>
-                              <Rectangle fx:id="cardDrawB1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardDrawB2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardDrawB3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardDrawB4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardDrawB5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardDrawB6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardDrawB7" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardDrawB1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardDrawB2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardDrawB3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardDrawB4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardDrawB5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardDrawB6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardDrawB7" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="1">
                            <children>
-                              <Rectangle fx:id="cardBattleA1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA7" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                              <Rectangle fx:id="cardBattleA8" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA7" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                              <Rectangle fx:id="cardBattleA8" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="98.0" prefWidth="634.0" spacing="10.0">
                            <children>
                               <StackPane prefHeight="84.0" prefWidth="69.0">
                                  <children>
-                                    <Rectangle fx:id="cardDrawA1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                                    <Text fx:id="CardDrawA1Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
+                                    <Rectangle fx:id="cardDrawA1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                                    <Text fx:id="cardDrawA1Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                                  </children>
                               </StackPane>
                               <StackPane prefHeight="84.0" prefWidth="69.0">
                                  <children>
-                                    <Rectangle fx:id="cardDrawA2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                                    <Text fx:id="CardDrawA2Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
+                                    <Rectangle fx:id="cardDrawA2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                                    <Text fx:id="cardDrawA2Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                                  </children>
                               </StackPane>
                               <StackPane prefHeight="84.0" prefWidth="69.0">
                                  <children>
-                                    <Rectangle fx:id="cardDrawA3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                                    <Text fx:id="CardDrawA3Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
+                                    <Rectangle fx:id="cardDrawA3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                                    <Text fx:id="cardDrawA3Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                                  </children>
                               </StackPane>
                               <StackPane prefHeight="84.0" prefWidth="69.0">
                                  <children>
-                                    <Rectangle fx:id="cardDrawA4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                                    <Text fx:id="CardDrawA4Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
+                                    <Rectangle fx:id="cardDrawA4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                                    <Text fx:id="cardDrawA4Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                                  </children>
                               </StackPane>
                               <StackPane prefHeight="84.0" prefWidth="69.0">
                                  <children>
-                                    <Rectangle fx:id="cardDrawA5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                                    <Text fx:id="CardDrawA5Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
+                                    <Rectangle fx:id="cardDrawA5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                                    <Text fx:id="cardDrawA5Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                                  </children>
                               </StackPane>
                               <StackPane prefHeight="84.0" prefWidth="69.0">
                                  <children>
-                                    <Rectangle fx:id="cardDrawA6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                                    <Text fx:id="CardDrawA6Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
+                                    <Rectangle fx:id="cardDrawA6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                                    <Text fx:id="cardDrawA6Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                                  </children>
                               </StackPane>
                               <StackPane prefHeight="84.0" prefWidth="69.0">
                                  <children>
-                                    <Rectangle fx:id="cardDrawA7" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseClicked="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                                    <Text fx:id="CardDrawA7Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
+                                    <Rectangle fx:id="cardDrawA7" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                                    <Text fx:id="cardDrawA7Text" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                                  </children>
                               </StackPane>
                            </children>
