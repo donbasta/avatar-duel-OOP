@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
   private static final String LAND_CSV_FILE_PATH = "../card/data/land.csv";
   private static final String CHARACTER_CSV_FILE_PATH = "../card/data/character.csv";
-  private static final String SKILL_CSV_FILE_PATH = "../card/data/skill_aura.csv";
+  private static final String SKILL_CSV_FILE_PATH = "../card/data/skill.csv";
 
   private ArrayList<Card> cardData;
 
@@ -44,16 +44,16 @@ public class Main extends Application {
     skillReader.setSkipHeader(true);
     List<String[]> skillRows = skillReader.read();
 
-    for(String[] row : landRows) {
-      LandCard a = new LandCard(row[1], row[3], Element.valueOf(row[2]), row[4]);
+//    for(String[] row : landRows) {
+//      LandCard a = new LandCard(row[1], row[3], Element.valueOf(row[2]), row[4]);
+//      cardData.add(a);
+//    }
+
+    for(String[] row : characterRows){
+      CharacterCard a = new CharacterCard(row[1], row[3], Element.valueOf(row[2]), Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]), row[4]);
       cardData.add(a);
     }
 
-//    for(String[] row : characterRows){
-//      CharacterCard a = new CharacterCard(row[1], row[3], Element.valueOf(row[2]), Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]), row[4]);
-//      cardData.add(a);
-//    }
-//
 //    for(String[] row : skillRows){
 //      SkillCard a = new SkillCard(row[1], row[3], Element.valueOf(row[2]), row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]), row[4]);
 //      cardData.add(a);
