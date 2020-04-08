@@ -1,21 +1,24 @@
 package com.avatarduel.gui;
 
+import com.avatarduel.cards.*;
+import com.avatarduel.model.Element;
+
 public class CardViewer {
 	
 	private boolean isUp;
 	private boolean isAda;
-	private String imagepath;
+	private Card card;
 	
 	public CardViewer() {
 		this.isUp = false;
 		this.isAda = false;
-		this.imagepath = "";
+		this.card = new LandCard("","",Element.AIR,"");
 	}
 	
-	public CardViewer(boolean isUp, boolean isAda, String imagepath){
+	public CardViewer(boolean isUp, boolean isAda, Card card){
 		this.isUp = isUp;
 		this.isAda = isAda;
-		this.imagepath = imagepath;
+		this.card = card;
 	}
 	
 	public void setUp(boolean b) {
@@ -26,8 +29,8 @@ public class CardViewer {
 		this.isAda = b;
 	}
 	
-	public void setImagePath(String path) {
-		this.imagepath = path;
+	public void setImagePath(Card card) {
+		this.card = card;
 	}
 	
 	public boolean getUp() {
@@ -38,8 +41,8 @@ public class CardViewer {
 		return this.isAda;
 	}
 	
-	public String getPath() {
-		return this.imagepath;
+	public Card getCard() {
+		return this.card;
 	}
 
 }
