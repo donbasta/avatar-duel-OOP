@@ -8,7 +8,7 @@ public class State {
     private int turn;
     private Player P1;
     private Player P2;
-    private Phase current;
+//    private Phase current;
 //    private List FieldP1;
 //    private List FieldP2;
 //    private List DeckP1;
@@ -28,6 +28,12 @@ public class State {
 
     public int getTurn(){
         return this.turn;
+    }
+    
+    public Player getPlayer(int a) {
+    	if(a==1) return this.P1;
+    	else if(a==2) return this.P2;
+    	return new Player();
     }
 
     //ini phasenya belum di implement jd blm tau atribut & method & parameternya

@@ -27,9 +27,10 @@ public class Decks{
         return this.deck;
     }
 
-    public void drawCard(){
+    public Card drawCard(){
         Card c = this.deck.pop();
         this.hand.add(c);
+        return c;
     }
     
     public void addToDeck(Card c){

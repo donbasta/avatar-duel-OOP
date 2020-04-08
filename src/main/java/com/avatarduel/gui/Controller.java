@@ -2,6 +2,8 @@ package com.avatarduel.gui;
 
 import javafx.scene.paint.Color;
 
+import java.util.Collections;
+
 import com.avatarduel.cards.Card;
 import com.avatarduel.model.Element;
 import com.avatarduel.state.Decks;
@@ -33,6 +35,9 @@ public class Controller {
 
     @FXML
     private ImageView cardViewImage;
+    
+    @FXML
+    private Text cardViewDescription;
 
     @FXML
     private Rectangle cardBattleA9;
@@ -329,18 +334,19 @@ public class Controller {
     private CardViewer[] objectCardBattleA;
     private CardViewer[] objectCardBattleB;
     
-    Player qila = new Player();
-    Player hojun = new Player();
+    private Player hojun;
+    private Player qila;
+    private State state;
     
-    
-    
-//    qila.getDecks().addToDeck()
-    
-    
+    public void setPlay(Player pa, Player pb, State st) {
+    	hojun = pa;
+    	qila = pb;
+    	state = st;
+    }
+
     @FXML
     public void initialize() {
     	
-//    	Stage stage = (Stage) mainPane.getScene().getWindow();
     	System.out.println("test cuy"); //debug
     	Scene scene = mainPane.getScene();
    
@@ -480,21 +486,39 @@ public class Controller {
     @FXML
     void drawCard(MouseEvent event) {
     	System.out.println("test"); //debug
-//    	Card card =  //top deck
-    	for(int i=1; i<8; i++) {
-    		if(objectCardDrawA[i].getAda()) {
-    			continue;
-    		}
-    		//TO DO: ISI BERDASARKAN KARTU TOP DARI DECKNYA
-    		objectCardDrawA[i] = new CardViewer();
-    		objectCardDrawA[i].setAda(true);
-    		objectCardDrawA[i].setUp(true);
-    		//TO DO: ISI TEXT BERDASARKAN KARTUNYA
-//    		String description = objectCardDrawA[i].getCard().getElement().toString(); 
-    		String description = Element.WATER.toString(); 
-        	cardDrawAText[i].setText(description);
-        	break;
-        	//TO DO: SET WARNA RECTANGLE BERDASARKAN ELEMENNYA
+    	
+    	int turn = state.getTurn();
+    	
+    	if(turn == 1) {
+        	for(int i=1; i<8; i++) {
+        		if(objectCardDrawA[i].getAda()) {
+        			continue;
+        		}
+        		Card drawn = state.getPlayer(1).getDecks().drawCard();
+        		//TO DO: ISI BERDASARKAN KARTU TOP DARI DECKNYA
+        		objectCardDrawA[i] = new CardViewer(true, true, drawn);
+        		//TO DO: ISI TEXT BERDASARKAN KARTUNYA
+        		String description = objectCardDrawA[i].getCard().getElement().toString(); 
+            	cardDrawAText[i].setText(description);
+            	break;
+            	//TO DO: SET WARNA RECTANGLE BERDASARKAN ELEMENNYA (OPTIONAL)
+        	}
+    	}
+    	
+    	else if(turn == 2) {
+        	for(int i=1; i<8; i++) {
+        		if(objectCardDrawB[i].getAda()) {
+        			continue;
+        		}
+        		Card drawn = state.getPlayer(2).getDecks().drawCard();
+        		//TO DO: ISI BERDASARKAN KARTU TOP DARI DECKNYA
+        		objectCardDrawB[i] = new CardViewer(true, true, drawn);
+        		//TO DO: ISI TEXT BERDASARKAN KARTUNYA
+        		String description = objectCardDrawB[i].getCard().getElement().toString(); 
+            	cardDrawBText[i].setText(description);
+            	break;
+            	//TO DO: SET WARNA RECTANGLE BERDASARKAN ELEMENNYA (OPTIONAL)
+        	}
     	}
     }
 
@@ -508,30 +532,29 @@ public class Controller {
         int box = 0;
         
         if(type == 'D') {
-        	player = id.charAt(8);
         	box = Integer.parseInt(id.substring(9,id.length()));
+        	player = id.charAt(8);
         }
         else if(type == 'B') {
-        	player = id.charAt(10);
         	box = Integer.parseInt(id.substring(11,id.length()));
+        	player = id.charAt(10);
         }
         
-        char state = 'A'; //debug
-        
         if(player == 'A') {
-        	//statenya belom ada
         	if(type == 'D') {
-            	if(objectCardDrawA[box].getAda() && state == 'A') {
+            	if(objectCardDrawA[box].getAda() && state.getTurn() == 1) {
                 	cardViewImage.setImage(new Image("file:".concat(objectCardDrawA[box].getCard().getPath())));
-                	cardViewName.setText(objectCardDrawA[box].getCard().getElement().toString());
+                	cardViewName.setText(objectCardDrawA[box].getCard().getName());
                 	cardViewId.setText(objectCardDrawA[box].getCard().getElement().toString());
-                	System.out.println(id); //debug
+                	cardViewDescription.setText(objectCardDrawA[box].getCard().getDesc());
+                	System.out.println("file:".concat(objectCardDrawA[box].getCard().getPath())); //debug
             	}
         	} else if(type == 'B') {
-            	if(objectCardBattleA[box].getAda() && state == 'A') {
-                	cardViewImage.setImage(new Image("file:".concat(objectCardBattleA[box].getCard().getPath())));
-                	cardViewName.setText(objectCardBattleA[box].getCard().getElement().toString());
+            	if(objectCardBattleA[box].getAda() && state.getTurn() == 1) {
+                	cardViewImage.setImage(new Image("file:../".concat(objectCardBattleA[box].getCard().getPath())));
+                	cardViewName.setText(objectCardBattleA[box].getCard().getName());
                 	cardViewId.setText(objectCardBattleA[box].getCard().getElement().toString());
+                	cardViewDescription.setText(objectCardBattleA[box].getCard().getDesc());
                 	System.out.println(id); //debug
             	}
         	}
@@ -539,17 +562,19 @@ public class Controller {
 
         } else if(player == 'B') {
         	if(type == 'D') {
-            	if(objectCardDrawB[box].getAda() && state == 'B') {
-                	cardViewImage.setImage(new Image("file:".concat(objectCardDrawB[box].getCard().getPath())));
+            	if(objectCardDrawB[box].getAda() && state.getTurn() == 2) {
+                	cardViewImage.setImage(new Image("file:../".concat(objectCardDrawB[box].getCard().getPath())));
                 	cardViewName.setText(objectCardDrawB[box].getCard().getName());
                 	cardViewId.setText(objectCardDrawB[box].getCard().getElement().toString());
+                	cardViewDescription.setText(objectCardDrawB[box].getCard().getDesc());
                  	System.out.println(id); //debug
             	}
         	} else if(type == 'B') {
-            	if(objectCardBattleB[box].getAda() && state == 'B') {
-                	cardViewImage.setImage(new Image("file:".concat(objectCardBattleB[box].getCard().getPath())));
+            	if(objectCardBattleB[box].getAda() && state.getTurn() == 2) {
+                	cardViewImage.setImage(new Image("file:../".concat(objectCardBattleB[box].getCard().getPath())));
                 	cardViewName.setText(objectCardBattleB[box].getCard().getName());
                 	cardViewId.setText(objectCardBattleB[box].getCard().getElement().toString());
+                	cardViewDescription.setText(objectCardBattleB[box].getCard().getDesc());
                 	System.out.println(id); //debug
             	}
         	}

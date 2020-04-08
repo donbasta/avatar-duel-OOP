@@ -50,7 +50,7 @@
                               <Insets top="15.0" />
                            </StackPane.margin>
                            <font>
-                              <Font size="26.0" />
+                              <Font size="18.0" />
                            </font>
                         </Text>
                         <Text fx:id="cardViewId" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="222.13671875">
@@ -66,6 +66,11 @@
                               <Insets top="75.0" />
                            </StackPane.margin>
                         </ImageView>
+                        <Text fx:id="cardViewDescription" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="231.15949249267578">
+                           <StackPane.margin>
+                              <Insets top="310.0" />
+                           </StackPane.margin>
+                        </Text>
                      </children>
                   </StackPane>
                </children>
