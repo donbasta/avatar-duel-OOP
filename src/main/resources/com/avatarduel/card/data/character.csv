@@ -1,2 +1,12 @@
 id;name;element;description;imagepath;attack;defense;power
-1;Junho;AIR;aing wibu;somepath.png;3;2;1
+1;Junho;AIR;aing wibu;somepath.png;3;2;2
+2;Hojun;WATER;aing wibu;somepath.png;3;2;1
+3;Farras;FIRE;aing wibu;somepath.png;3;2;1
+4;Rasfar;EARTH;aing wibu;somepath.png;3;2;1
+5;Choi;AIR;aing wibu;somepath.png;3;2;1
+6;Warlord Hibban;FIRE;aing wibu;somepath.png;3;2;1
+7;Kakek;WATER;aing wibu;somepath.png;3;2;1
+8;Kakek Muda;EARTH;aing wibu;somepath.png;3;2;1
+9;donbasta;FIRE;aing wibu;somepath.png;3;2;1
+10;Katara;WATER;aing wibu;somepath.png;3;2;1
+11;Zuko;FIRE;aing wibu;somepath.png;3;2;1

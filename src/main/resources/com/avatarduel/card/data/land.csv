@@ -1,2 +1,5 @@
 id;name;element;description;imagepath
 1;Eastern Water Temple;AIR;One of the two temples exclusively housing female airbenders.;src/res/image/Eastern Water Temple.png
+2;Fire Fountain City;FIRE;One of the two temples exclusively housing female airbenders.;src/res/image/Fire Fountain City.png
+3;Southern Water Tribe;WATER;One of the two temples exclusively housing female airbenders.;src/res/image/Southern Water Tribe.png
+4;Kiyoshi Island;EARTH;One of the two temples exclusively housing female airbenders.;src/res/image/Kiyoshi Island.png
