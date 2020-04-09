@@ -427,22 +427,22 @@
                         <Text fx:id="numCardDeck1" strokeType="OUTSIDE" strokeWidth="0.0" />
                         <VBox prefHeight="64.0" prefWidth="224.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
+                              <Text fx:id="water1" strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BUMI: 0/0">
+                              <Text fx:id="earth1" strokeType="OUTSIDE" strokeWidth="0.0" text="BUMI: 0/0">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="API: 0/0">
+                              <Text fx:id="fire1" strokeType="OUTSIDE" strokeWidth="0.0" text="API: 0/0">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UDARA: 0/0">
+                              <Text fx:id="air1" strokeType="OUTSIDE" strokeWidth="0.0" text="UDARA: 0/0">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
@@ -455,22 +455,22 @@
                      <children>
                         <VBox prefHeight="62.0" prefWidth="224.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
+                              <Text fx:id="water2" strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BUMI: 0/0">
+                              <Text fx:id="earth2" strokeType="OUTSIDE" strokeWidth="0.0" text="BUMI: 0/0">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="API: 0/0">
+                              <Text fx:id="fire2" strokeType="OUTSIDE" strokeWidth="0.0" text="API: 0/0">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Text>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UDARA: 0/0">
+                              <Text fx:id="air2" strokeType="OUTSIDE" strokeWidth="0.0" text="UDARA: 0/0">
                                  <font>
                                     <Font size="24.0" />
                                  </font>

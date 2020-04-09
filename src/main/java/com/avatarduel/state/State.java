@@ -8,7 +8,7 @@ public class State {
     private int turn;
     private Player P1;
     private Player P2;
-    int phase;
+    private int phase;
 //    private Phase current;
 //    private List FieldP1;
 //    private List FieldP2;
@@ -17,6 +17,7 @@ public class State {
 
     public State(int turn, Player P1, Player P2){
         this.run = true;
+        this.phase = 1;
         this.turn = turn;
         this.P1 = P1;
         this.P2 = P2;

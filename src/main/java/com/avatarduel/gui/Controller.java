@@ -351,7 +351,31 @@ public class Controller {
 	private Button btn_mp2;
 	@FXML
 	private Button btn_et;
+
+	@FXML 
+	private Text water1;
+
+	@FXML 
+	private Text air1;
+
+	@FXML 
+	private Text earth1;
+
+	@FXML 
+	private Text fire1;
     
+	@FXML 
+	private Text water2;
+
+	@FXML 
+	private Text air2;
+
+	@FXML 
+	private Text earth2;
+
+	@FXML 
+	private Text fire2;
+
     protected Rectangle[] cardDrawA;
     protected Rectangle[] cardDrawB;
     protected Rectangle[] cardBattleA;
@@ -388,6 +412,7 @@ public class Controller {
     	btn_battle.setDisable(true);
 		btn_mp2.setDisable(true);
 		btn_et.setDisable(true);
+		deck2.setDisable(true);
 
 		status.setText("Player 1 : Draw Phase");
     	Card cd;
@@ -402,12 +427,32 @@ public class Controller {
 				e.printStackTrace();
 			}
     	}
+
+		this.setPower(1, state.getPlayer(1));
+		this.setPower(2, state.getPlayer(2));
+		
+
+
     	hideCard(2);
     	numCardDeck1.setText(String.format("%d / %d", state.getPlayer(1).getDecks().getDeck().size(), maksKartu));
     	numCardDeck2.setText(String.format("%d / %d", state.getPlayer(2).getDecks().getDeck().size(), maksKartu));
     	
 
     }
+
+	private void setPower(int who, Player p){
+		if(who == 1){
+			air1.setText(Integer.toString(p.getPower().getPower(Element.AIR)));
+			water1.setText(Integer.toString(p.getPower().getPower(Element.WATER)));
+			earth1.setText(Integer.toString(p.getPower().getPower(Element.EARTH)));
+			fire1.setText(Integer.toString(p.getPower().getPower(Element.FIRE)));
+		} else {
+			air2.setText(Integer.toString(p.getPower().getPower(Element.AIR)));
+			water2.setText(Integer.toString(p.getPower().getPower(Element.WATER)));
+			earth2.setText(Integer.toString(p.getPower().getPower(Element.EARTH)));
+			fire2.setText(Integer.toString(p.getPower().getPower(Element.FIRE)));
+		}
+	}
 
 
 
@@ -573,7 +618,7 @@ public class Controller {
 		}
     }
     
-    void hideCard(int numPlayer) {
+    public void hideCard(int numPlayer) {
     	if(numPlayer == 1) {
         	for(int i=1; i<=8; i++) {
         		if(objectCardDrawA[i].getAda()) {
