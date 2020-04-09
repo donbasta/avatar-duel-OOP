@@ -6,12 +6,14 @@ import com.avatarduel.cards.*;
 public class Player{
     private int health;
     private Decks cards;
+    private Power power;
     
-    final private int MAX_HEALTH = 100;
+    final private int MAX_HEALTH = 80;
     
     public Player(){
         this.health = MAX_HEALTH;
         this.cards = new Decks();
+        this.power = new Power();
     }
     
     public Decks getDecks() {
@@ -20,6 +22,10 @@ public class Player{
 
     public int getHealth(){
         return this.health;
+    }
+    
+    public Power getPower() {
+    	return this.power;
     }
     
     public void setHealth(int health){

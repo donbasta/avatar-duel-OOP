@@ -1,26 +1,24 @@
 package com.avatarduel.gui;
 
-import javafx.scene.paint.Color;
-
-import java.util.Collections;
-
 import com.avatarduel.cards.Card;
+import com.avatarduel.cards.CharacterCard;
+import com.avatarduel.cards.SkillCard;
 import com.avatarduel.model.Element;
-import com.avatarduel.state.Decks;
+import com.avatarduel.phase.MainPhase1;
+import com.avatarduel.phase.Phase;
 import com.avatarduel.state.Player;
 import com.avatarduel.state.State;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Control;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 public class Controller {
 
@@ -224,6 +222,12 @@ public class Controller {
 
     @FXML
     private Text cardDrawB7Text;
+    
+    @FXML
+    private Rectangle cardDrawB8;
+
+    @FXML
+    private Text cardDrawB8Text;
 
     @FXML
     private Rectangle cardBattleA1;
@@ -314,6 +318,12 @@ public class Controller {
 
     @FXML
     private Text cardDrawA7Text;
+    
+    @FXML
+    private Rectangle cardDrawA8;
+
+    @FXML
+    private Text cardDrawA8Text;
 
     @FXML
     private Rectangle deck1;
@@ -321,27 +331,58 @@ public class Controller {
     @FXML
     private Rectangle deck2;
     
-    private Rectangle[] cardDrawA;
-    private Rectangle[] cardDrawB;
-    private Rectangle[] cardBattleA;
-    private Rectangle[] cardBattleB;
-    private Text[] cardDrawAText;
-    private Text[] cardDrawBText;
-    private Text[] cardBattleAText;
-    private Text[] cardBattleBText;
-    private CardViewer[] objectCardDrawA;
-    private CardViewer[] objectCardDrawB;
-    private CardViewer[] objectCardBattleA;
-    private CardViewer[] objectCardBattleB;
+    @FXML
+    private Text numCardDeck1;
+
+    @FXML
+    private Text numCardDeck2;
     
-    private Player hojun;
-    private Player qila;
-    private State state;
+    protected Rectangle[] cardDrawA;
+    protected Rectangle[] cardDrawB;
+    protected Rectangle[] cardBattleA;
+    protected Rectangle[] cardBattleB;
+    protected Text[] cardDrawAText;
+    protected Text[] cardDrawBText;
+    protected Text[] cardBattleAText;
+    protected Text[] cardBattleBText;
+    protected CardViewer[] objectCardDrawA;
+    protected CardViewer[] objectCardDrawB;
+    protected CardViewer[] objectCardBattleA;
+    protected CardViewer[] objectCardBattleB;
+    protected Text[] numCardDeck;
+    
+    protected Player hojun;
+    protected Player qila;
+    protected State state;
+    protected int maksKartu;
+    protected MainPhase1 mainphase;
     
     public void setPlay(Player pa, Player pb, State st) {
     	hojun = pa;
     	qila = pb;
     	state = st;
+    	
+    	maksKartu = state.getPlayer(1).getDecks().getDeck().size();
+    	
+    	hideCard(1);
+    	hideCard(2);
+    	
+    	Card cd;
+    	for(int i=1; i<=7; i++) {
+    		try {
+				cd = state.getPlayer(1).getDecks().drawCard();
+				addCard(1,cd);
+	    		cd = state.getPlayer(2).getDecks().drawCard();
+	    		addCard(2,cd);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}
+    	hideCard(2);
+    	numCardDeck1.setText(String.format("%d / %d", state.getPlayer(1).getDecks().getDeck().size(), maksKartu));
+    	numCardDeck2.setText(String.format("%d / %d", state.getPlayer(2).getDecks().getDeck().size(), maksKartu));
+    	
     }
 
     @FXML
@@ -350,7 +391,7 @@ public class Controller {
     	System.out.println("test cuy"); //debug
     	Scene scene = mainPane.getScene();
    
-    	cardDrawA = new Rectangle[8];
+    	cardDrawA = new Rectangle[10];
     	cardDrawA[1] = cardDrawA1;
     	cardDrawA[2] = cardDrawA2;
     	cardDrawA[3] = cardDrawA3;
@@ -358,6 +399,7 @@ public class Controller {
     	cardDrawA[5] = cardDrawA5;
     	cardDrawA[6] = cardDrawA6;
     	cardDrawA[7] = cardDrawA7;
+    	cardDrawA[8] = cardDrawA8;
     	
     	cardBattleA = new Rectangle[17];
     	cardBattleA[1] = cardBattleA1;
@@ -377,7 +419,7 @@ public class Controller {
     	cardBattleA[15] = cardBattleA15;
     	cardBattleA[16] = cardBattleA16;
     	
-    	cardDrawAText = new Text[8];
+    	cardDrawAText = new Text[10];
     	cardDrawAText[1] = cardDrawA1Text;
     	cardDrawAText[2] = cardDrawA2Text;
     	cardDrawAText[3] = cardDrawA3Text;
@@ -385,6 +427,7 @@ public class Controller {
     	cardDrawAText[5] = cardDrawA5Text;
     	cardDrawAText[6] = cardDrawA6Text;
     	cardDrawAText[7] = cardDrawA7Text;
+    	cardDrawAText[8] = cardDrawA8Text;
     	
     	cardBattleAText = new Text[17];
     	cardBattleAText[1] = cardBattleA1Text;
@@ -404,7 +447,7 @@ public class Controller {
     	cardBattleAText[15] = cardBattleA15Text;
     	cardBattleAText[16] = cardBattleA16Text;
     	
-    	cardDrawB = new Rectangle[8];
+    	cardDrawB = new Rectangle[10];
     	cardDrawB[1] = cardDrawB1;
     	cardDrawB[2] = cardDrawB2;
     	cardDrawB[3] = cardDrawB3;
@@ -412,6 +455,7 @@ public class Controller {
     	cardDrawB[5] = cardDrawB5;
     	cardDrawB[6] = cardDrawB6;
     	cardDrawB[7] = cardDrawB7;
+    	cardDrawB[8] = cardDrawB8;
     	
     	cardBattleB = new Rectangle[17];
     	cardBattleB[1] = cardBattleB1;
@@ -431,7 +475,7 @@ public class Controller {
     	cardBattleB[15] = cardBattleB15;
     	cardBattleB[16] = cardBattleB16;
     	
-    	cardDrawBText = new Text[8];
+    	cardDrawBText = new Text[10];
     	cardDrawBText[1] = cardDrawB1Text;
     	cardDrawBText[2] = cardDrawB2Text;
     	cardDrawBText[3] = cardDrawB3Text;
@@ -439,6 +483,7 @@ public class Controller {
     	cardDrawBText[5] = cardDrawB5Text;
     	cardDrawBText[6] = cardDrawB6Text;
     	cardDrawBText[7] = cardDrawB7Text;
+    	cardDrawBText[8] = cardDrawB8Text;
     	
     	cardBattleBText = new Text[17];
     	cardBattleBText[1] = cardBattleB1Text;
@@ -458,73 +503,234 @@ public class Controller {
     	cardBattleBText[15] = cardBattleB15Text;
     	cardBattleBText[16] = cardBattleB16Text;
     	
-    	objectCardDrawA = new CardViewer[8];
-    	for(int i=1; i<8; i++) {
+    	objectCardDrawA = new CardViewer[10];
+    	for(int i=1; i<=8; i++) {
     		objectCardDrawA[i] = new CardViewer();
     	}
     	
-    	objectCardBattleA = new CardViewer[17];
+    	objectCardBattleA = new CardViewerBattle[17];
     	for(int i=1; i<17; i++) {
-    		objectCardBattleA[i] = new CardViewer();
+    		objectCardBattleA[i] = new CardViewerBattle();
     	}
     	
-    	objectCardDrawB = new CardViewer[8];
-    	for(int i=1; i<8; i++) {
+    	objectCardDrawB = new CardViewer[10];
+    	for(int i=1; i<=8; i++) {
     		objectCardDrawB[i] = new CardViewer();
     	}
     	
-    	objectCardBattleB = new CardViewer[17];
+    	objectCardBattleB = new CardViewerBattle[17];
     	for(int i=1; i<17; i++) {
-    		objectCardBattleB[i] = new CardViewer();
+    		objectCardBattleB[i] = new CardViewerBattle();
     	}
+    	
+    	numCardDeck = new Text[3];
+    	numCardDeck[1] = numCardDeck1;
+    	numCardDeck[2] = numCardDeck2;
 
         cardViewImage.setImage(new Image("file:src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png"));
-
     	
     }
 
     @FXML
     void drawCard(MouseEvent event) {
-    	System.out.println("test"); //debug
-    	
     	int turn = state.getTurn();
+    	Card drawn;
+		try {
+			drawn = state.getPlayer(turn).getDecks().drawCard();
+	    	numCardDeck[turn].setText(String.format("%d / %d", state.getPlayer(turn).getDecks().getDeck().size(), maksKartu));
+	    	addCard(turn, drawn);
+		} catch (Exception e) {
+			String t = e.toString();
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
+    
+    void hideCard(int numPlayer) {
+    	if(numPlayer == 1) {
+        	for(int i=1; i<=8; i++) {
+        		if(objectCardDrawA[i].getAda()) {
+        			objectCardDrawA[i].setUp(false);
+        			cardDrawA[i].setFill(Color.TRANSPARENT);
+        		}
+        		cardDrawAText[i].setText("???");
+        	}
+    	} else if(numPlayer == 2) {
+    		for(int i=1; i<=8; i++) {
+    			if(objectCardDrawB[i].getAda()) {
+        			objectCardDrawB[i].setUp(false);
+        			cardDrawB[i].setFill(Color.TRANSPARENT);
+        		}
+    			cardDrawBText[i].setText("???");
+    		}
+    	}
+    }
+    
+    void showCard(int numPlayer) {
+    	if(numPlayer == 1) {
+        	for(int i=1; i<=8; i++) {
+        		if(objectCardDrawA[i].getAda()) {
+        			objectCardDrawA[i].setUp(true);
+        			cardDrawAText[i].setText(getDescription(objectCardDrawA[i].getCard()));
+        			cardDrawA[i].setFill(getColor(objectCardDrawA[i].getCard()));
+        		}
+        	}
+    	} else if(numPlayer == 2) {
+    		for(int i=1; i<=8; i++) {
+    			if(objectCardDrawB[i].getAda()) {
+        			objectCardDrawB[i].setUp(true);
+        			cardDrawBText[i].setText(getDescription(objectCardDrawB[i].getCard()));
+        			cardDrawB[i].setFill(getColor(objectCardDrawB[i].getCard()));
+        		}
+    		}
+    	}
+    }
+    
+    String getDescription(Card cd) {
+    	String description = "";
+		if(cd.getClass().getSimpleName().equals("LandCard")) {
+			description = "LAND";
+		} else if(cd.getClass().getSimpleName().equals("CharacterCard")) {
+			CharacterCard chd = (CharacterCard) cd;
+			description = String.format("PWR %d\nATK %d\nDEF %d", chd.getPower(), chd.getAttack(), chd.getDefense());
+		} else if(cd.getClass().getSimpleName().equals("SkillCard")) {
+			SkillCard scd = (SkillCard) cd;
+			description = String.format("%s\nPWR %d\n ATK %d\n DEF %d", scd.getType(), scd.getPower(), scd.getAttackIncrease(), scd.getDefenseIncrease());
+		}
+		return description;
+    }
+    
+    Color getColor(Card cd) {
+    	Color warna = Color.TRANSPARENT;
+    	if(cd.getElement() == Element.WATER) {
+			warna = Color.LIGHTBLUE;
+		} else if(cd.getElement() == Element.FIRE) {
+			warna = Color.CRIMSON;
+		} else if(cd.getElement() == Element.EARTH) {
+			warna = Color.LIGHTGREEN;
+		} else if(cd.getElement() == Element.AIR) {
+			warna = Color.LIGHTYELLOW;
+		}
+    	return warna;
+    }
+    
+    void addCard(int numPlayer, Card cd) {
     	
-    	if(turn == 1) {
-        	for(int i=1; i<8; i++) {
+    	if(numPlayer == 1) {
+    		for(int i=1; i<=8; i++) {
         		if(objectCardDrawA[i].getAda()) {
         			continue;
         		}
-        		Card drawn = state.getPlayer(1).getDecks().drawCard();
-        		//TO DO: ISI BERDASARKAN KARTU TOP DARI DECKNYA
-        		objectCardDrawA[i] = new CardViewer(true, true, drawn);
-        		//TO DO: ISI TEXT BERDASARKAN KARTUNYA
-        		String description = objectCardDrawA[i].getCard().getElement().toString(); 
+        		objectCardDrawA[i] = new CardViewer(true, true, cd);
+        		String description = getDescription(cd);
+        		cardDrawA[i].setFill(getColor(cd));
             	cardDrawAText[i].setText(description);
             	break;
-            	//TO DO: SET WARNA RECTANGLE BERDASARKAN ELEMENNYA (OPTIONAL)
         	}
-    	}
-    	
-    	else if(turn == 2) {
-        	for(int i=1; i<8; i++) {
+    	} else if(numPlayer == 2) {
+    		for(int i=1; i<=8; i++) {
         		if(objectCardDrawB[i].getAda()) {
         			continue;
         		}
-        		Card drawn = state.getPlayer(2).getDecks().drawCard();
-        		//TO DO: ISI BERDASARKAN KARTU TOP DARI DECKNYA
-        		objectCardDrawB[i] = new CardViewer(true, true, drawn);
-        		//TO DO: ISI TEXT BERDASARKAN KARTUNYA
-        		String description = objectCardDrawB[i].getCard().getElement().toString(); 
+        		objectCardDrawB[i] = new CardViewer(true, true, cd);
+        		String description = getDescription(cd);
+        		cardDrawB[i].setFill(getColor(cd));
             	cardDrawBText[i].setText(description);
             	break;
-            	//TO DO: SET WARNA RECTANGLE BERDASARKAN ELEMENNYA (OPTIONAL)
         	}
     	}
+    	
+    }
+    
+    @FXML
+    void mainPhaseCard(MouseEvent event) {
+    	int turn = state.getTurn();
+    	String id = ((Node) event.getSource()).getId();
+    	int box = Integer.parseInt(id.substring(9,id.length()));
+    	char player = id.charAt(8);
+    	
+    	System.out.println(player);
+    	
+    	if(player == 'A' && turn == 1) {
+    		Card main = objectCardDrawA[box].getCard();
+    		mainphase = new MainPhase1(1,state.getPlayer(1).getDecks(), state.getPlayer(1).getPower());
+    		try {
+				mainphase.putCardToField(main);
+				putCardToBattle(main,turn);
+				emptyCell("draw", turn, box);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	} else if(player == 'B' && turn == 2) {
+    		Card main = objectCardDrawB[box].getCard();
+    		mainphase = new MainPhase1(2,state.getPlayer(2).getDecks(), state.getPlayer(2).getPower());
+    		try {
+				mainphase.putCardToField(main);
+				putCardToBattle(main,turn);
+				emptyCell("draw", turn, box);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}	
+    }
+    
+    void putCardToBattle(Card c, int player) {
+    	if(player == 1) {
+        	for(int i = 1; i<=16; i++) {
+        		if(objectCardBattleA[i].getAda()) {
+        			continue;
+        		}
+        		objectCardBattleA[i] = new CardViewerBattle(true, true, c, 1);
+        		String description = getDescription(c);
+        		cardBattleA[i].setFill(getColor(c));
+            	cardBattleAText[i].setText(description);
+            	break;
+        	}
+    	}
+    	if(player == 2) {
+        	for(int i = 1; i<=16; i++) {
+        		if(objectCardBattleB[i].getAda()) {
+        			continue;
+        		}
+        		objectCardBattleB[i] = new CardViewerBattle(true, true, c, 1);
+        		String description = getDescription(c);
+        		cardBattleB[i].setFill(getColor(c));
+            	cardBattleBText[i].setText(description);
+            	break;
+        	}
+    	}
+
+    }
+    
+    void emptyCell(String location, int player, int position) {
+    	if(player == 1) {
+        	if(location.equals("battle")) {
+        		cardBattleAText[position].setText("???");
+        		cardBattleA[position].setFill(Color.TRANSPARENT);
+        		objectCardBattleA[position] = new CardViewerBattle();
+        	} else if(location.equals("draw")) {
+        		cardDrawAText[position].setText("???");
+        		cardDrawA[position].setFill(Color.TRANSPARENT);
+        		objectCardDrawA[position] = new CardViewer();
+        	}
+    	} else if(player == 2) {
+        	if(location.equals("battle")) {
+        		cardBattleBText[position].setText("???");
+        		cardBattleB[position].setFill(Color.TRANSPARENT);
+        		objectCardBattleB[position] = new CardViewerBattle();
+        	} else if(location.equals("draw")) {
+        		cardDrawBText[position].setText("???");
+        		cardDrawB[position].setFill(Color.TRANSPARENT);
+        		objectCardDrawB[position] = new CardViewer();
+        	}
+    	}
+
     }
 
     @FXML
     void viewCard(MouseEvent event) {
-    	System.out.println("test"); //debug
     	String id = ((Node) event.getSource()).getId();
         
         char type = id.charAt(4);
@@ -551,7 +757,7 @@ public class Controller {
             	}
         	} else if(type == 'B') {
             	if(objectCardBattleA[box].getAda() && state.getTurn() == 1) {
-                	cardViewImage.setImage(new Image("file:../".concat(objectCardBattleA[box].getCard().getPath())));
+                	cardViewImage.setImage(new Image("file:".concat(objectCardBattleA[box].getCard().getPath())));
                 	cardViewName.setText(objectCardBattleA[box].getCard().getName());
                 	cardViewId.setText(objectCardBattleA[box].getCard().getElement().toString());
                 	cardViewDescription.setText(objectCardBattleA[box].getCard().getDesc());
@@ -559,11 +765,10 @@ public class Controller {
             	}
         	}
         	
-
         } else if(player == 'B') {
         	if(type == 'D') {
             	if(objectCardDrawB[box].getAda() && state.getTurn() == 2) {
-                	cardViewImage.setImage(new Image("file:../".concat(objectCardDrawB[box].getCard().getPath())));
+                	cardViewImage.setImage(new Image("file:".concat(objectCardDrawB[box].getCard().getPath())));
                 	cardViewName.setText(objectCardDrawB[box].getCard().getName());
                 	cardViewId.setText(objectCardDrawB[box].getCard().getElement().toString());
                 	cardViewDescription.setText(objectCardDrawB[box].getCard().getDesc());
@@ -571,7 +776,7 @@ public class Controller {
             	}
         	} else if(type == 'B') {
             	if(objectCardBattleB[box].getAda() && state.getTurn() == 2) {
-                	cardViewImage.setImage(new Image("file:../".concat(objectCardBattleB[box].getCard().getPath())));
+                	cardViewImage.setImage(new Image("file:".concat(objectCardBattleB[box].getCard().getPath())));
                 	cardViewName.setText(objectCardBattleB[box].getCard().getName());
                 	cardViewId.setText(objectCardBattleB[box].getCard().getElement().toString());
                 	cardViewDescription.setText(objectCardBattleB[box].getCard().getDesc());

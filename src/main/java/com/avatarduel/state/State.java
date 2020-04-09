@@ -8,6 +8,7 @@ public class State {
     private int turn;
     private Player P1;
     private Player P2;
+    int phase;
 //    private Phase current;
 //    private List FieldP1;
 //    private List FieldP2;
@@ -36,7 +37,7 @@ public class State {
     	return new Player();
     }
 
-    //ini phasenya belum di implement jd blm tau atribut & method & parameternya
+//    ini phasenya belum di implement jd blm tau atribut & method & parameternya
 //    public void nextPhase(Phase p){
 //        if (p.getPhase()==1){ //Draw Phase
 //            this.current = new Phase(2);

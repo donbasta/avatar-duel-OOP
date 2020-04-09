@@ -3,7 +3,7 @@ package com.avatarduel.phase;
 import com.avatarduel.state.*;
 import com.avatarduel.model.Element;
 
-public class DrawPhase implements Phase{
+public class DrawPhase implements Phase {
     private int turn;
     private Decks decks;
     private Power power;
@@ -19,7 +19,11 @@ public class DrawPhase implements Phase{
         int air = this.decks.countLand(Element.AIR);
         int earth = this.decks.countLand(Element.EARTH);
         this.power = new Power(fire,water,air,earth);
-        this.decks.drawCard();
+        try {
+			this.decks.drawCard();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
 }

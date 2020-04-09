@@ -7,6 +7,10 @@ public class Power{
     private int water;
     private int air;
     private int earth;
+    
+    public Power() {
+    	this.fire = this.water = this.air = this.earth = 0;
+    }
 
     public Power(int fire, int water, int air, int earth){
         this.fire = fire;

@@ -29,6 +29,8 @@ public class Main extends Application {
   private static final String SKILL_CSV_FILE_PATH = "../card/data/skill.csv";
 
   private ArrayList<Card> cardData;
+  private Player hojun, qila;
+  private State state;
 
   public void loadCards() throws IOException, URISyntaxException {
 
@@ -68,38 +70,39 @@ public class Main extends Application {
   @Override
   public void start(Stage stage) throws Exception {
 	  
-     try {
-        this.loadCards();
-     } catch (Exception e) {
-      	System.out.println(e);
-     }
+    try {
+      this.loadCards();
+    } catch (Exception e) {
+      System.out.println(e);
+    }
 	  
-	 Player qila = new Player();
-     Player hojun = new Player();
+	qila = new Player();
+    hojun = new Player();
       
-     Collections.shuffle(cardData);
-     for(Card card : cardData) {
-    	 qila.getDecks().addToDeck(card);
-     }
-     Collections.shuffle(cardData);
-     for(Card card : cardData) {
-    	 hojun.getDecks().addToDeck(card);
-     }
+    Collections.shuffle(cardData);
+    for(Card card : cardData) {
+    	qila.getDecks().addToDeck(card);
+    }
+    Collections.shuffle(cardData);
+    for(Card card : cardData) {
+    	hojun.getDecks().addToDeck(card);
+    }
       
-     State state = new State(1, qila, hojun);	  
+    state = new State(1, qila, hojun);	  
 	  
 	FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("tes.fxml"));
 	
-      // Load outer outermost element from the FXML file
+    // Load outer outermost element from the FXML file
     Parent root = loader.load();
     
+    //set initial variables
 	Controller controller = loader.<Controller>getController();
 	controller.setPlay(qila, hojun, state);
 
-      // Setup new scene
+    // Setup new scene
     Scene scene = new Scene(root, 1200, 720);
 
-      // Set stage to the scene
+    // Set stage to the scene
     stage.setTitle("Avatar the legend of jun");
     stage.setScene(scene);
     stage.show();    
