@@ -76,7 +76,7 @@ public class Main extends Application {
       System.out.println(e);
     }
 	  
-	qila = new Player();
+	  qila = new Player();
     hojun = new Player();
       
     Collections.shuffle(cardData);

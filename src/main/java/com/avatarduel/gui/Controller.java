@@ -19,6 +19,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.scene.control.Button;
 
 public class Controller {
 
@@ -336,6 +337,20 @@ public class Controller {
 
     @FXML
     private Text numCardDeck2;
+
+	@FXML
+	private Text status;
+
+	@FXML
+	private Button btn_draw;
+	@FXML
+	private Button btn_mp1;
+	@FXML
+	private Button btn_battle;
+	@FXML
+	private Button btn_mp2;
+	@FXML
+	private Button btn_et;
     
     protected Rectangle[] cardDrawA;
     protected Rectangle[] cardDrawB;
@@ -356,6 +371,7 @@ public class Controller {
     protected State state;
     protected int maksKartu;
     protected MainPhase1 mainphase;
+	private int te;
     
     public void setPlay(Player pa, Player pb, State st) {
     	hojun = pa;
@@ -366,7 +382,14 @@ public class Controller {
     	
     	hideCard(1);
     	hideCard(2);
-    	
+
+		btn_draw.setDisable(true);
+		btn_mp1.setDisable(true);
+    	btn_battle.setDisable(true);
+		btn_mp2.setDisable(true);
+		btn_et.setDisable(true);
+
+		status.setText("Player 1 : Draw Phase");
     	Card cd;
     	for(int i=1; i<=7; i++) {
     		try {
@@ -383,7 +406,10 @@ public class Controller {
     	numCardDeck1.setText(String.format("%d / %d", state.getPlayer(1).getDecks().getDeck().size(), maksKartu));
     	numCardDeck2.setText(String.format("%d / %d", state.getPlayer(2).getDecks().getDeck().size(), maksKartu));
     	
+
     }
+
+
 
     @FXML
     public void initialize() {
@@ -533,6 +559,7 @@ public class Controller {
 
     @FXML
     void drawCard(MouseEvent event) {
+		
     	int turn = state.getTurn();
     	Card drawn;
 		try {
