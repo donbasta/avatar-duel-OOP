@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="player" prefHeight="800.0" prefWidth="224.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.CardDeck">
+   <children>
+      <VBox alignment="CENTER" prefHeight="398.0" prefWidth="224.0" spacing="30.0">
+         <children>
+            <Rectangle fx:id="deck1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="138.0" onMouseClicked="#drawCard" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+            <Text fx:id="numCardDeck1" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <VBox prefHeight="64.0" prefWidth="224.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BUMI: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="API: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UDARA: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="408.0" prefWidth="223.0" spacing="30.0">
+         <children>
+            <VBox prefHeight="62.0" prefWidth="224.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BUMI: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="API: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UDARA: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <Text fx:id="numCardDeck2" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Rectangle fx:id="deck2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="138.0" onMouseClicked="#drawCard" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+         </children>
+      </VBox>
+   </children>
+</VBox>

@@ -325,17 +325,17 @@ public class Controller {
     @FXML
     private Text cardDrawA8Text;
 
-    @FXML
-    private Rectangle deck1;
-
-    @FXML
-    private Rectangle deck2;
-    
-    @FXML
-    private Text numCardDeck1;
-
-    @FXML
-    private Text numCardDeck2;
+//    @FXML
+//    private CardDeck deck1;
+//
+//    @FXML
+//    private CardDeck deck2;
+//    
+//    @FXML
+//    private Text numCardDeck1;
+//
+//    @FXML
+//    private Text numCardDeck2;
     
     protected Rectangle[] cardDrawA;
     protected Rectangle[] cardDrawB;
@@ -349,7 +349,7 @@ public class Controller {
     protected CardViewer[] objectCardDrawB;
     protected CardViewer[] objectCardBattleA;
     protected CardViewer[] objectCardBattleB;
-    protected Text[] numCardDeck;
+//    protected Text[] numCardDeck;
     
     protected Player hojun;
     protected Player qila;
@@ -380,8 +380,8 @@ public class Controller {
 			}
     	}
     	hideCard(2);
-    	numCardDeck1.setText(String.format("%d / %d", state.getPlayer(1).getDecks().getDeck().size(), maksKartu));
-    	numCardDeck2.setText(String.format("%d / %d", state.getPlayer(2).getDecks().getDeck().size(), maksKartu));
+//    	numCardDeck1.setText(String.format("%d / %d", state.getPlayer(1).getDecks().getDeck().size(), maksKartu));
+//    	numCardDeck2.setText(String.format("%d / %d", state.getPlayer(2).getDecks().getDeck().size(), maksKartu));
     	
     }
 
@@ -508,24 +508,27 @@ public class Controller {
     		objectCardDrawA[i] = new CardViewer();
     	}
     	
-    	objectCardBattleA = new CardViewerBattle[17];
-    	for(int i=1; i<17; i++) {
-    		objectCardBattleA[i] = new CardViewerBattle();
-    	}
+//    	objectCardBattleA = new CardViewerBattle[17];
+//    	for(int i=1; i<17; i++) {
+//    		objectCardBattleA[i] = new CardViewerBattle();
+//    	}
     	
     	objectCardDrawB = new CardViewer[10];
     	for(int i=1; i<=8; i++) {
     		objectCardDrawB[i] = new CardViewer();
     	}
     	
-    	objectCardBattleB = new CardViewerBattle[17];
-    	for(int i=1; i<17; i++) {
-    		objectCardBattleB[i] = new CardViewerBattle();
-    	}
+//    	objectCardBattleB = new CardViewerBattle[17];
+//    	for(int i=1; i<17; i++) {
+//    		objectCardBattleB[i] = new CardViewerBattle();
+//    	}
     	
-    	numCardDeck = new Text[3];
-    	numCardDeck[1] = numCardDeck1;
-    	numCardDeck[2] = numCardDeck2;
+//    	deck1 = new CardDeck();
+//    	deck2 = new CardDeck();
+    	
+//    	numCardDeck = new Text[3];
+//    	numCardDeck[1] = numCardDeck1;
+//    	numCardDeck[2] = numCardDeck2;
 
         cardViewImage.setImage(new Image("file:src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png"));
     	
@@ -537,7 +540,7 @@ public class Controller {
     	Card drawn;
 		try {
 			drawn = state.getPlayer(turn).getDecks().drawCard();
-	    	numCardDeck[turn].setText(String.format("%d / %d", state.getPlayer(turn).getDecks().getDeck().size(), maksKartu));
+//	    	numCardDeck[turn].setText(String.format("%d / %d", state.getPlayer(turn).getDecks().getDeck().size(), maksKartu));
 	    	addCard(turn, drawn);
 		} catch (Exception e) {
 			String t = e.toString();
@@ -621,7 +624,7 @@ public class Controller {
         		if(objectCardDrawA[i].getAda()) {
         			continue;
         		}
-        		objectCardDrawA[i] = new CardViewer(true, true, cd);
+        		objectCardDrawA[i] = new CardViewer(cd,1);
         		String description = getDescription(cd);
         		cardDrawA[i].setFill(getColor(cd));
             	cardDrawAText[i].setText(description);
@@ -632,7 +635,7 @@ public class Controller {
         		if(objectCardDrawB[i].getAda()) {
         			continue;
         		}
-        		objectCardDrawB[i] = new CardViewer(true, true, cd);
+        		objectCardDrawB[i] = new CardViewer(cd,1);
         		String description = getDescription(cd);
         		cardDrawB[i].setFill(getColor(cd));
             	cardDrawBText[i].setText(description);
@@ -642,92 +645,92 @@ public class Controller {
     	
     }
     
-    @FXML
-    void mainPhaseCard(MouseEvent event) {
-    	int turn = state.getTurn();
-    	String id = ((Node) event.getSource()).getId();
-    	int box = Integer.parseInt(id.substring(9,id.length()));
-    	char player = id.charAt(8);
-    	
-    	System.out.println(player);
-    	
-    	if(player == 'A' && turn == 1) {
-    		Card main = objectCardDrawA[box].getCard();
-    		mainphase = new MainPhase1(1,state.getPlayer(1).getDecks(), state.getPlayer(1).getPower());
-    		try {
-				mainphase.putCardToField(main);
-				putCardToBattle(main,turn);
-				emptyCell("draw", turn, box);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-    	} else if(player == 'B' && turn == 2) {
-    		Card main = objectCardDrawB[box].getCard();
-    		mainphase = new MainPhase1(2,state.getPlayer(2).getDecks(), state.getPlayer(2).getPower());
-    		try {
-				mainphase.putCardToField(main);
-				putCardToBattle(main,turn);
-				emptyCell("draw", turn, box);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-    	}	
-    }
+//    @FXML
+//    void mainPhaseCard(MouseEvent event) {
+//    	int turn = state.getTurn();
+//    	String id = ((Node) event.getSource()).getId();
+//    	int box = Integer.parseInt(id.substring(9,id.length()));
+//    	char player = id.charAt(8);
+//    	
+//    	System.out.println(player);
+//    	
+//    	if(player == 'A' && turn == 1) {
+//    		Card main = objectCardDrawA[box].getCard();
+//    		mainphase = new MainPhase1(1,state.getPlayer(1).getDecks(), state.getPlayer(1).getPower());
+//    		try {
+//				mainphase.putCardToField(main);
+//				putCardToBattle(main,turn);
+//				emptyCell("draw", turn, box);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//    	} else if(player == 'B' && turn == 2) {
+//    		Card main = objectCardDrawB[box].getCard();
+//    		mainphase = new MainPhase1(2,state.getPlayer(2).getDecks(), state.getPlayer(2).getPower());
+//    		try {
+//				mainphase.putCardToField(main);
+//				putCardToBattle(main,turn);
+//				emptyCell("draw", turn, box);
+//			} catch (Exception e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//    	}	
+//    }
     
-    void putCardToBattle(Card c, int player) {
-    	if(player == 1) {
-        	for(int i = 1; i<=16; i++) {
-        		if(objectCardBattleA[i].getAda()) {
-        			continue;
-        		}
-        		objectCardBattleA[i] = new CardViewerBattle(true, true, c, 1);
-        		String description = getDescription(c);
-        		cardBattleA[i].setFill(getColor(c));
-            	cardBattleAText[i].setText(description);
-            	break;
-        	}
-    	}
-    	if(player == 2) {
-        	for(int i = 1; i<=16; i++) {
-        		if(objectCardBattleB[i].getAda()) {
-        			continue;
-        		}
-        		objectCardBattleB[i] = new CardViewerBattle(true, true, c, 1);
-        		String description = getDescription(c);
-        		cardBattleB[i].setFill(getColor(c));
-            	cardBattleBText[i].setText(description);
-            	break;
-        	}
-    	}
-
-    }
+//    void putCardToBattle(Card c, int player) {
+//    	if(player == 1) {
+//        	for(int i = 1; i<=16; i++) {
+//        		if(objectCardBattleA[i].getAda()) {
+//        			continue;
+//        		}
+//        		objectCardBattleA[i] = new CardViewerBattle(true, true, c, 1);
+//        		String description = getDescription(c);
+//        		cardBattleA[i].setFill(getColor(c));
+//            	cardBattleAText[i].setText(description);
+//            	break;
+//        	}
+//    	}
+//    	if(player == 2) {
+//        	for(int i = 1; i<=16; i++) {
+//        		if(objectCardBattleB[i].getAda()) {
+//        			continue;
+//        		}
+//        		objectCardBattleB[i] = new CardViewerBattle(true, true, c, 1);
+//        		String description = getDescription(c);
+//        		cardBattleB[i].setFill(getColor(c));
+//            	cardBattleBText[i].setText(description);
+//            	break;
+//        	}
+//    	}
+//
+//    }
     
-    void emptyCell(String location, int player, int position) {
-    	if(player == 1) {
-        	if(location.equals("battle")) {
-        		cardBattleAText[position].setText("???");
-        		cardBattleA[position].setFill(Color.TRANSPARENT);
-        		objectCardBattleA[position] = new CardViewerBattle();
-        	} else if(location.equals("draw")) {
-        		cardDrawAText[position].setText("???");
-        		cardDrawA[position].setFill(Color.TRANSPARENT);
-        		objectCardDrawA[position] = new CardViewer();
-        	}
-    	} else if(player == 2) {
-        	if(location.equals("battle")) {
-        		cardBattleBText[position].setText("???");
-        		cardBattleB[position].setFill(Color.TRANSPARENT);
-        		objectCardBattleB[position] = new CardViewerBattle();
-        	} else if(location.equals("draw")) {
-        		cardDrawBText[position].setText("???");
-        		cardDrawB[position].setFill(Color.TRANSPARENT);
-        		objectCardDrawB[position] = new CardViewer();
-        	}
-    	}
-
-    }
+//    void emptyCell(String location, int player, int position) {
+//    	if(player == 1) {
+//        	if(location.equals("battle")) {
+//        		cardBattleAText[position].setText("???");
+//        		cardBattleA[position].setFill(Color.TRANSPARENT);
+//        		objectCardBattleA[position] = new CardViewerBattle();
+//        	} else if(location.equals("draw")) {
+//        		cardDrawAText[position].setText("???");
+//        		cardDrawA[position].setFill(Color.TRANSPARENT);
+//        		objectCardDrawA[position] = new CardViewer();
+//        	}
+//    	} else if(player == 2) {
+//        	if(location.equals("battle")) {
+//        		cardBattleBText[position].setText("???");
+//        		cardBattleB[position].setFill(Color.TRANSPARENT);
+//        		objectCardBattleB[position] = new CardViewerBattle();
+//        	} else if(location.equals("draw")) {
+//        		cardDrawBText[position].setText("???");
+//        		cardDrawB[position].setFill(Color.TRANSPARENT);
+//        		objectCardDrawB[position] = new CardViewer();
+//        	}
+//    	}
+//
+//    }
 
     @FXML
     void viewCard(MouseEvent event) {
