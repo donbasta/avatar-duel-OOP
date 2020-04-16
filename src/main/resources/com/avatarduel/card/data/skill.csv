@@ -1,0 +1,4 @@
+id;name;element;description;imagepath;type;power;incatk;incdef
+1;Air Scooter;AIR;Woohoo;test.jpg;aura;3;10;2
+2;Air Scooter Two;AIR;Woohoo;test.jpg;powerup;3;10;2
+3;Air Scooter Three;AIR;Woohoo;test.jpg;destroy;3;10;2
