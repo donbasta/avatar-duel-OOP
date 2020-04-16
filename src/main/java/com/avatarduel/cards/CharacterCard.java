@@ -10,13 +10,13 @@ public class CharacterCard extends Card {
     private boolean haveAttacked;
     private String mode; /* "ATTACK" or "DEFENSE" */
 
-    public CharacterCard(String name, String desc, Element element, int attack, int defense, int power, String mode, String path){
+    public CharacterCard(String name, String desc, Element element, int attack, int defense, int power,String path){
         super(name, desc, element, path);
         this.attack = attack;
         this.defense = defense;
         this.power = power;
         this.haveAttacked = false;
-        this.mode = mode;
+        this.mode = "ATTACK";
     }
 
     public int getAttack(){
@@ -36,4 +36,6 @@ public class CharacterCard extends Card {
     public void setHaveAttacked() { this.haveAttacked = true;}
 
     public String getMode() { return this.mode;}
+
+    public void setMode(String mode) { this.mode = mode;}
 }
