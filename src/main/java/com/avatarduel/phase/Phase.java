@@ -1,5 +1,5 @@
 package com.avatarduel.phase;
 
-interface Phase{
+public interface Phase {
     public void run();
 }
