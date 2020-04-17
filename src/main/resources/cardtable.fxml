@@ -25,36 +25,7 @@
      <children>
         <CardRow fx:id="player1" alignment="CENTER" prefHeight="98.0" prefWidth="634.0" spacing="10.0">
            <children>
-              <StackPane prefHeight="84.0" prefWidth="69.0">
-                 <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
-                 </children>
-              </StackPane>
-              <StackPane prefHeight="84.0" prefWidth="69.0">
-                 <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
-                 </children>
-              </StackPane>
-              <StackPane prefHeight="84.0" prefWidth="69.0">
-                 <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
-                 </children>
-              </StackPane>
-              <StackPane prefHeight="101.0" prefWidth="20.0">
-                 <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
-                 </children>
-              </StackPane>
-              <StackPane prefHeight="84.0" prefWidth="69.0">
-                 <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
-                 </children>
-              </StackPane>
+              
            </children>
         </CardRow>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="1">
@@ -216,38 +187,7 @@
               </StackPane>
            </children></HBox>
         <CardRow alignment="CENTER" prefHeight="189.0" prefWidth="686.0" spacing="10.0" GridPane.rowIndex="5">
-           <children>
-              <StackPane prefHeight="100.0" prefWidth="0.0">
-                 <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                 </children>
-              </StackPane>
-              <StackPane prefHeight="100.0" prefWidth="0.0">
-                 <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                 </children>
-              </StackPane>
-              <StackPane prefHeight="100.0" prefWidth="0.0">
-                 <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                 </children>
-              </StackPane>
-              <StackPane prefHeight="100.0" prefWidth="0.0">
-                 <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                 </children>
-              </StackPane>
-              <StackPane prefHeight="100.0" prefWidth="18.0">
-                 <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" />
-                 </children>
-              </StackPane>
-           </children>
+           
         </CardRow>
      </children>
   </GridPane>

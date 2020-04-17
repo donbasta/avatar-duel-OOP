@@ -1,29 +1,38 @@
-//package com.avatarduel.gui;
-//
-//import javafx.fxml.FXML;
-//import javafx.scene.Node;
-//import javafx.scene.image.Image;
-//import javafx.scene.image.ImageView;
-//import javafx.scene.input.MouseEvent;
-//import javafx.scene.layout.StackPane;
-//import javafx.scene.text.Text;
-//
-//public class CardHoverViewer extends StackPane {
-//	
-//	@FXML
-//    private Text cardViewName;
-//
-//    @FXML
-//    private Text cardViewId;
-//
-//    @FXML
-//    private ImageView cardViewImage;
-//    
-//    @FXML
-//    private Text cardViewDescription;
-//    
-//    @FXML
-//    void viewCard(MouseEvent event) {
+package com.avatarduel.gui;
+
+import javafx.fxml.FXML;
+import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
+
+public class CardHoverController extends StackPane {
+	
+	@FXML
+    private Text cardViewName;
+
+    @FXML
+    private Text cardViewId;
+
+    @FXML
+    private ImageView cardViewImage;
+    
+    @FXML
+    private Text cardViewDescription;
+    
+    private Controller controller;
+    
+    public void setController(Controller controller) {
+    	this.controller = controller;
+    }
+    
+    public void setImage(String url) {
+    	cardViewImage.setImage(new Image(url));
+    }
+    
+    void viewCard(MouseEvent event) {
 //    	String id = ((Node) event.getSource()).getId();
 //        
 //        char type = id.charAt(4);
@@ -77,6 +86,6 @@
 //            	}
 //        	}
 //        }
-//    }
-//	
-//}
+    }
+	
+}

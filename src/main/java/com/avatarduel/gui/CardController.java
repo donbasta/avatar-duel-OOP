@@ -18,17 +18,28 @@ public class CardController extends GridPane {
 	
 	@FXML private CardRow player2;
 	
-	private int tes;
+	private CardRow[] player;
+	
+//	private int tes;
+	
+    private Controller controller;
+    
+    public void setController(Controller controller) {
+    	this.controller = controller;
+    }
 	
 	@FXML
 	void initialize() {
-		tes = 0;
+		player = new CardRow[3];
+//		tes = 0;
+		player[1] = player1;
+		player[2] = player2;
 	}
 	
-	@FXML 
-	public void drawCard() {
-		tes++;
-		System.out.println("lol" + tes);
+	public void addCard(int p, Card c) {
+//		tes++;
+//		System.out.println("lol" + tes);
+		player[p].addCard(c);
 	}
 	
 	@FXML

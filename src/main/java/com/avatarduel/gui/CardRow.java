@@ -6,8 +6,8 @@ import javafx.scene.layout.HBox;
 
 public class CardRow extends HBox {
 	
-	public void addCard(Card card, int player) {
-		CardViewer newCard = new CardViewer(card, player);
+	public void addCard(Card card) {
+		CardViewer newCard = new CardViewer(card);
 		this.getChildren().add(newCard);
 	}
 	

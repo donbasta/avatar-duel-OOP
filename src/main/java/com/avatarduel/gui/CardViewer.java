@@ -5,6 +5,7 @@ import com.avatarduel.model.Element;
 
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
@@ -13,7 +14,7 @@ public class CardViewer extends StackPane {
 	private boolean isUp;
 	private boolean isAda;
 	private Card card;
-	private int owner;
+//	private int owner;
 	private boolean isClick;
 	
 	public CardViewer() {
@@ -21,21 +22,22 @@ public class CardViewer extends StackPane {
 		this.isAda = false;
 		this.card = new Card("","",Element.FIRE,"");
 		this.isClick = false;
-		this.owner = 0;
+//		this.owner = 0;
 	}
 	
-	public CardViewer(Card card, int player) {
+	public CardViewer(Card card) {
 		
 		Rectangle rect = new Rectangle();
 		rect.setHeight(84);
 		rect.setWidth(69);
 	    rect.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
-	        event.consume();
+	        System.out.println("tes satu dua");
 	    });
+	    rect.setFill(getColor(card));
 		
 		Text text = new Text(this.getText(card));
 		
-		this.owner = player;
+//		this.owner = player;
 		this.isUp = false;
 		this.card = card;
 		this.isClick = false;
@@ -57,6 +59,20 @@ public class CardViewer extends StackPane {
 		}
 		return description;
     }
+    
+  Color getColor(Card cd) {
+	Color warna = Color.TRANSPARENT;
+	if(cd.getElement() == Element.WATER) {
+		warna = Color.LIGHTBLUE;
+	} else if(cd.getElement() == Element.FIRE) {
+		warna = Color.CRIMSON;
+	} else if(cd.getElement() == Element.EARTH) {
+		warna = Color.LIGHTGREEN;
+	} else if(cd.getElement() == Element.AIR) {
+		warna = Color.LIGHTYELLOW;
+	}
+	return warna;
+}
 	
 	public void setUp(boolean b) {
 		this.isUp = b;

@@ -31,35 +31,33 @@ public class Controller {
     @FXML
     private DeckController deckController;
     
+    @FXML
+    private CardHoverController cardHoverController;
+    
     protected Player[] player;
     protected State state;
     protected MainPhase1 mainphase;
     
     public void setPlay(Player pa, Player pb, State st) {
     	
-    	player = new Player[2];
-    	player[0] = pa;
-    	player[1] = pb;
+    	player = new Player[3];
+    	player[1] = pa;
+    	player[2] = pb;
     	state = st;
     	
     	Card cd;
     	
-    	for(int i=0; i<2; i++) {
-    		for(int j=1; j<=7; j++) {
-        		try {
-    				cd = player[i].getDecks().drawCard();
-//    				addCard(1,cd);
-    			} catch (Exception e) {
-    				// TODO Auto-generated catch block
-    				e.printStackTrace();
-    			}
-        	}
-    	}
-    	
-    	
-//    	hideCard(2);
-//    	numCardDeck1.setText(String.format("%d / %d", state.getPlayer(1).getDecks().getDeck().size(), maksKartu));
-//    	numCardDeck2.setText(String.format("%d / %d", state.getPlayer(2).getDecks().getDeck().size(), maksKartu));
+//    	for(int i=0; i<2; i++) {
+//    		for(int j=1; j<=7; j++) {
+//        		try {
+//    				cd = player[i].getDecks().drawCard();
+//    				addCard(i,cd);
+//    			} catch (Exception e) {
+//    				// TODO Auto-generated catch block
+//    				e.printStackTrace();
+//    			}
+//        	}
+//    	}
     	
     }
 
@@ -70,18 +68,24 @@ public class Controller {
     	Scene scene = mainPane.getScene();
     	
     	deckController.setController(this);
-//    	cardController.setController(this);
-    	
-//    	numCardDeck = new Text[3];
-//    	numCardDeck[1] = numCardDeck1;
-//    	numCardDeck[2] = numCardDeck2;
+    	cardController.setController(this);
+    	cardHoverController.setController(this);
 
-//        cardViewImage.setImage(new Image("file:src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png"));
+      cardHoverController.setImage("file:src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png");
     	
     }
     
-    public void handleDrawCard() {
-    	cardController.drawCard();
+    public void handleDrawCard(int p) {
+    	try {
+        	Card card = player[p].getDecks().drawCard();
+        	cardController.addCard(p, card);
+    	} catch (Exception e) {
+    		
+    	}
+    }
+    
+    public void handleHoverCard() {
+    	
     }
 
 //    @FXML

@@ -39,20 +39,26 @@ public class DeckController extends VBox {
 	@FXML
 	void drawCard(MouseEvent event) {
 		String id = ((Node) event.getSource()).getId();
-		System.out.println(id);
-		controller.handleDrawCard();
-//		deck1.setFill(Color.WHITE);
+//		System.out.println(id);
 		
-		try {
-//			FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cardtable.fxml"));
-//			Parent root = loader.load();
-//			CardController cardController = loader.<CardController>getController();
-//			cardController.drawCard();
-//			System.out.println(id);
-		} catch (Exception e) {
-
+		int player = -1;
+		if(id.equals("deck1")) {
+			player = 1;
+		} else {
+			player = 2;
 		}
-		event.consume();
+		controller.handleDrawCard(player);
+		
+//		try {
+////			FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("cardtable.fxml"));
+////			Parent root = loader.load();
+////			CardController cardController = loader.<CardController>getController();
+////			cardController.drawCard();
+////			System.out.println(id);
+//				} catch (Exception e) {
+
+//		}
+
 	}
 	
 	
