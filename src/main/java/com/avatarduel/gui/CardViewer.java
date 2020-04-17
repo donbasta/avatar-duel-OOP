@@ -16,6 +16,7 @@ public class CardViewer extends StackPane {
 	private Card card;
 //	private int owner;
 	private boolean isClick;
+	private Controller controller;
 	
 	public CardViewer() {
 		this.isUp = false;
@@ -25,13 +26,16 @@ public class CardViewer extends StackPane {
 //		this.owner = 0;
 	}
 	
-	public CardViewer(Card card) {
+	public CardViewer(Card card, Controller controller) {
+		
+		this.controller = controller;
 		
 		Rectangle rect = new Rectangle();
 		rect.setHeight(84);
 		rect.setWidth(69);
 	    rect.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
 	        System.out.println("tes satu dua");
+	        controller.updateView(this.card);
 	    });
 	    rect.setFill(getColor(card));
 		

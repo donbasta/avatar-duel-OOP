@@ -23,11 +23,11 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
      <children>
-        <CardRow fx:id="player1" alignment="CENTER" prefHeight="98.0" prefWidth="634.0" spacing="10.0">
+        <CardTable fx:id="player1" alignment="CENTER" prefHeight="98.0" prefWidth="634.0" spacing="10.0">
            <children>
 
            </children>
-        </CardRow>
+        </CardTable>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="1">
            <children>
               <StackPane prefHeight="150.0" prefWidth="200.0">
@@ -186,8 +186,8 @@
                  </children>
               </StackPane>
            </children></HBox>
-        <CardRow alignment="CENTER" prefHeight="189.0" prefWidth="686.0" spacing="10.0" GridPane.rowIndex="5">
+        <CardTable alignment="CENTER" prefHeight="189.0" prefWidth="686.0" spacing="10.0" GridPane.rowIndex="5">
 
-        </CardRow>
+        </CardTable>
      </children>
   </GridPane>

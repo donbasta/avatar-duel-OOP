@@ -1,5 +1,7 @@
 package com.avatarduel.gui;
 
+import com.avatarduel.cards.Card;
+
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.image.Image;
@@ -38,8 +40,12 @@ public class CardHoverController extends StackPane {
     	cardViewImage.setImage(new Image(url));
     }
     
-    public void updateView(){
-        System.out.println("HOVER");
+    public void updateView(Card card){
+    	cardViewImage.setImage(new Image("file:".concat(card.getPath())));
+    	cardViewName.setText(card.getName());
+    	cardViewId.setText(card.getElement().toString());
+    	cardViewDescription.setText(card.getDesc());
+    	System.out.println("file:".concat(card.getPath())); //debug
     }
     
     void viewCard(MouseEvent event) {

@@ -4,10 +4,10 @@ import com.avatarduel.cards.*;
 
 import javafx.scene.layout.HBox;
 
-public class CardRow extends HBox {
+public class CardTable extends HBox {
 	
-	public void addCard(Card card) {
-		CardViewer newCard = new CardViewer(card);
+	public void addCard(Card card, Controller controller) {
+		CardViewer newCard = new CardViewer(card, controller);
 		this.getChildren().add(newCard);
 	}
 	

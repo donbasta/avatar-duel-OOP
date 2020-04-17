@@ -2,6 +2,7 @@ package com.avatarduel.gui;
 
 import com.avatarduel.cards.Card;
 import com.avatarduel.cards.CharacterCard;
+import com.avatarduel.cards.LandCard;
 import com.avatarduel.cards.SkillCard;
 import com.avatarduel.model.Element;
 import com.avatarduel.state.Player;
@@ -16,13 +17,13 @@ import javafx.fxml.FXMLLoader;
 
 public class CardController extends GridPane {
 	
-	@FXML private CardRow player1;
+	@FXML private CardTable player1;
 	
-	@FXML private CardRow player2;
+	@FXML private CardTable player2;
 
 	private Controller controller;
 	
-	private CardRow[] player;
+	private CardTable[] player;
 	
 //	private int tes;
     
@@ -32,7 +33,7 @@ public class CardController extends GridPane {
 	
 	@FXML
 	void initialize() {
-		player = new CardRow[3];
+		player = new CardTable[3];
 //		tes = 0;
 		player[1] = player1;
 		player[2] = player2;
@@ -42,7 +43,7 @@ public class CardController extends GridPane {
 	public void addCard(int p, Card c) {
 //		tes++;
 //		System.out.println("lol" + tes);
-		player[p].addCard(c);
+		player[p].addCard(c, controller);
 	}
 	
 	@FXML
@@ -52,7 +53,8 @@ public class CardController extends GridPane {
 		String id = event.getPickResult().getIntersectedNode().getId(); 
 		/* idnya berbentuk macam2 */
 		System.out.println(id);
-		controller.updateView();
+		Card card = new LandCard("LOL", "LOL", Element.WATER, "src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png");
+		controller.updateView(card);
 		event.consume();
 	}
 	

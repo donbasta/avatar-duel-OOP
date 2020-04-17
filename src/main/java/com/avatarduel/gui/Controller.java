@@ -70,8 +70,7 @@ public class Controller {
     	deckController.setController(this);
     	cardController.setController(this);
     	cardHoverController.setController(this);
-
-      cardHoverController.setImage("file:src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png");
+    	cardHoverController.setImage("file:src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png");
     	
     }
     
@@ -88,9 +87,9 @@ public class Controller {
     	
     }
 
-	public void updateView(){
+	public void updateView(Card card){
 		System.out.println("KESINI");
-		cardHoverController.updateView();
+		cardHoverController.updateView(card);
 	}
 
 //    @FXML
