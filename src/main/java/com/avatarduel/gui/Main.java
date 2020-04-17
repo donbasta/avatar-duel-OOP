@@ -89,7 +89,7 @@ public class Main extends Application {
     for(Card card : cardData) {
     	hojun.getDecks().addToDeck(card);
     }
-    DrawPhase a = new DrawPhase(1);
+    DrawPhase a = new DrawPhase();
     state = new State(1, qila, hojun, a);	  
 	  
 	FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("tes.fxml"));

@@ -43,7 +43,11 @@ public class CardController extends GridPane {
 	public void addCard(int p, Card c) {
 //		tes++;
 //		System.out.println("lol" + tes);
-		player[p].addCard(c, controller);
+		player[p].addCard(c, controller, p);
+	}
+
+	public void removeCard(CardViewer c, int p){
+		player[p].removeCard(c);
 	}
 	
 	@FXML

@@ -62,7 +62,6 @@ public class Controller {
     		for(int j=1; j<=7; j++) {
         		try {
 					Card card = player[i].getDecks().drawCard();
-					System.out.println(card.getName());
 					cardController.addCard(i, card);
 				} catch (Exception e) {
 					System.out.println(e.toString());
@@ -73,6 +72,15 @@ public class Controller {
     	
     }
 
+	public void useCard(CardViewer c){
+		System.out.println("DIKLIK");
+		Phase ph = this.state.getPhase();
+		if(c.getOwner() == this.state.getTurn() && ph.canUseCard){
+			System.out.println("HEHE\n");
+			cardController.removeCard(c, this.state.getTurn());
+		}
+	}
+
 	private void update(){
 		int turn = this.state.getTurn();
 		Phase ph = this.state.getPhase();
@@ -81,6 +89,10 @@ public class Controller {
 		btnMain.setDisable(!ph.mainBtn);
 		btnBattle.setDisable(!ph.battleBtn);
 		btnEnd.setDisable(!ph.endturnBtn);
+	}
+
+	private void resetPower(){
+		int turn = this.state.getTurn();
 	}
 
     @FXML
@@ -97,12 +109,18 @@ public class Controller {
     }
     
     public void handleDrawCard(int p) {
-    	try {
-        	Card card = player[p].getDecks().drawCard();
-        	cardController.addCard(p, card);
-    	} catch (Exception e) {
-    		System.out.println(e.toString());
-    	}
+		if(this.state.getTurn() == p && this.state.getPhase().canDraw){
+			try {
+				Card card = player[p].getDecks().drawCard();
+				cardController.addCard(p, card);
+			} catch (Exception e) {
+				System.out.println(e.toString());
+			}
+
+			Phase ne = new MainPhase();
+			this.state.setPhase(ne);
+			this.update();
+		}
     }
     
     public void handleHoverCard() {

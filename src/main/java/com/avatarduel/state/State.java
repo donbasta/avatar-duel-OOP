@@ -30,6 +30,10 @@ public class State {
 //        this.DeckP2 = DeckP2;
     }
 
+    public void setPhase(Phase a){
+        this.phase = a;
+    }
+
     public Phase getPhase(){
         return this.phase;
     }

@@ -1,30 +1,25 @@
 package com.avatarduel.phase;
 
-
 import com.avatarduel.state.*;
 import com.avatarduel.model.Element;
 
-public class DrawPhase extends Phase {
-    private Decks decks;
-    private Power power;
+public class MainPhase extends Phase {
 
-    public DrawPhase(){
-        //this.decks = deck;
-
+    public MainPhase(){
 
         /* reset power atau enggak */
-        resetPower = true;
+        resetPower = false;
 
         /* bisa draw atau enggak */
-        canDraw = true;
+        canDraw = false;
 
         /* bisa pakai kartu atau enggak */
-        canUseCard = false;
+        canUseCard = true;
 
         /* tombol apa saja yang bisa di klik */
         drawBtn = false;
         mainBtn = false;
-        battleBtn = false;
+        battleBtn = true;
         endturnBtn = false;
 
     }
