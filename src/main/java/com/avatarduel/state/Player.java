@@ -2,6 +2,7 @@ package com.avatarduel.state;
 
 import java.util.*;
 import com.avatarduel.cards.*;
+import com.avatarduel.model.Element;
 
 public class Player{
     private int health;
@@ -26,6 +27,14 @@ public class Player{
     
     public Power getPower() {
     	return this.power;
+    }
+    
+    public void setPowerToDefault() {
+    	this.getPower().fullPower();
+    }
+    
+    public void incrementPower(Element element) {
+    	this.getPower().addPower(element);
     }
     
     public void setHealth(int health){

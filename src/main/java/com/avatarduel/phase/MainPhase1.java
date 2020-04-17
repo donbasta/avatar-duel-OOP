@@ -3,7 +3,7 @@ package com.avatarduel.phase;
 import com.avatarduel.state.*;
 import com.avatarduel.cards.*;
 import com.avatarduel.exceptions.LandCardException;
-import com.avatarduel.exceptions.NotEnoughPowerException;
+import com.avatarduel.exceptions.CharacterFullException;
 /*
 public class MainPhase1 implements Phase{
     private int turn;

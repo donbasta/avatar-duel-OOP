@@ -30,7 +30,7 @@ public class Main extends Application {
   private static final String CHARACTER_CSV_FILE_PATH = "../card/data/character.csv";
   private static final String SKILL_CSV_FILE_PATH = "../card/data/skill.csv";
 
-  private ArrayList<Card> cardData;
+  private ArrayList<Card> cardData1, cardData2;
   private Player hojun, qila;
   private State state;
 
@@ -51,21 +51,22 @@ public class Main extends Application {
     skillReader.setSkipHeader(true);
     List<String[]> skillRows = skillReader.read();
     
-    cardData = new ArrayList<Card>();
+    cardData1 = new ArrayList<Card>();
+    cardData2 = new ArrayList<Card>();
 
     for(String[] row : landRows) {
-      LandCard a = new LandCard(row[1], row[3], Element.valueOf(row[2]), row[4]);
-      cardData.add(a);
+      cardData1.add(new LandCard(row[1], row[3], Element.valueOf(row[2]), row[4]));
+      cardData2.add(new LandCard(row[1], row[3], Element.valueOf(row[2]), row[4]));
     }
 
     for(String[] row : characterRows){
-      CharacterCard a = new CharacterCard(row[1], row[3], Element.valueOf(row[2]), Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]), row[4]);
-      cardData.add(a);
+      cardData1.add(new CharacterCard(row[1], row[3], Element.valueOf(row[2]), Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]), row[4]));
+      cardData2.add(new CharacterCard(row[1], row[3], Element.valueOf(row[2]), Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]), row[4]));
     }
 
     for(String[] row : skillRows){
-      SkillCard a = new SkillCard(row[1], row[3], Element.valueOf(row[2]), row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]), row[4]);
-      cardData.add(a);
+      cardData1.add(new SkillCard(row[1], row[3], Element.valueOf(row[2]), row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]), row[4]));
+      cardData2.add(new SkillCard(row[1], row[3], Element.valueOf(row[2]), row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]), row[4]));
     }
   }
 
@@ -81,12 +82,12 @@ public class Main extends Application {
 	qila = new Player();
     hojun = new Player();
       
-    Collections.shuffle(cardData);
-    for(Card card : cardData) {
+    Collections.shuffle(cardData1);
+    for(Card card : cardData1) {
     	qila.getDecks().addToDeck(card);
     }
-    Collections.shuffle(cardData);
-    for(Card card : cardData) {
+    Collections.shuffle(cardData2);
+    for(Card card : cardData2) {
     	hojun.getDecks().addToDeck(card);
     }
     DrawPhase a = new DrawPhase();

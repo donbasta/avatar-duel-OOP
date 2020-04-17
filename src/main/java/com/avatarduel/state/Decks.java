@@ -7,13 +7,17 @@ import com.avatarduel.exceptions.*;
 
 public class Decks{
     private List<Card> hand;
-    private List<Card> field;
+    private List<Card> skillCard;
+    private List<Card> characterCard;
     private Stack<Card> deck;
     final int MAKS_HAND = 8;
+    final int MAKS_CHARACTER_CARD = 6;
+    final int MAKS_SKILL_CARD = 6;
     
     public Decks(){
         this.hand = new ArrayList<Card>();
-        this.field = new ArrayList<Card>();
+        this.characterCard = new ArrayList<Card>();
+        this.skillCard = new ArrayList<Card>();
         this.deck = new Stack<Card>();
     }
 
@@ -21,8 +25,12 @@ public class Decks{
         return this.hand;
     }
 
-    public List<Card> getField(){
-        return this.field;
+    public List<Card> getSkillCard(){
+        return this.skillCard;
+    }
+    
+    public List<Card> getCharacterCard(){
+    	return this.characterCard;
     }
 
     public Stack<Card> getDeck(){
@@ -41,34 +49,53 @@ public class Decks{
     public void addToDeck(Card c){
         this.deck.add(c);
     }
+
+    public void addToFieldCharacter(Card c, Power power) throws Exception{
+    	if(this.characterCard.size() == MAKS_CHARACTER_CARD) {
+    		throw new CharacterFullException();
+    	}
+    	
+    	if(power.getPower(c.getElement()) == 0) {
+    		throw new NotEnoughPowerException();
+    	}
+    	
+    	power.usePower(c.getElement());
+        this.hand.remove(c);
+        this.characterCard.add(c);
+    }
     
-    // public void addToHand(){
-        
-    // }
-
-    public void addToField(Card c){
-    	if(this.field.size() < 16) {
-            this.hand.remove(c);
-            this.field.add(c);
-    	}        
+    public void addToFieldSkill(Card c, Power power) throws Exception{
+    	if(this.skillCard.size() == MAKS_SKILL_CARD) {
+    		throw new SkillFullException();
+    	}
+    	
+    	if(power.getPower(c.getElement()) == 0) {
+    		throw new NotEnoughPowerException();
+    	}
+    	
+    	//sekarang update flag2 nya buat skill, pilih kartu
+    	
+    	power.usePower(c.getElement());
+        this.hand.remove(c);
+        this.characterCard.add(c);
     }
 
-    public void removeFromField(Card card){
-    	if(this.field.contains(card)) {
-    		this.field.remove(this.field.indexOf(card));
-    	} else{
-            System.out.println("Card is not in the field");
-        }
-    }
+//    public void removeFromField(Card card){
+//    	if(this.field.contains(card)) {
+//    		this.field.remove(this.field.indexOf(card));
+//    	} else{
+//            System.out.println("Card is not in the field");
+//        }
+//    }
 
-    public int countLand(Element element){
-        int count = 0;
-        for (int i=0; i<this.hand.size(); i++){
-            if (this.hand.get(i).getElement() == element){
-                count++;
-            }
-        }
-        return count;
-    }
+//    public int countLand(Element element){
+//        int count = 0;
+//        for (int i=0; i<this.hand.size(); i++){
+//            if (this.hand.get(i).getElement() == element){
+//                count++;
+//            }
+//        }
+//        return count;
+//    }
 
 }

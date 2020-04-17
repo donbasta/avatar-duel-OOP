@@ -8,10 +8,8 @@ public class State {
     private int turn;
     private Player P1;
     private Player P2;
-    //int phase;
 
     private Phase phase;
-//    private Phase current;
 //    private List FieldP1;
 //    private List FieldP2;
 //    private List DeckP1;

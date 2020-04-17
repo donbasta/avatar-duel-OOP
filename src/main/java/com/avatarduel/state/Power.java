@@ -7,16 +7,14 @@ public class Power{
     private int water;
     private int air;
     private int earth;
+    private int maxFire;
+    private int maxWater;
+    private int maxAir;
+    private int maxEarth;
     
     public Power() {
     	this.fire = this.water = this.air = this.earth = 0;
-    }
-
-    public Power(int fire, int water, int air, int earth){
-        this.fire = fire;
-        this.water = water;
-        this.air = air;
-        this.earth = earth;
+    	this.maxFire = this.maxWater = this.maxAir = this.maxEarth = 0;
     }
 
     public int getPower(Element element){
@@ -38,21 +36,83 @@ public class Power{
         }
     }
 
-    public void setPower(Element element, int x){
+    public void addPower(Element element){
         if (element == Element.FIRE){
-            this.fire = x;
+            this.fire++;
+            this.maxFire++;
         }
         else if (element == Element.WATER){
-            this.water = x;
+            this.water++;
+            this.maxWater++;
         }
         else if (element == Element.AIR){
-            this.air = x;
+            this.air++;
+            this.maxAir++;
         }
         else if(element == Element.EARTH){
-            this.earth = x;
+            this.earth++;
+            this.maxEarth++;
         }
         else{
             System.out.println("errorrr input");
         }
     }
+    
+    public void usePower(Element element) {
+		  if (element == Element.FIRE){
+	          this.fire--;
+	      }
+	      else if (element == Element.WATER){
+	          this.water--;
+	      }
+	      else if (element == Element.AIR){
+	          this.air--;
+	      }
+	      else if(element == Element.EARTH){
+	          this.earth--;
+	      }
+	      else{
+	          System.out.println("errorrr input");
+	      }
+    }
+    
+    public void fullPower(){
+        this.fire = this.maxFire;
+        this.water = this.maxWater;
+        this.air = this.maxAir;
+        this.earth = this.maxEarth;
+    }
+    
+    public int getFire() {
+    	return this.fire;
+    }
+    
+    public int getMaxFire() {
+    	return this.maxFire;
+    }
+    
+    public int getWater() {
+    	return this.water;
+    }
+    
+    public int getMaxWater() {
+    	return this.maxWater;
+    }
+    
+    public int getEarth() {
+    	return this.earth;
+    }
+    
+    public int getMaxEarth() {
+    	return this.maxEarth;
+    }
+    
+    public int getAir() {
+    	return this.air;
+    }
+    
+    public int getMaxAir() {
+    	return this.maxAir;
+    }
+    
 }

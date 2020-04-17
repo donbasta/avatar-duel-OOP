@@ -6,21 +6,16 @@ import javafx.scene.layout.HBox;
 
 public class CardTable extends HBox {
 	
-	public void addCard(Card card, Controller controller, int p) {
-		CardViewer newCard = new CardViewer(card, controller, p);
-		this.getChildren().add(newCard);
+	public void addCardToHand(Card card, Controller controller, int p) {
+		this.getChildren().add(new CardHandViewer(card, controller, p));
+	}
+	
+	public void addCardToField(Controller controller, int p) {
+		this.getChildren().add(new CardFieldViewer(controller, p));
 	}
 
 	public void removeCard(CardViewer c){
 		this.getChildren().remove(c);
 	}
-	
-//	public void removeCard(Card card, int player) {
-//		for (Node child : stackWrapp.getChildren()) {
-//		    ImageView imgView = (ImageView) child;
-//		    
-//		}
-//	}
-	
 	 
 }

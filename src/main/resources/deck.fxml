@@ -19,24 +19,24 @@
          <children>
             <Rectangle fx:id="deck1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="138.0" onMouseClicked="#drawCard" stroke="BLACK" strokeType="INSIDE" width="102.0" />
             <Text fx:id="numCardDeck1" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <VBox prefHeight="64.0" prefWidth="224.0">
+            <VBox fx:id="power1" prefHeight="64.0" prefWidth="224.0">
                <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="WATER: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="EARTH: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FIRE: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BUMI: 0/0">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="API: 0/0">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UDARA: 0/0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -47,24 +47,24 @@
       </VBox>
       <VBox alignment="CENTER" prefHeight="408.0" prefWidth="223.0" spacing="30.0">
          <children>
-            <VBox prefHeight="62.0" prefWidth="224.0">
+            <VBox fx:id="power2" prefHeight="62.0" prefWidth="224.0">
                <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="WATER: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="EARTH: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FIRE: 0/0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BUMI: 0/0">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="API: 0/0">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UDARA: 0/0">
                      <font>
                         <Font size="24.0" />
                      </font>

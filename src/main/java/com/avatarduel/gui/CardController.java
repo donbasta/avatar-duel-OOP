@@ -20,34 +20,53 @@ public class CardController extends GridPane {
 	@FXML private CardTable player1;
 	
 	@FXML private CardTable player2;
+	
+	@FXML private CardTable fieldSkill1;
+
+	@FXML private CardTable fieldSkill2;
+	
+	@FXML private CardTable fieldChar1;
+	
+	@FXML private CardTable fieldChar2;
 
 	private Controller controller;
 	
-	private CardTable[] player;
+	private CardTable[] hand;
+	private CardField[] field;
+	public static CardViewer clickedCard;
 	
-//	private int tes;
-    
     public void setController(Controller controller) {
     	this.controller = controller;
     }
 	
 	@FXML
 	void initialize() {
-		player = new CardTable[3];
-//		tes = 0;
-		player[1] = player1;
-		player[2] = player2;
-
+		hand = new CardTable[3];
+		hand[1] = player1;
+		hand[2] = player2;
+		
+		for(int i=1; i<=6; i++) {
+			fieldChar1.addCardToField(controller, 1);
+			fieldChar2.addCardToField(controller, 2);
+			fieldSkill1.addCardToField(controller, 1);
+			fieldSkill2.addCardToField(controller, 2);
+		}
+		
+		field = new CardField[3];
+		field[1] = new CardField(fieldChar1, fieldSkill1);
+		field[2] = new CardField(fieldChar2, fieldSkill2);
 	}
 	
-	public void addCard(int p, Card c) {
-//		tes++;
-//		System.out.println("lol" + tes);
-		player[p].addCard(c, controller, p);
+	public void addCardToField(int p, Card c) {
+		field[p].addCard(c, controller, p);
+	}
+	
+	public void addCardToHand(int p, Card c) {
+		hand[p].addCardToHand(c, controller, p);
 	}
 
 	public void removeCard(CardViewer c, int p){
-		player[p].removeCard(c);
+		hand[p].removeCard(c);
 	}
 	
 	@FXML
