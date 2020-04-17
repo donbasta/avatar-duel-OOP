@@ -3,11 +3,12 @@ package com.avatarduel.gui;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
-public class CardDeck {
+public class DeckController extends VBox {
 	
     @FXML
     private Rectangle deck1;
