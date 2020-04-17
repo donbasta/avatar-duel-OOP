@@ -30,6 +30,9 @@ public class Controller {
 	
     @FXML
     private DeckController deckController;
+
+	@FXML 
+	private CardHoverViewer cardHoverViewer;
     
     protected Player[] player;
     protected State state;

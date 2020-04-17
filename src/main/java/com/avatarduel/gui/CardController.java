@@ -19,9 +19,11 @@ public class CardController extends GridPane {
 	@FXML private CardRow player2;
 	
 	private int tes;
+
 	
 	@FXML
 	void initialize() {
+		System.out.println("this controller");
 		tes = 0;
 	}
 	
@@ -35,6 +37,7 @@ public class CardController extends GridPane {
 	void viewCard(MouseEvent event) {
 //		String id = ((Node) event.getSource()).getId();
 //		System.out.println(id);
+		System.out.println("hiyaa");
 		event.consume();
 	}
 	
