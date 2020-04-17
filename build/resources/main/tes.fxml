@@ -83,7 +83,7 @@
                </children>
             </VBox>
             
-            <fx:include fx:id="player" source="deck.fxml" />
+            <fx:include fx:id="deck" source="deck.fxml" />
             
          </children>
       </HBox>

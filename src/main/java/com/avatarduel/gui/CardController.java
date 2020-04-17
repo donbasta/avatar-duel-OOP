@@ -14,13 +14,21 @@ import javafx.scene.paint.Color;
 
 public class CardController extends GridPane {
 	
-	@FXML CardRow player1;
+	@FXML private CardRow player1;
 	
-	@FXML CardRow player2;
-
+	@FXML private CardRow player2;
+	
+	private int tes;
+	
 	@FXML
 	void initialize() {
-		
+		tes = 0;
+	}
+	
+	@FXML 
+	public void drawCard() {
+		tes++;
+		System.out.println("lol" + tes);
 	}
 	
 	@FXML
