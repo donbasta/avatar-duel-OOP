@@ -27,31 +27,31 @@
            <children>
               <StackPane prefHeight="84.0" prefWidth="69.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="handA1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
               <StackPane prefHeight="84.0" prefWidth="69.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="handA2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
               <StackPane prefHeight="84.0" prefWidth="69.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="handA3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
               <StackPane prefHeight="101.0" prefWidth="20.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="handA4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
               <StackPane prefHeight="84.0" prefWidth="69.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="handA5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
@@ -59,39 +59,39 @@
         </CardRow>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="1">
            <children>
-              <StackPane fx:id="skillA1" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillA1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="skillA2" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillA2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="skillA3" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillA3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="skillA4" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillA4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="skillA5" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillA5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="skillA6" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillA6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
@@ -99,78 +99,78 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="2">
            <children>
-              <StackPane fx:id="charA1" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charA1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="charA2" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charA2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="charA3" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charA3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="charA4" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charA4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="charA5" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charA5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="charA6" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charA6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
            </children></HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="3">
            <children>
-              <StackPane fx:id="charB1" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charB1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="charB2" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charB2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="charB3" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charB3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="charB4" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charB4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="charB5" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charB5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="charB6" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="charB6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
@@ -178,39 +178,39 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="4">
            <children>
-              <StackPane fx:id="skillB1" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillB1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="skillB2" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillB2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="skillB3" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillB3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="skillB4" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillB4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="skillB5" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillB5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
-              <StackPane fx:id="skillB6" prefHeight="150.0" prefWidth="200.0">
+              <StackPane prefHeight="150.0" prefWidth="200.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="skillB6" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>
@@ -219,31 +219,31 @@
            <children>
               <StackPane prefHeight="100.0" prefWidth="0.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="handB1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" />
                  </children>
               </StackPane>
               <StackPane prefHeight="100.0" prefWidth="0.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="handB2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" />
                  </children>
               </StackPane>
               <StackPane prefHeight="100.0" prefWidth="0.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="handB3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" />
                  </children>
               </StackPane>
               <StackPane prefHeight="100.0" prefWidth="0.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="handB4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" />
                  </children>
               </StackPane>
               <StackPane prefHeight="100.0" prefWidth="18.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="handB5" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" />
                  </children>
               </StackPane>

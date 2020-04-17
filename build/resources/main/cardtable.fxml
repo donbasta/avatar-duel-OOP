@@ -27,7 +27,7 @@
            <children>
               <StackPane prefHeight="84.0" prefWidth="69.0">
                  <children>
-                    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
+                    <Rectangle fx:id="hehe" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="84.0" onMouseEntered="#viewCard" stroke="BLACK" strokeType="INSIDE" width="69.0" />
                     <Text strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="39.826171875" />
                  </children>
               </StackPane>

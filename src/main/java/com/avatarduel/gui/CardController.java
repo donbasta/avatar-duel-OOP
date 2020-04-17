@@ -41,7 +41,9 @@ public class CardController extends GridPane {
 	void viewCard(MouseEvent event) {
 //		String id = ((Node) event.getSource()).getId();
 //		System.out.println(id);
-		System.out.println("hiyaa");
+		String id = event.getPickResult().getIntersectedNode().getId(); 
+		/* idnya berbentuk macam2 */
+		System.out.println(id);
 		controller.updateView();
 		event.consume();
 	}
