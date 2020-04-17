@@ -80,7 +80,7 @@ public class Controller {
         	Card card = player[p].getDecks().drawCard();
         	cardController.addCard(p, card);
     	} catch (Exception e) {
-    		
+    		System.out.println(e.toString());
     	}
     }
     
