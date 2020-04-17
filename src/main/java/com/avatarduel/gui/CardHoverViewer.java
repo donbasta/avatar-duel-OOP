@@ -22,11 +22,21 @@ public class CardHoverViewer extends StackPane {
    @FXML
    private Text cardViewDescription;
 
+   private Controller controller;
+
    @FXML
    void initialize(){
        System.out.println("HOVER");
        this.cardViewName.setText("HEEELLOO");
    }
+
+    public void setController(Controller controller) {
+    	this.controller = controller;
+    }
+
+    public void updateView(){
+        System.out.println("HOVER");
+    }
    
 /*@FXML
    void viewCard(MouseEvent event) {

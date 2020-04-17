@@ -32,7 +32,7 @@ public class Controller {
     private DeckController deckController;
 
 	@FXML 
-	private CardHoverViewer cardHoverViewer;
+	private CardHoverViewer cardviewerController;
     
     protected Player[] player;
     protected State state;
@@ -73,7 +73,8 @@ public class Controller {
     	Scene scene = mainPane.getScene();
     	
     	deckController.setController(this);
-//    	cardController.setController(this);
+    	cardController.setController(this);
+		cardviewerController.setController(this);
     	
 //    	numCardDeck = new Text[3];
 //    	numCardDeck[1] = numCardDeck1;
@@ -86,6 +87,11 @@ public class Controller {
     public void handleDrawCard() {
     	cardController.drawCard();
     }
+
+	public void updateView(){
+		System.out.println("KESINI");
+		cardviewerController.updateView();
+	}
 
 //    @FXML
 //    void drawCard(MouseEvent event) {

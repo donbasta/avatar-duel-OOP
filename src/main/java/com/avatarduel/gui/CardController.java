@@ -5,18 +5,22 @@ import com.avatarduel.cards.CharacterCard;
 import com.avatarduel.cards.SkillCard;
 import com.avatarduel.model.Element;
 import com.avatarduel.state.Player;
+import com.avatarduel.gui.*;
 
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
+import javafx.fxml.FXMLLoader;
 
 public class CardController extends GridPane {
 	
 	@FXML private CardRow player1;
 	
 	@FXML private CardRow player2;
+
+	private Controller controller;
 	
 	private int tes;
 
@@ -38,7 +42,12 @@ public class CardController extends GridPane {
 //		String id = ((Node) event.getSource()).getId();
 //		System.out.println(id);
 		System.out.println("hiyaa");
+		controller.updateView();
 		event.consume();
 	}
+
+    public void setController(Controller controller) {
+    	this.controller = controller;
+    }
 	
 }
