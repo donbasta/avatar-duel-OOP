@@ -186,7 +186,7 @@
                  </children>
               </StackPane>
            </children></HBox>
-        <CardTable alignment="CENTER" prefHeight="189.0" prefWidth="686.0" spacing="10.0" GridPane.rowIndex="5">
+        <CardTable fx:id="player2" alignment="CENTER" prefHeight="189.0" prefWidth="686.0" spacing="10.0" GridPane.rowIndex="5">
 
         </CardTable>
      </children>

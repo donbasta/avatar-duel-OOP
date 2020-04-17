@@ -58,10 +58,11 @@ public class Controller {
     	
     	Card cd;
     	
-    	for(int i=0; i<2; i++) {
+    	for(int i=1; i<=2; i++) {
     		for(int j=1; j<=7; j++) {
         		try {
 					Card card = player[i].getDecks().drawCard();
+					System.out.println(card.getName());
 					cardController.addCard(i, card);
 				} catch (Exception e) {
 					System.out.println(e.toString());
