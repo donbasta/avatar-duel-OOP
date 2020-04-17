@@ -4,8 +4,7 @@ import com.avatarduel.cards.Card;
 import com.avatarduel.cards.CharacterCard;
 import com.avatarduel.cards.SkillCard;
 import com.avatarduel.model.Element;
-import com.avatarduel.phase.MainPhase1;
-import com.avatarduel.phase.Phase;
+import com.avatarduel.phase.*;
 import com.avatarduel.state.Player;
 import com.avatarduel.state.State;
 
@@ -19,6 +18,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.scene.control.Button;
 
 public class Controller {
 	
@@ -33,10 +33,21 @@ public class Controller {
     
     @FXML
     private CardHoverController cardHoverController;
+
+	@FXML
+	private Button btnDraw;
+
+	@FXML
+	private Button btnMain;
+
+	@FXML
+	private Button btnBattle;
+
+	@FXML
+	private Button btnEnd;
     
     protected Player[] player;
     protected State state;
-    protected MainPhase1 mainphase;
     
     public void setPlay(Player pa, Player pb, State st) {
     	
@@ -47,19 +58,29 @@ public class Controller {
     	
     	Card cd;
     	
-//    	for(int i=0; i<2; i++) {
-//    		for(int j=1; j<=7; j++) {
-//        		try {
-//    				cd = player[i].getDecks().drawCard();
-//    				addCard(i,cd);
-//    			} catch (Exception e) {
-//    				// TODO Auto-generated catch block
-//    				e.printStackTrace();
-//    			}
-//        	}
-//    	}
+    	for(int i=0; i<2; i++) {
+    		for(int j=1; j<=7; j++) {
+        		try {
+					Card card = player[i].getDecks().drawCard();
+					cardController.addCard(i, card);
+				} catch (Exception e) {
+					System.out.println(e.toString());
+				}
+        	}
+    	}
+		this.update();
     	
     }
+
+	private void update(){
+		int turn = this.state.getTurn();
+		Phase ph = this.state.getPhase();
+		/* enable / disable phase button */
+		btnDraw.setDisable(!ph.drawBtn);
+		btnMain.setDisable(!ph.mainBtn);
+		btnBattle.setDisable(!ph.battleBtn);
+		btnEnd.setDisable(!ph.endturnBtn);
+	}
 
     @FXML
     public void initialize() {

@@ -17,6 +17,8 @@ import com.avatarduel.state.Player;
 import com.avatarduel.state.State;
 import com.avatarduel.util.CSVReader;
 
+import com.avatarduel.phase.*;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -87,8 +89,8 @@ public class Main extends Application {
     for(Card card : cardData) {
     	hojun.getDecks().addToDeck(card);
     }
-      
-    state = new State(1, qila, hojun);	  
+    DrawPhase a = new DrawPhase(1);
+    state = new State(1, qila, hojun, a);	  
 	  
 	FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("tes.fxml"));
 	

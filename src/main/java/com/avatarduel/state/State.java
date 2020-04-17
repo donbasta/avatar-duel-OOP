@@ -8,23 +8,30 @@ public class State {
     private int turn;
     private Player P1;
     private Player P2;
-    int phase;
+    //int phase;
+
+    private Phase phase;
 //    private Phase current;
 //    private List FieldP1;
 //    private List FieldP2;
 //    private List DeckP1;
 //    private List DeckP2;
 
-    public State(int turn, Player P1, Player P2){
+    public State(int turn, Player P1, Player P2, Phase ph){
         this.run = true;
         this.turn = turn;
         this.P1 = P1;
         this.P2 = P2;
+        this.phase = ph;
 //        this.current = current;
 //        this.FieldP1 = FieldP1;
 //        this.FieldP2 = FieldP2;
 //        this.DeckP1 = DeckP1;
 //        this.DeckP2 = DeckP2;
+    }
+
+    public Phase getPhase(){
+        return this.phase;
     }
 
     public int getTurn(){

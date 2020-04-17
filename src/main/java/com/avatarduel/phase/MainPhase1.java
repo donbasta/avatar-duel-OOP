@@ -4,7 +4,7 @@ import com.avatarduel.state.*;
 import com.avatarduel.cards.*;
 import com.avatarduel.exceptions.LandCardException;
 import com.avatarduel.exceptions.NotEnoughPowerException;
-
+/*
 public class MainPhase1 implements Phase{
     private int turn;
     private Decks player;
@@ -74,3 +74,4 @@ public class MainPhase1 implements Phase{
     }
 
 }
+*/

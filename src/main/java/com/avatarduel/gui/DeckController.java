@@ -1,5 +1,6 @@
 package com.avatarduel.gui;
 
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,6 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+
 
 public class DeckController extends VBox {
 	
@@ -23,6 +25,8 @@ public class DeckController extends VBox {
 
     @FXML
     private Text numCardDeck2;
+
+
     
     private Controller controller;
     
