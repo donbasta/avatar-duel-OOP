@@ -32,7 +32,7 @@ public class DeckController extends VBox {
 	void drawCard(MouseEvent event) {
 		String id = ((Node) event.getSource()).getId();
 		System.out.println(id);
-		deck1.setFill(Color.WHITE);
+//		deck1.setFill(Color.WHITE);
 		event.consume();
 	}
 
