@@ -28,8 +28,18 @@ public class CardHoverController extends StackPane {
     	this.controller = controller;
     }
     
+    @FXML
+    void initialize(){
+        System.out.println("HOVER");
+        this.cardViewName.setText("HEEELLOO");
+    }
+    
     public void setImage(String url) {
     	cardViewImage.setImage(new Image(url));
+    }
+    
+    public void updateView(){
+        System.out.println("HOVER");
     }
     
     void viewCard(MouseEvent event) {
@@ -87,5 +97,4 @@ public class CardHoverController extends StackPane {
 //        	}
 //        }
     }
-	
 }

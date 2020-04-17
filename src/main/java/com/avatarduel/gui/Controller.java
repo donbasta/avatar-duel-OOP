@@ -88,6 +88,11 @@ public class Controller {
     	
     }
 
+	public void updateView(){
+		System.out.println("KESINI");
+		cardHoverController.updateView();
+	}
+
 //    @FXML
 //    void drawCard(MouseEvent event) {
 //    	int turn = state.getTurn();
