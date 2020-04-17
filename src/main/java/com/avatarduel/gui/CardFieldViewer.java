@@ -41,9 +41,12 @@ public class CardFieldViewer extends CardViewer {
 		rect.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
 			System.out.print(isAda);
 			if(this.isAda) {
-				controller.updateView(this.card);
+				try {
+					controller.updateView(this.card);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
-	        
 	    });
 		
 		rect.setFill(Color.TRANSPARENT);

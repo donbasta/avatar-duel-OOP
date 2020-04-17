@@ -68,10 +68,20 @@ public class Controller {
 				}
         	}
     	}
+    	
+		for(int i=1; i<=6; i++) {
+			cardController.fieldChar[1].addCardToField(this, 1);
+			cardController.fieldChar[2].addCardToField(this, 2);
+			cardController.fieldSkill[1].addCardToField(this, 1);
+			cardController.fieldSkill[2].addCardToField(this, 2);
+		}
+    	
 		this.update();
     }
     
     public void handleFieldCard(CardViewer c) {
+    	
+    	System.out.println("why??");
     	
     	Phase ph = this.state.getPhase();
     	
@@ -81,18 +91,22 @@ public class Controller {
     	
     	if(c.getOwner() == this.state.getTurn()) {
     		
-    		if(type.contentEquals("CharacterCard")) { 
+    		System.out.println("LOL");
+    		
+    		if(type.equals("CharacterCard")) { 
     			Rectangle rect = (Rectangle) c.getChildren().get(0);
     			CharacterCard chcard = (CharacterCard) card;
     			System.out.println("lol");
     			if(chcard.getPosition().equals("ATTACK")) {
+    				System.out.println("lol1");
         			rect.setHeight(69);
         			rect.setWidth(84);
         			chcard.setPosition("DEFENCE");
     			} else if(chcard.getPosition().equals("DEFENCE")) {
+    				System.out.println("lol2");
         			rect.setHeight(84);
         			rect.setWidth(69);
-        			chcard.setPosition("DEFENCE");
+        			chcard.setPosition("ATTACK");
     			}
 			}
     		
@@ -104,6 +118,7 @@ public class Controller {
 		
 		System.out.println("DIKLIK");
 		Phase ph = this.state.getPhase();
+
 		if(c.getOwner() == this.state.getTurn() && ph.canUseCard){
 			
 			System.out.println("HEHE\n");
@@ -114,7 +129,7 @@ public class Controller {
 			Card card = c.getCard();
 			String type = card.getClass().getSimpleName();
 	//				System.out.println(type);
-			if(type.contentEquals("CharacterCard")) { //if dia character, lgsg taro aja di, klik di tempat yg kosong di kotak character
+			if(type.equals("CharacterCard")) { //if dia character, lgsg taro aja di, klik di tempat yg kosong di kotak character
 				
 				try {
 					player[currentTurn].getDecks().addToFieldCharacter(card, player[currentTurn].getPower());
@@ -125,7 +140,7 @@ public class Controller {
 					System.out.println(e.toString());
 				}
 				
-			} else if(type.contentEquals("LandCard")) { //if dia land, lgsg ubah powernya
+			} else if(type.equals("LandCard")) { //if dia land, lgsg ubah powernya
 				System.out.println("DEBUG");
 				if(ph.getClass().getSimpleName().equals("MainPhase")){
 					MainPhase mph = (MainPhase) this.state.getPhase();
@@ -140,7 +155,7 @@ public class Controller {
 			//if dia skill, cek dia aura, skill, atau powerup, terus pilih kartu target, terus 'ngebind' jadi kalo targetnya mati
 			// dia juga bakal mati	
 				
-			} else if(type.contentEquals("SkillCard")) {
+			} else if(type.equals("SkillCard")) {
 				System.out.println("DEBUG");
 				cardController.removeCard(c, this.state.getTurn());
 			}

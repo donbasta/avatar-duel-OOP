@@ -28,6 +28,8 @@ public class CardController extends GridPane {
 	@FXML private CardTable fieldChar1;
 	
 	@FXML private CardTable fieldChar2;
+	
+	public CardTable[] fieldSkill, fieldChar;
 
 	private Controller controller;
 	
@@ -45,12 +47,13 @@ public class CardController extends GridPane {
 		hand[1] = player1;
 		hand[2] = player2;
 		
-		for(int i=1; i<=6; i++) {
-			fieldChar1.addCardToField(controller, 1);
-			fieldChar2.addCardToField(controller, 2);
-			fieldSkill1.addCardToField(controller, 1);
-			fieldSkill2.addCardToField(controller, 2);
-		}
+		fieldSkill = new CardTable[3];
+		fieldSkill[1] = fieldSkill1;
+		fieldSkill[2] = fieldSkill2;
+		
+		fieldChar = new CardTable[3];
+		fieldChar[1] = fieldChar1;
+		fieldChar[2] = fieldChar2;
 		
 		field = new CardField[3];
 		field[1] = new CardField(fieldChar1, fieldSkill1);
