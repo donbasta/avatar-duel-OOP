@@ -1,14 +1,16 @@
-public class MainPhase1 implements Phase{
+public class MainPhase implements Phase{
     private int turn;
     private Decks player;
     private Power power;
     private boolean cek_putland;
+    private boolean skill_active;
 
-    public MainPhase1(int turn, Decks player, Power power){
+    public MainPhase(int turn, Decks player, Power power){
         this.turn = turn;
         this.player = P;
         this.power = power;
         this.cek_putland = true;
+        this.skill_active = false;
 
     }
 
@@ -36,9 +38,9 @@ public class MainPhase1 implements Phase{
         }
     }
 
-    public void moveCard(Card c,int position){
-        //pake bawaaan summoned card mungkin???
-    }
+    // public void moveCard(Card c,int position){
+    //     //pake bawaaan summoned card mungkin???
+    // }
   
 
     public void throwSkill(Card c){
