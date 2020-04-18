@@ -8,6 +8,7 @@ public class Card {
     protected Element element;
     protected String path;
     
+    
     public Card(String name, String desc, Element element, String path){
         this.name = name;
         this.desc = desc;

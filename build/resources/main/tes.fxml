@@ -26,6 +26,7 @@
                   <fx:include fx:id="card" source="cardtable.fxml" />
                   <HBox alignment="CENTER" prefHeight="53.0" prefWidth="686.0" spacing="20.0">
                      <children>
+                        <Button fx:id="btnRemove" mnemonicParsing="false" prefHeight="15.0" prefWidth="70.0" text="Remove" />
                         <Button fx:id="btnDraw" mnemonicParsing="false" text="Draw Phase" />
                         <Button fx:id="btnMain" mnemonicParsing="false" text="Main Phase" />
                         <Button fx:id="btnBattle" mnemonicParsing="false" text="BattlePhase" />

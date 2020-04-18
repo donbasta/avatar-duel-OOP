@@ -45,9 +45,25 @@ public class Controller {
 
 	@FXML
 	private Button btnEnd;
+	
+	@FXML
+	private Button btnRemove;
     
     protected Player[] player;
     protected State state;
+    
+    @FXML
+    public void initialize() {
+    	
+    	System.out.println("test cuy"); //debug
+    	Scene scene = mainPane.getScene();
+    	
+    	deckController.setController(this);
+    	cardController.setController(this);
+    	cardHoverController.setController(this);
+    	cardHoverController.setImage("file:src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png");
+    	
+    }
     
     public void setPlay(Player pa, Player pb, State st) {
     	
@@ -176,19 +192,6 @@ public class Controller {
 	private void resetPower(){
 		int turn = this.state.getTurn();
 	}
-
-    @FXML
-    public void initialize() {
-    	
-    	System.out.println("test cuy"); //debug
-    	Scene scene = mainPane.getScene();
-    	
-    	deckController.setController(this);
-    	cardController.setController(this);
-    	cardHoverController.setController(this);
-    	cardHoverController.setImage("file:src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png");
-    	
-    }
     
     public void handleDrawCard(int p) {
 		if(this.state.getTurn() == p && this.state.getPhase().canDraw){
@@ -203,13 +206,9 @@ public class Controller {
 			this.update();
 		}
     }
-    
-    public void handleHoverCard() {
-    	
-    }
 
 	public void updateView(Card card){
-		System.out.println("KESINI");
+//		System.out.println("KESINI");
 		cardHoverController.updateView(card);
 	}
    
