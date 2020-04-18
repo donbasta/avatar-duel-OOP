@@ -114,6 +114,20 @@ public class Controller {
     	
     }
 
+	@FXML
+	public void goBattle(MouseEvent event){
+		BattlePhase a = new BattlePhase();
+		this.state.setPhase(a);
+		this.update();
+	}
+
+	@FXML
+	public void endTurn(MouseEvent event){
+		this.state.changeTurn();
+		DrawPhase a = new DrawPhase();
+		this.state.setPhase(a);
+		this.update();
+	}
 	public void handleHandCard(CardViewer c){
 		
 		System.out.println("DIKLIK");
@@ -132,7 +146,7 @@ public class Controller {
 			if(type.equals("CharacterCard")) { //if dia character, lgsg taro aja di, klik di tempat yg kosong di kotak character
 				
 				try {
-					player[currentTurn].getDecks().addToFieldCharacter(card, player[currentTurn].getPower());
+					player[currentTurn].getDecks().addToFieldCharacter((CharacterCard) card, player[currentTurn].getPower());
 					cardController.addCardToField(c.getOwner(), card);
 					cardController.removeCard(c, this.state.getTurn());
 					deckController.setPower(currentTurn, player[currentTurn].getPower());
@@ -171,10 +185,17 @@ public class Controller {
 		btnMain.setDisable(!ph.mainBtn);
 		btnBattle.setDisable(!ph.battleBtn);
 		btnEnd.setDisable(!ph.endturnBtn);
+
+		if(ph.resetPower){
+			this.resetPower();
+		}
 	}
 
 	private void resetPower(){
 		int turn = this.state.getTurn();
+
+		player[turn].setPowerToDefault();
+		deckController.setPower(turn, player[turn].getPower());
 	}
 
     @FXML

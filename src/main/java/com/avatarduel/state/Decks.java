@@ -50,21 +50,21 @@ public class Decks{
         this.deck.add(c);
     }
 
-    public void addToFieldCharacter(Card c, Power power) throws Exception{
+    public void addToFieldCharacter(CharacterCard c, Power power) throws Exception{
     	if(this.characterCard.size() == MAKS_CHARACTER_CARD) {
     		throw new CharacterFullException();
     	}
-    	
-    	if(power.getPower(c.getElement()) == 0) {
+        Element e = c.getElement();
+    	if(power.getPower(e) < c.getPower()) {
     		throw new NotEnoughPowerException();
     	}
     	
-    	power.usePower(c.getElement());
+    	power.usePower(c.getElement(), c.getPower());
         this.hand.remove(c);
         this.characterCard.add(c);
     }
     
-    public void addToFieldSkill(Card c, Power power) throws Exception{
+    public void addToFieldSkill(SkillCard c, Power power) throws Exception{
     	if(this.skillCard.size() == MAKS_SKILL_CARD) {
     		throw new SkillFullException();
     	}
@@ -75,7 +75,7 @@ public class Decks{
     	
     	//sekarang update flag2 nya buat skill, pilih kartu
     	
-    	power.usePower(c.getElement());
+    	power.usePower(c.getElement(), c.getPower());
         this.hand.remove(c);
         this.characterCard.add(c);
     }

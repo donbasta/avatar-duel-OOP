@@ -1,13 +1,14 @@
 package com.avatarduel.phase;
 
+
 import com.avatarduel.state.*;
 import com.avatarduel.model.Element;
 
-public class MainPhase extends Phase {
-	
-	private boolean canUseLandCard;
+public class BattlePhase extends Phase {
 
-    public MainPhase(){
+    public BattlePhase(){
+        //this.decks = deck;
+
 
         /* reset power atau enggak */
         resetPower = false;
@@ -16,27 +17,16 @@ public class MainPhase extends Phase {
         canDraw = false;
 
         /* bisa pakai kartu atau enggak */
-        canUseCard = true;
-        
-        /* masih bisa pake kartu land card atau nggak */
-        canUseLandCard = true;
+        canUseCard = false;
 
-        canAttack = false;
+        canAttack = true;
 
         /* tombol apa saja yang bisa di klik */
         drawBtn = false;
         mainBtn = false;
-        battleBtn = true;
-        endturnBtn = false;
+        battleBtn = false;
+        endturnBtn = true;
 
-    }
-    
-    public boolean getCanUseLandCard() {
-    	return this.canUseLandCard;
-    }
-    
-    public void setLandCardUsed() {
-    	this.canUseLandCard = false;
     }
 
     /* void run(){

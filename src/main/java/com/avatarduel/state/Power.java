@@ -58,18 +58,18 @@ public class Power{
         }
     }
     
-    public void usePower(Element element) {
+    public void usePower(Element element, int amount) {
 		  if (element == Element.FIRE){
-	          this.fire--;
+	          this.fire -= amount;
 	      }
 	      else if (element == Element.WATER){
-	          this.water--;
+	          this.water -= amount;
 	      }
 	      else if (element == Element.AIR){
-	          this.air--;
+	          this.air -= amount;
 	      }
 	      else if(element == Element.EARTH){
-	          this.earth--;
+	          this.earth -= amount;
 	      }
 	      else{
 	          System.out.println("errorrr input");

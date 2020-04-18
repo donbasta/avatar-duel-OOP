@@ -32,6 +32,9 @@ public class State {
         this.phase = a;
     }
 
+    public void changeTurn(){
+        this.turn = (2 - this.turn) % 2 + 1;
+    }
     public Phase getPhase(){
         return this.phase;
     }
