@@ -26,11 +26,12 @@
                   <fx:include fx:id="card" source="cardtable.fxml" />
                   <HBox alignment="CENTER" prefHeight="53.0" prefWidth="686.0" spacing="20.0">
                      <children>
-                        <Button fx:id="btnRemove" mnemonicParsing="false" prefHeight="15.0" prefWidth="70.0" text="Remove" />
+                        <Button fx:id="btnRemove" mnemonicParsing="false" onMouseClicked="#removeCard" prefHeight="15.0" prefWidth="70.0" text="Remove" />
                         <Button fx:id="btnDraw" mnemonicParsing="false" text="Draw Phase" />
                         <Button fx:id="btnMain" mnemonicParsing="false" text="Main Phase" />
-                        <Button fx:id="btnBattle" onMouseClicked="#goBattle" mnemonicParsing="false" text="BattlePhase" />
-                        <Button fx:id="btnEnd" onMouseClicked="#endTurn" mnemonicParsing="false" text="End Phase" />
+                        <Button fx:id="btnBattle" mnemonicParsing="false" onMouseClicked="#goBattle" text="BattlePhase" />
+                        <Button fx:id="btnEnd" mnemonicParsing="false" onMouseClicked="#endTurn" text="End Phase" />
+                        <Button fx:id="btnDirectAttack" mnemonicParsing="false" onMouseClicked="#attackDirectly" text="Attack Directly" />
                      </children>
                   </HBox>
                   

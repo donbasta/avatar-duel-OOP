@@ -48,6 +48,9 @@ public class Controller {
 	
 	@FXML
 	private Button btnRemove;
+	
+	@FXML
+	private Button btnDirectAttack;
     
     protected Player[] player;
     protected State state;
@@ -91,33 +94,90 @@ public class Controller {
 			cardController.fieldSkill[1].addCardToField(this, 1);
 			cardController.fieldSkill[2].addCardToField(this, 2);
 		}
+		
+		for(int i=1; i<=2; i++) {
+			deckController.setNumCardDeck(i, player[i].getDecks().getDeck().size());
+		}
     	
 		this.update();
     }
     
     public void handleFieldCard(CardViewer c) {
-
-    	
-    	System.out.println("why??");
     	
     	Phase ph = this.state.getPhase();
-    	
-    	// kalau masih battle phase, ada dua kemungkinan, ngeremove card sama ngemutar (change position) card
     	Card card = c.getCard();
+    	System.out.println(card==null);
+    	System.out.println("lolz");
     	String type = card.getClass().getSimpleName();
     	
-		if(this.state.getPhase().destroyActive){
+    	if(this.state.getPhase().canAttack) {
+    		
+    		if(type.equals("CharacterCard")) {
+    			CharacterCard chcard = (CharacterCard) card;
+        		if(c.getOwner() == this.state.getTurn()) {
+        			((Rectangle) c.getChildren().get(0)).setStyle("-fx-stroke: yellow; -fx-stroke-width: 5;");
+        			((CardFieldViewer) c).setOnAttackPosition(true);
+        			ph.activeAttackingCardViewer = c;
+        			ph.activeAttackingCard = chcard;
+        			ph.canAttack = false;
+        			ph.attackActive = true;
+        		}
+    		}
+    		
+    	} else if(this.state.getPhase().attackActive) {
+    		
+    		if(c.getOwner() != this.state.getTurn()) {
+    			try {
+    				if(type.equals("CharacterCard")) {
+    					int opponent = 3-this.state.getTurn();
+        				BattlePhase bph = (BattlePhase) ph;
+        				boolean removed = bph.attack((CharacterCard) c.getCard(), player[opponent]);
+        				if(removed) {
+        					cardController.removeCharacter(c);
+        				}
+        				deckController.setHpText(opponent, player[opponent].getHealth());
+        				deckController.setProgressBarHp(opponent, player[opponent].getHealth());
+    				}
+    			} catch (Exception e) {
+    				System.out.println(e.getMessage());
+    			}
+    			//TO DO
+    			//mekanisme battle
+    			((Rectangle) ph.activeAttackingCardViewer.getChildren().get(0)).setStyle(null);
+    			((CardFieldViewer) ph.activeAttackingCardViewer).setOnAttackPosition(false);
+    			ph.activeAttackingCardViewer = null;
+    			ph.activeAttackingCard = null;
+    			ph.canAttack = true;
+    			ph.attackActive = false;
+    		} else if(c.getOwner() == this.state.getTurn()) {
+    			
+    			((Rectangle) ph.activeAttackingCardViewer.getChildren().get(0)).setStyle(null);
+    			((CardFieldViewer) ph.activeAttackingCardViewer).setOnAttackPosition(false);
+    			
+    			((Rectangle) c.getChildren().get(0)).setStyle("-fx-stroke: yellow; -fx-stroke-width: 5;");
+    			((CardFieldViewer) c).setOnAttackPosition(true);
+    			ph.activeAttackingCardViewer = c;
+    			ph.activeAttackingCard = (CharacterCard) c.getCard();
+    			
+    		}
+   
+    	} else if(this.state.getPhase().destroyActive){
+    		
 			if(type.equals("CharacterCard")){
 				//ancurin semua equip
 				for(CardViewer skill : ((CharacterCard) card).getEquippedSkill()){
 					cardController.removeSkill(skill);
+					player[this.state.getTurn()].getDecks().removeCardFromField(skill.getCard());
 				}
 
 				//ancurin kartu di field
 				cardController.removeCharacter(c);
+				player[this.state.getTurn()].getDecks().removeCardFromField(c.getCard());
 				this.state.getPhase().destroyActive = false;
 			}
+			
 		} else {
+			
 			if(this.state.getPhase().skillActive){
 				if(type.equals("CharacterCard")){
 					CharacterCard cha = (CharacterCard) card;
@@ -129,33 +189,24 @@ public class Controller {
 					this.state.getPhase().skillActive = false;
 				}
 			} else {
-
 				if(c.getOwner() == this.state.getTurn() && !this.state.getPhase().canAttack) {
-					
-					System.out.println("LOL");
-					
 					if(type.equals("CharacterCard")) { 
 						Rectangle rect = (Rectangle) c.getChildren().get(0);
 						CharacterCard chcard = (CharacterCard) card;
-						//System.out.println("lol");
 						if(chcard.getPosition().equals("ATTACK")) {
-							//System.out.println("lol1");
 							rect.setHeight(69);
 							rect.setWidth(84);
 							chcard.setPosition("DEFENCE");
 						} else if(chcard.getPosition().equals("DEFENCE")) {
-							//System.out.println("lol2");
 							rect.setHeight(84);
 							rect.setWidth(69);
 							chcard.setPosition("ATTACK");
 						}
 					}
-					
 				}
-
 			}
+			
 		}
-    	
     }
 
 	@FXML
@@ -167,11 +218,71 @@ public class Controller {
 
 	@FXML
 	public void endTurn(MouseEvent event){
+		
+		Phase ph = this.state.getPhase();
+		
+		if(ph.activeAttackingCardViewer != null) {
+			((Rectangle) ph.activeAttackingCardViewer.getChildren().get(0)).setStyle(null);
+			((CardFieldViewer) ph.activeAttackingCardViewer).setOnAttackPosition(false);
+			ph.activeAttackingCardViewer = null;
+			ph.activeAttackingCard = null;
+		}
+		
 		this.state.changeTurn();
 		DrawPhase a = new DrawPhase();
 		this.state.setPhase(a);
 		this.update();
+		deckController.setCurrentTurn(this.state.getTurn());
+		
+
 	}
+	
+	@FXML
+	public void removeCard(MouseEvent event) {
+		Phase ph = this.state.getPhase();
+		int currentTurn = this.state.getTurn();
+		CardViewer currentClicked = CardController.clickedCard;
+		if(ph.canRemove && currentClicked.getOwner() == currentTurn) {
+			if(currentClicked.getClass().getSimpleName().equals("CardHandViewer")) {
+				//buang kartu pada tempat tersebut, kurangin yg ada di deck jangan lupa
+				cardController.removeCard(currentClicked, currentTurn);
+				player[currentTurn].getDecks().removeCardFromHand(currentClicked.card);
+			} else if(currentClicked.getClass().getSimpleName().equals("CardFieldViewer")) {
+				//buang kartunya, kurangin yg ada di deck jangan lupa
+				Card card = currentClicked.card;
+				if(card.getClass().getSimpleName().equals("CharacterCard")) {
+					cardController.removeCharacter(currentClicked);
+				} else if(card.getClass().getSimpleName().equals("SkillCard")) {
+					cardController.removeSkill(currentClicked);
+				}
+				player[currentTurn].getDecks().removeCardFromField(currentClicked.card);
+			}
+		}
+	}
+	
+	@FXML
+	public void attackDirectly(MouseEvent event) {
+		Phase ph = this.state.getPhase();
+		int opponent = 3-this.state.getTurn();
+		if(ph.attackActive) {
+			if(player[opponent].getDecks().getCharacterCard().isEmpty()) {
+				try {
+					((BattlePhase) ph).attackDirectly(player[opponent]);
+					deckController.setHpText(opponent, player[opponent].getHealth());
+					deckController.setProgressBarHp(opponent, player[opponent].getHealth());
+				} catch (Exception e) {
+					System.out.println(e.toString());
+				}
+			}
+			((Rectangle) ph.activeAttackingCardViewer.getChildren().get(0)).setStyle(null);
+			((CardFieldViewer) ph.activeAttackingCardViewer).setOnAttackPosition(false);
+			ph.activeAttackingCardViewer = null;
+			ph.activeAttackingCard = null;
+			ph.canAttack = true;
+			ph.attackActive = false;
+		}
+	}
+	
 	public void handleHandCard(CardViewer c){
 
 		Phase ph = this.state.getPhase();
@@ -184,7 +295,6 @@ public class Controller {
 			
 			Card card = c.getCard();
 			String type = card.getClass().getSimpleName();
-	//				System.out.println(type);
 			if(type.equals("CharacterCard")) { //if dia character, lgsg taro aja di, klik di tempat yg kosong di kotak character
 				
 				try {
@@ -201,6 +311,7 @@ public class Controller {
 					MainPhase mph = (MainPhase) this.state.getPhase();
 					if(mph.getCanUseLandCard()) {
 						player[currentTurn].incrementPower(card.getElement());
+						player[currentTurn].getDecks().useLand(card);
 						deckController.setPower(currentTurn, player[currentTurn].getPower());
 						mph.setLandCardUsed();
 						cardController.removeCard(c, this.state.getTurn());
@@ -228,9 +339,10 @@ public class Controller {
 						this.state.getPhase().activeSkill = (SkillCard) card;
 						cardController.removeCard(c, this.state.getTurn());
 					}
+				} else if(scd.getType().equals("powerup")){
+					
 				}
 			}
-			
 		}
 	}
 
@@ -260,17 +372,17 @@ public class Controller {
 			try {
 				Card card = player[p].getDecks().drawCard();
 				cardController.addCardToHand(p, card);
+				deckController.setNumCardDeck(p, player[p].getDecks().getDeck().size());
+				Phase ne = new MainPhase();
+				this.state.setPhase(ne);
+				this.update();
 			} catch (Exception e) {
 				System.out.println(e.toString());
 			}
-			Phase ne = new MainPhase();
-			this.state.setPhase(ne);
-			this.update();
 		}
     }
 
 	public void updateView(Card card){
-//		System.out.println("KESINI");
 		cardHoverController.updateView(card);
 	}
    

@@ -10,7 +10,7 @@ public class Decks{
     private List<Card> skillCard;
     private List<Card> characterCard;
     private Stack<Card> deck;
-    final int MAKS_HAND = 8;
+    final int MAKS_HAND = 9;
     final int MAKS_CHARACTER_CARD = 6;
     final int MAKS_SKILL_CARD = 6;
     
@@ -46,6 +46,18 @@ public class Decks{
         return c;
     }
     
+    public void removeCardFromHand(Card card) {
+    	this.hand.remove(card);
+    }
+    
+    public void removeCardFromField(Card card) {
+    	if(card.getClass().getSimpleName().equals("SkillCard")) {
+    		this.skillCard.remove(card);
+    	} else if(card.getClass().getSimpleName().equals("CharacterCard")) {
+    		this.characterCard.remove(card);
+    	}
+    }
+    
     public void addToDeck(Card c){
         this.deck.add(c);
     }
@@ -64,6 +76,10 @@ public class Decks{
         this.characterCard.add(c);
     }
     
+    public void useLand(Card c) {
+    	this.hand.remove(c);
+    }
+    
     public void addToFieldSkill(SkillCard c, Power power) throws Exception{
     	if(this.skillCard.size() == MAKS_SKILL_CARD) {
     		throw new SkillFullException();
@@ -79,23 +95,5 @@ public class Decks{
         this.hand.remove(c);
         this.characterCard.add(c);
     }
-
-//    public void removeFromField(Card card){
-//    	if(this.field.contains(card)) {
-//    		this.field.remove(this.field.indexOf(card));
-//    	} else{
-//            System.out.println("Card is not in the field");
-//        }
-//    }
-
-//    public int countLand(Element element){
-//        int count = 0;
-//        for (int i=0; i<this.hand.size(); i++){
-//            if (this.hand.get(i).getElement() == element){
-//                count++;
-//            }
-//        }
-//        return count;
-//    }
 
 }

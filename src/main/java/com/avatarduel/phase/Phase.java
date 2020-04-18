@@ -1,12 +1,14 @@
 package com.avatarduel.phase;
 
 import com.avatarduel.cards.*;
+import com.avatarduel.gui.CardViewer;
 
 public abstract class Phase {
 
 	public Boolean resetPower;
 	public Boolean canDraw;
-	public boolean canUseCard;
+	public Boolean canRemove;
+	public Boolean canUseCard;
 	public Boolean drawBtn;
 	public Boolean mainBtn;
 	public Boolean battleBtn;
@@ -15,8 +17,11 @@ public abstract class Phase {
 	public Boolean canAttack;
 
 	public Boolean skillActive;
+	public Boolean attackActive;
 
 	public Boolean destroyActive;
 
 	public SkillCard activeSkill;
+	public CharacterCard activeAttackingCard;
+	public CardViewer activeAttackingCardViewer;
 }

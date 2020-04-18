@@ -14,6 +14,9 @@ public class MainPhase extends Phase {
 
         /* bisa draw atau enggak */
         canDraw = false;
+        
+        /* bisa remove atau enggak */
+        canRemove = true;
 
         /* bisa pakai kartu atau enggak */
         canUseCard = true;
@@ -22,6 +25,8 @@ public class MainPhase extends Phase {
         canUseLandCard = true;
 
         canAttack = false;
+        
+        attackActive = false;
 
         skillActive = false;
 

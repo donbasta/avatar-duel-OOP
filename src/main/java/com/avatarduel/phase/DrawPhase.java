@@ -17,6 +17,9 @@ public class DrawPhase extends Phase {
 
         /* bisa draw atau enggak */
         canDraw = true;
+        
+        /* bisa remove atau enggak */
+        canRemove = true;
 
         /* bisa pakai kartu atau enggak */
         canUseCard = false;
@@ -24,6 +27,8 @@ public class DrawPhase extends Phase {
         canAttack = false;
 
         skillActive = false;
+        
+        attackActive = false;
 
         destroyActive = false;
 

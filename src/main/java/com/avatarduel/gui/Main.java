@@ -76,6 +76,7 @@ public class Main extends Application {
     try {
       this.loadCards();
     } catch (Exception e) {
+    	e.printStackTrace();
       System.out.println(e);
     }
 	  

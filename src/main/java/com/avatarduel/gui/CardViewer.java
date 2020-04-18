@@ -18,6 +18,7 @@ public class CardViewer extends StackPane {
 	protected boolean isClick;
 	protected Controller controller;
 	protected int owner;
+	boolean onAttackPosition;
 	
 	public CardViewer(Controller controller, boolean ada, Card cd, boolean click, int p) {
 		this.controller = controller;
@@ -25,6 +26,7 @@ public class CardViewer extends StackPane {
 		this.card = cd;
 		this.isClick = click;
 		this.owner = p;
+		this.onAttackPosition = false;
 		
 		Rectangle rect = new Rectangle();
 
@@ -61,6 +63,14 @@ public class CardViewer extends StackPane {
 
 	public int getOwner(){
 		return this.owner;
+	}
+	
+	public void setOnAttackPosition(boolean onAttack) {
+		this.onAttackPosition = onAttack;
+	}
+	
+	public boolean getOnAttackPosition() {
+		return this.onAttackPosition;
 	}
 	
     String getText(Card card) {

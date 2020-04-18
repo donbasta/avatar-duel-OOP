@@ -29,7 +29,11 @@ public class CardHandViewer extends CardViewer{
 				
 				try {
 					Rectangle previousClickedCard = (Rectangle) CardController.clickedCard.getChildren().get(0);
-					previousClickedCard.setStyle(null);
+					if(!(CardController.clickedCard).getOnAttackPosition()) {
+						previousClickedCard.setStyle(null);
+					} else {
+						previousClickedCard.setStyle("-fx-stroke: yellow; -fx-stroke-width: 5;");
+					}
 					CardController.clickedCard.setClick(false);
 				} catch (Exception e) {
 					

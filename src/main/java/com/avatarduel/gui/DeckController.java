@@ -4,10 +4,13 @@ package com.avatarduel.gui;
 import com.avatarduel.state.Player;
 import com.avatarduel.state.Power;
 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -24,6 +27,21 @@ public class DeckController extends VBox {
     private Rectangle deck2;
     
     @FXML
+    private Text hpText1;
+    
+    @FXML
+    private Text hpText2;
+    
+    @FXML
+    private ProgressBar hpBar1;
+    
+    @FXML
+    private ProgressBar hpBar2;
+    
+    @FXML
+    private Text currentTurnText;
+    
+    @FXML
     private Text numCardDeck1;
 
     @FXML
@@ -35,8 +53,10 @@ public class DeckController extends VBox {
     @FXML
     private VBox power2;
     
-    private Text[] numCardDeck;
+    private ProgressBar[] hpBar;
+    private Text[] numCardDeck, hpText;
     private VBox[] powerStat;
+//    private DoubleProperty[] healthUpdater;
     
     private Controller controller;
     
@@ -53,6 +73,24 @@ public class DeckController extends VBox {
 		numCardDeck[1] = numCardDeck1;
 		numCardDeck[2] = numCardDeck2;
 		
+		hpText = new Text[3];
+		hpText[1] = hpText1;
+		hpText[2] = hpText2;
+		
+		hpBar = new ProgressBar[3];
+		hpBar[1] = hpBar1;
+		hpBar[2] = hpBar2;
+		hpBar[1].setStyle("-fx-accent: red;");
+		hpBar[2].setStyle("-fx-accent: blue;");
+		
+//		healthUpdater = new DoubleProperty[3];
+//		healthUpdater[1] = new SimpleDoubleProperty(.0);
+//		healthUpdater[2] = new SimpleDoubleProperty(.0);
+		
+//		for(int i=1; i<=2; i++) {
+//			playerHealth[i].progressProperty().bind(healthUpdater[i]);
+//		}
+
 		powerStat = new VBox[3];
 		powerStat[1] = power1;
 		powerStat[2] = power2;
@@ -68,9 +106,26 @@ public class DeckController extends VBox {
 		} else {
 			player = 2;
 		}
-		//kasih try catch buat nangkep exception tangan penuh
 		controller.handleDrawCard(player);
-		numCardDeck[player].setText("");
+	}
+	
+	public void setNumCardDeck(int player, int numRemainingCard) {
+		numCardDeck[player].setText(Integer.toString(numRemainingCard));
+	}
+	
+	public void setHpText(int player, int curHp) {
+		hpText[player].setText("HP: "+Integer.toString(curHp)+"/80");
+	}
+	
+	public void setProgressBarHp(int player, int curHp) {
+		System.out.println("lololol");
+//		healthUpdater[player].set(((double) curHp)/80.00);
+//		playerHealth[player].progressProperty().bind(healthUpdater[player]);
+		hpBar[player].setProgress(((double) curHp)/80.00);
+	}
+	
+	public void setCurrentTurn(int player) {
+		currentTurnText.setText("It's player " + Integer.toString(player) + " turn!");
 	}
 	
 	public void setPower(int p, Power power) {
