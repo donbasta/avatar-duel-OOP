@@ -21,6 +21,10 @@ public class BattlePhase extends Phase {
 
         canAttack = true;
 
+        skillActive = false;
+
+        destroyActive = false;
+
         /* tombol apa saja yang bisa di klik */
         drawBtn = false;
         mainBtn = false;

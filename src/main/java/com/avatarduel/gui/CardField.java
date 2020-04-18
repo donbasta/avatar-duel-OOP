@@ -24,6 +24,21 @@ public class CardField {
 			}
 		}
 	}
+
+	public void removeCharacter(CardViewer c, Controller controller, int p){
+		this.character.removeCharacter(c, controller, p);
+	}
+
+	public int countCharacter(){
+		int cnt = 0;
+		for(Node child : character.getChildren()){
+			CardFieldViewer cardField = (CardFieldViewer) child;
+			if(cardField.getAda()){
+				cnt++;
+			}
+		}
+		return cnt;
+	}
 	
 	
 	

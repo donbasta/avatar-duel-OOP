@@ -36,6 +36,10 @@ public class Player{
     public void incrementPower(Element element) {
     	this.getPower().addPower(element);
     }
+
+    public void usePower(Element element, int change){
+        this.getPower().usePower(element, change);
+    }
     
     public void setHealth(int health){
         if(health < 0){
