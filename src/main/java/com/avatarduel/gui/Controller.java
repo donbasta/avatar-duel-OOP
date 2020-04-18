@@ -108,6 +108,11 @@ public class Controller {
     	
 		if(this.state.getPhase().destroyActive){
 			if(type.equals("CharacterCard")){
+				//ancurin semua equip
+				for(CardViewer skill : ((CharacterCard) card).getEquippedSkill()){
+					cardController.removeSkill(skill);
+				}
+
 				//ancurin kartu di field
 				cardController.removeCharacter(c);
 				this.state.getPhase().destroyActive = false;
@@ -117,8 +122,10 @@ public class Controller {
 				if(type.equals("CharacterCard")){
 					CharacterCard cha = (CharacterCard) card;
 					cardController.removeCharacter(c);
-					cha.useSkill(this.state.getPhase().activeSkill);
-					cardController.addCardToField(1, cha);
+					CardFieldViewer a = cardController.addSkillToField(this.state.getTurn(), this.state.getPhase().activeSkill);
+					cha.useSkill(a);
+					cardController.addCardToField(c.getOwner(), cha); // masih salah
+					this.state.getPhase().activeSkill = null;
 					this.state.getPhase().skillActive = false;
 				}
 			} else {

@@ -63,6 +63,10 @@ public class CardController extends GridPane {
 	public void addCardToField(int p, Card c) {
 		field[p].addCard(c, controller, p);
 	}
+
+	public CardFieldViewer addSkillToField(int p, Card c){
+		return field[p].addSkillCard(c, controller, p);
+	}
 	
 	public void addCardToHand(int p, Card c) {
 		hand[p].addCardToHand(c, controller, p);
@@ -72,9 +76,14 @@ public class CardController extends GridPane {
 		hand[p].removeCard(c);
 	}
 
+	public void removeSkill(CardViewer c){
+		int owner = c.getOwner();
+		field[owner].removeSkill(c, controller, owner);
+	}
+
 	public void removeCharacter(CardViewer c){
-		field[1].removeCharacter(c, controller, 1);
-		field[2].removeCharacter(c, controller, 2);
+		int owner = c.getOwner();
+		field[owner].removeCharacter(c, controller, owner);
 	}
 
 	public Boolean characterNotEmpty(){

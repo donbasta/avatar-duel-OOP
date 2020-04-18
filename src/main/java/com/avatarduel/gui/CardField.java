@@ -25,6 +25,23 @@ public class CardField {
 		}
 	}
 
+	public CardFieldViewer addSkillCard(Card c, Controller controller, int p) {
+		for(Node child : skill.getChildren()) {
+			CardFieldViewer cardField = (CardFieldViewer) child;
+			if(!cardField.getAda()) {
+				cardField.setCard(c);
+				cardField.setAda(true);
+				return cardField;
+			}
+		}
+		return null;
+	}
+
+	public void removeSkill(CardViewer c, Controller controller, int p){
+		this.skill.removeCard(c);
+		this.skill.addCardToField(controller, p);
+	}
+
 	public void removeCharacter(CardViewer c, Controller controller, int p){
 		this.character.removeCharacter(c, controller, p);
 	}
