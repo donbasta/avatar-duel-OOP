@@ -10,4 +10,6 @@ public abstract class Phase {
 	public Boolean mainBtn;
 	public Boolean battleBtn;
 	public Boolean endturnBtn;
+	
+	public Boolean canAttack;
 }

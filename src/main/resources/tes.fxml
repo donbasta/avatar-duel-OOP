@@ -29,8 +29,8 @@
                         <Button fx:id="btnRemove" mnemonicParsing="false" prefHeight="15.0" prefWidth="70.0" text="Remove" />
                         <Button fx:id="btnDraw" mnemonicParsing="false" text="Draw Phase" />
                         <Button fx:id="btnMain" mnemonicParsing="false" text="Main Phase" />
-                        <Button fx:id="btnBattle" mnemonicParsing="false" text="BattlePhase" />
-                        <Button fx:id="btnEnd" mnemonicParsing="false" text="End Phase" />
+                        <Button fx:id="btnBattle" onMouseClicked="#goBattle" mnemonicParsing="false" text="BattlePhase" />
+                        <Button fx:id="btnEnd" onMouseClicked="#endTurn" mnemonicParsing="false" text="End Phase" />
                      </children>
                   </HBox>
                   
