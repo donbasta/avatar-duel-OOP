@@ -71,6 +71,11 @@ public class CardController extends GridPane {
 	public void removeCard(CardViewer c, int p){
 		hand[p].removeCard(c);
 	}
+
+	public void removeCharacter(CardViewer c){
+		field[1].removeCharacter(c, controller, 1);
+		field[2].removeCharacter(c, controller, 2);
+	}
 	
 	@FXML
 	void viewCard(MouseEvent event) {

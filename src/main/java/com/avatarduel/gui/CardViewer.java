@@ -72,7 +72,22 @@ public class CardViewer extends StackPane {
 			description = String.format("PWR %d\nATK %d\nDEF %d", chd.getPower(), chd.getAttack(), chd.getDefense());
 		} else if(card.getClass().getSimpleName().equals("SkillCard")) {
 			SkillCard scd = (SkillCard) card;
-			description = String.format("%s\nPWR %d\n ATK %d\n DEF %d", scd.getType(), scd.getPower(), scd.getAttackIncrease(), scd.getDefenseIncrease());
+			if(scd.getType().equals("aura")){
+				String incatk, incdef;
+				if(scd.getAttackIncrease() >= 0){
+					incatk = "+" + Integer.toString(scd.getAttackIncrease());
+				} else {
+					incatk = "-" + Integer.toString(-1 * scd.getAttackIncrease());
+				}
+				if(scd.getDefenseIncrease() >= 0){
+					incdef = "+" + Integer.toString(scd.getDefenseIncrease());
+				} else {
+					incdef = "-" + Integer.toString(-1 * scd.getDefenseIncrease());
+				}
+				description = String.format("%s\nPWR %d\n ATK %s\n DEF %s", scd.getType(), scd.getPower(), incatk, incdef);
+			} else {
+				description = String.format("%s\nPWR %d", scd.getType(), scd.getPower());
+			}
 		}
 		return description;
     }

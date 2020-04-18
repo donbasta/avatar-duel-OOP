@@ -24,6 +24,11 @@ public class CardField {
 			}
 		}
 	}
+
+	public void removeCharacter(CardViewer c, Controller controller, int p){
+		this.character.removeCharacter(c, controller, p);
+	}
+
 	
 	
 	

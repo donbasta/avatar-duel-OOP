@@ -17,5 +17,15 @@ public class CardTable extends HBox {
 	public void removeCard(CardViewer c){
 		this.getChildren().remove(c);
 	}
+
+	public void removeCharacter(CardViewer c, Controller controller, int p){
+		if(this.getChildren().contains(c)){
+			this.getChildren().remove(c);
+			this.addCardToField(controller, p);
+			System.out.println("ADA DISINI");
+		} else {
+			System.out.println("GAADA DISINI");
+		}
+	}
 	 
 }

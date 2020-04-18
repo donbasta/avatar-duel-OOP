@@ -12,4 +12,8 @@ public abstract class Phase {
 	public Boolean endturnBtn;
 	
 	public Boolean canAttack;
+
+	public Boolean skillActive;
+
+	public Boolean destroyActive;
 }
