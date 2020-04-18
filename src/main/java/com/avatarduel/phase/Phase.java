@@ -1,5 +1,6 @@
 package com.avatarduel.phase;
 
+import com.avatarduel.cards.*;
 
 public abstract class Phase {
 
@@ -16,4 +17,6 @@ public abstract class Phase {
 	public Boolean skillActive;
 
 	public Boolean destroyActive;
+
+	public SkillCard activeSkill;
 }

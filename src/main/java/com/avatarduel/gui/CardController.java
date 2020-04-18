@@ -76,6 +76,10 @@ public class CardController extends GridPane {
 		field[1].removeCharacter(c, controller, 1);
 		field[2].removeCharacter(c, controller, 2);
 	}
+
+	public Boolean characterNotEmpty(){
+		return (field[1].countCharacter() > 0 || field[2].countCharacter() > 0);
+	}
 	
 	@FXML
 	void viewCard(MouseEvent event) {

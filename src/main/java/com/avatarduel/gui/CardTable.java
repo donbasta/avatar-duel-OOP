@@ -22,10 +22,7 @@ public class CardTable extends HBox {
 		if(this.getChildren().contains(c)){
 			this.getChildren().remove(c);
 			this.addCardToField(controller, p);
-			System.out.println("ADA DISINI");
-		} else {
-			System.out.println("GAADA DISINI");
-		}
+		} 
 	}
 	 
 }

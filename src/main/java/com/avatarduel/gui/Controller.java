@@ -97,28 +97,39 @@ public class Controller {
 				this.state.getPhase().destroyActive = false;
 			}
 		} else {
-
-			if(c.getOwner() == this.state.getTurn() && !this.state.getPhase().canAttack) {
-				
-				System.out.println("LOL");
-				
-				if(type.equals("CharacterCard")) { 
-					Rectangle rect = (Rectangle) c.getChildren().get(0);
-					CharacterCard chcard = (CharacterCard) card;
-					//System.out.println("lol");
-					if(chcard.getPosition().equals("ATTACK")) {
-						//System.out.println("lol1");
-						rect.setHeight(69);
-						rect.setWidth(84);
-						chcard.setPosition("DEFENCE");
-					} else if(chcard.getPosition().equals("DEFENCE")) {
-						//System.out.println("lol2");
-						rect.setHeight(84);
-						rect.setWidth(69);
-						chcard.setPosition("ATTACK");
-					}
+			if(this.state.getPhase().skillActive){
+				if(type.equals("CharacterCard")){
+					CharacterCard cha = (CharacterCard) card;
+					cardController.removeCharacter(c);
+					cha.useSkill(this.state.getPhase().activeSkill);
+					cardController.addCardToField(1, cha);
+					this.state.getPhase().skillActive = false;
 				}
-				
+			} else {
+
+				if(c.getOwner() == this.state.getTurn() && !this.state.getPhase().canAttack) {
+					
+					System.out.println("LOL");
+					
+					if(type.equals("CharacterCard")) { 
+						Rectangle rect = (Rectangle) c.getChildren().get(0);
+						CharacterCard chcard = (CharacterCard) card;
+						//System.out.println("lol");
+						if(chcard.getPosition().equals("ATTACK")) {
+							//System.out.println("lol1");
+							rect.setHeight(69);
+							rect.setWidth(84);
+							chcard.setPosition("DEFENCE");
+						} else if(chcard.getPosition().equals("DEFENCE")) {
+							//System.out.println("lol2");
+							rect.setHeight(84);
+							rect.setWidth(69);
+							chcard.setPosition("ATTACK");
+						}
+					}
+					
+				}
+
 			}
 		}
     	
@@ -142,7 +153,7 @@ public class Controller {
 
 		Phase ph = this.state.getPhase();
 
-		if(c.getOwner() == this.state.getTurn() && ph.canUseCard && !ph.destroyActive){
+		if(c.getOwner() == this.state.getTurn() && ph.canUseCard && !ph.destroyActive && !ph.skillActive){
 
 			int currentTurn = this.state.getTurn();
 			
@@ -163,7 +174,6 @@ public class Controller {
 				}
 				
 			} else if(type.equals("LandCard")) { //if dia land, lgsg ubah powernya
-				System.out.println("DEBUG");
 				if(ph.getClass().getSimpleName().equals("MainPhase")){
 					MainPhase mph = (MainPhase) this.state.getPhase();
 					if(mph.getCanUseLandCard()) {
@@ -180,11 +190,19 @@ public class Controller {
 			} else if(type.equals("SkillCard")) {
 				SkillCard scd = (SkillCard) card;
 				if(scd.getType().equals("destroy")){
-					System.out.println("INI DESTROY");
 					if(player[currentTurn].getPower().getPower(scd.getElement()) >= scd.getPower()){
 						player[currentTurn].usePower(scd.getElement(), scd.getPower());
 						deckController.setPower(currentTurn, player[currentTurn].getPower());
 						this.state.getPhase().destroyActive = true;
+						cardController.removeCard(c, this.state.getTurn());
+					}
+				} else if(scd.getType().equals("aura")){
+					if(player[currentTurn].getPower().getPower(scd.getElement()) >= scd.getPower() && cardController.characterNotEmpty()){
+						System.out.println("AURA");
+						player[currentTurn].usePower(scd.getElement(), scd.getPower());
+						deckController.setPower(currentTurn, player[currentTurn].getPower());
+						this.state.getPhase().skillActive = true;
+						this.state.getPhase().activeSkill = (SkillCard) card;
 						cardController.removeCard(c, this.state.getTurn());
 					}
 				}
