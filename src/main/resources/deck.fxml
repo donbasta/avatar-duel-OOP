@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="player" alignment="CENTER" prefHeight="800.0" prefWidth="224.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.avatarduel.gui.DeckController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="398.0" prefWidth="224.0" spacing="15.0">
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Rectangle fx:id="deck1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="138.0" onMouseClicked="#drawCard" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+                  <Text fx:id="numCardDeck1" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+            <VBox fx:id="power1" alignment="CENTER" prefHeight="64.0" prefWidth="224.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="WATER: 0/0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="EARTH: 0/0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FIRE: 0/0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <Text fx:id="hpText1" strokeType="OUTSIDE" strokeWidth="0.0" text="HP: 80/80">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="hpBar1" prefWidth="200.0" progress="1.0" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <Text fx:id="currentTurnText" strokeType="OUTSIDE" strokeWidth="0.0" text="It's player 1 turn!">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <VBox alignment="CENTER" prefHeight="408.0" prefWidth="223.0" spacing="15.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <ProgressBar fx:id="hpBar2" prefWidth="200.0" progress="1.0" />
+                  <Text fx:id="hpText2" strokeType="OUTSIDE" strokeWidth="0.0" text="HP: 80/80">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox fx:id="power2" alignment="CENTER" prefHeight="62.0" prefWidth="224.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="WATER: 0/0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="EARTH: 0/0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FIRE: 0/0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <StackPane prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Rectangle fx:id="deck2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="138.0" onMouseClicked="#drawCard" stroke="BLACK" strokeType="INSIDE" width="102.0" />
+                  <Text fx:id="numCardDeck2" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>
