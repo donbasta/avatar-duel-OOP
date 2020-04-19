@@ -1,12 +1,7 @@
 package com.avatarduel.gui;
 
 import com.avatarduel.cards.Card;
-import com.avatarduel.cards.CharacterCard;
-import com.avatarduel.cards.SkillCard;
-import com.avatarduel.model.Element;
-
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;

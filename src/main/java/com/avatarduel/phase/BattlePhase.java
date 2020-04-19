@@ -3,7 +3,6 @@ package com.avatarduel.phase;
 
 import com.avatarduel.state.*;
 import com.avatarduel.cards.CharacterCard;
-import com.avatarduel.model.Element;
 import com.avatarduel.exceptions.*;
 
 public class BattlePhase extends Phase {

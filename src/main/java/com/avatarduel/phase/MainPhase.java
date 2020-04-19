@@ -1,8 +1,5 @@
 package com.avatarduel.phase;
 
-import com.avatarduel.state.*;
-import com.avatarduel.model.Element;
-
 public class MainPhase extends Phase {
 	
 	private boolean canUseLandCard;
@@ -47,18 +44,5 @@ public class MainPhase extends Phase {
     public void setLandCardUsed() {
     	this.canUseLandCard = false;
     }
-
-    /* void run(){
-        int fire = this.decks.countLand(Element.FIRE);
-        int water = this.decks.countLand(Element.WATER);
-        int air = this.decks.countLand(Element.AIR);
-        int earth = this.decks.countLand(Element.EARTH);
-        this.power = new Power(fire,water,air,earth);
-        try {
-			this.decks.drawCard();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-    }*/
 
 }

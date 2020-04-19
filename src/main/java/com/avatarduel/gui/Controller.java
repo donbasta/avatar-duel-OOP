@@ -3,21 +3,14 @@ package com.avatarduel.gui;
 import com.avatarduel.cards.Card;
 import com.avatarduel.cards.CharacterCard;
 import com.avatarduel.cards.SkillCard;
-import com.avatarduel.model.Element;
 import com.avatarduel.phase.*;
 import com.avatarduel.state.Player;
 import com.avatarduel.state.State;
 
 import javafx.fxml.FXML;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.scene.control.Button;
 
 public class Controller {
@@ -58,12 +51,8 @@ public class Controller {
     @FXML
     public void initialize() {
     	
-    	System.out.println("test cuy"); //debug
-    	Scene scene = mainPane.getScene();
-    	
     	deckController.setController(this);
     	cardController.setController(this);
-    	cardHoverController.setController(this);
     	cardHoverController.setImage("file:src/main/resources/com/avatarduel/card/image/land/Ba Sing Se.png");
     	
     }
@@ -74,8 +63,6 @@ public class Controller {
     	player[1] = pa;
     	player[2] = pb;
     	state = st;
-    	
-    	Card cd;
     	
     	for(int i=1; i<=2; i++) {
     		for(int j=1; j<=7; j++) {
@@ -347,7 +334,6 @@ public class Controller {
 	}
 
 	private void update(){
-		int turn = this.state.getTurn();
 		Phase ph = this.state.getPhase();
 		/* enable / disable phase button */
 		btnDraw.setDisable(!ph.drawBtn);

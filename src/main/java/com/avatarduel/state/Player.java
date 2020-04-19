@@ -1,7 +1,5 @@
 package com.avatarduel.state;
 
-import java.util.*;
-import com.avatarduel.cards.*;
 import com.avatarduel.model.Element;
 
 public class Player{

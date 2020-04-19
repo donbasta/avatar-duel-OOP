@@ -1,15 +1,10 @@
 package com.avatarduel.gui;
 
 
-import com.avatarduel.state.Player;
 import com.avatarduel.state.Power;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
