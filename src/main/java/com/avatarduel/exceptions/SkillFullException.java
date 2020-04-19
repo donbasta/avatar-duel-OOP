@@ -8,6 +8,7 @@ public class SkillFullException extends Exception{
 		this.message = "Slot kartu skill penuh";
 	}
 	
+	@Override
 	public String toString() {
 		return this.message;
 	}

@@ -7,7 +7,8 @@ public class AlreadyAttackedException  extends Exception {
     public AlreadyAttackedException() {
         this.message = "Kartu ini sudah digunakan untuk menyerang, tidak dapat menyerng dua kali.";
     }
-
+    
+    @Override
     public String toString() {
         return this.message;
     }

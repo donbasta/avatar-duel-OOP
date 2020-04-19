@@ -8,6 +8,7 @@ public class CharacterFullException extends Exception{
 		this.message = "Slot kartu karakter penuh";
 	}
 	
+	@Override
 	public String toString() {
 		return this.message;
 	}

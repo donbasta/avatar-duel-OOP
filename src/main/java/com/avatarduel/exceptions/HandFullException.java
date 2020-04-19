@@ -8,6 +8,7 @@ public class HandFullException extends Exception {
 		this.message = "Hand is full";
 	}
 	
+	@Override
 	public String toString() {
 		return this.message;
 	}

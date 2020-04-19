@@ -6,7 +6,8 @@ public class StrongerEnemyCardException extends Exception {
     public StrongerEnemyCardException() {
         this.message = "Tidak bisa menyerang kartu musuh yang lebih kuat atau sama.";
     }
-
+    
+    @Override
     public String toString() {
         return this.message;
     }
