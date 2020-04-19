@@ -13,7 +13,7 @@ import javafx.scene.layout.GridPane;
  *
  * @author 
  */
-public class CardController extends GridPane {
+public class CardController extends GridPane implements NotificationController {
 	
 	@FXML private CardTable player1;
 	

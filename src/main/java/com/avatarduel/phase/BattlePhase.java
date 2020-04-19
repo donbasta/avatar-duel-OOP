@@ -65,7 +65,6 @@ public class BattlePhase extends Phase {
                     if (this.activeAttackingCard.getAttack() > enemyCard.getAttack()) {
                     	this.activeAttackingCard.setHasAttacked();
                     	enemyRemoved = true;
-//                      opponent.removePlayerCardFromField(enemyCard);
                         opponent.setHealth(opponent.getHealth() - (this.activeAttackingCard.getAttack() - enemyCard.getAttack()));
                     }
                     // Jika nilai attack kartu kita lebih kecil daripada kartu musuh, maka dikeluarkan exception StrongerEnemyCardException
@@ -83,7 +82,6 @@ public class BattlePhase extends Phase {
                             opponent.setHealth(opponent.getHealth() - (this.activeAttackingCard.getAttack() - enemyCard.getDefense()));
                         }
                     	enemyRemoved = true;
-//                      opponent.removePlayerCardFromField(enemyCard);
                     }
                     // Jika nilai attack kartu kita lebih kecil daripada defense kartu musuh, maka dikeluarkan exception StrongerEnemyCardException
                     else {

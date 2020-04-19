@@ -19,7 +19,7 @@ import javafx.scene.text.Text;
  *
  * @author 
  */
-public class DeckController extends VBox {
+public class DeckController extends VBox implements NotificationController {
 	
     @FXML private Rectangle deck1;
 
