@@ -8,6 +8,7 @@ public class LandCardException extends Exception {
 		this.message = "Failed to put land card in field, already put";
 	}
 	
+	@Override
 	public String toString() {
 		return this.message;
 	}

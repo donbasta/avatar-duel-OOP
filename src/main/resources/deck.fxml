@@ -43,6 +43,11 @@
                         <Font size="18.0" />
                      </font>
                   </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ENERGY: 0/0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
@@ -92,6 +97,11 @@
                      </font>
                   </Text>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="AIR: 0/0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ENERGY: 0/0">
                      <font>
                         <Font size="18.0" />
                      </font>

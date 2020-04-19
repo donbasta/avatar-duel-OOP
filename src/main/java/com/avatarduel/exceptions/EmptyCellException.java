@@ -8,6 +8,7 @@ public class EmptyCellException extends Exception{
 		this.message = "Tidak ada kartu di sini";
 	}
 	
+	@Override
 	public String toString() {
 		return this.message;
 	}

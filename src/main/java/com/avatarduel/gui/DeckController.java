@@ -119,6 +119,8 @@ public class DeckController extends VBox implements NotificationController {
 				text.setText("FIRE: " + Integer.toString(power.getFire()) + "/" + Integer.toString(power.getMaxFire()));
 			} else if(i==3) {
 				text.setText("AIR: " + Integer.toString(power.getAir()) + "/" + Integer.toString(power.getMaxAir()));
+			} else if(i==3) {
+				text.setText("ENERGY: " + Integer.toString(power.getEnergy()) + "/" + Integer.toString(power.getMaxEnergy()));
 			}
 		}
 		

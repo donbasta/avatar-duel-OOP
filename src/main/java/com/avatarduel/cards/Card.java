@@ -2,12 +2,11 @@ package com.avatarduel.cards;
 
 import com.avatarduel.model.Element;
 
-public class Card {
+public abstract class Card {
     protected String name;
     protected String desc;
     protected Element element;
     protected String path;
-    
     
     public Card(String name, String desc, Element element, String path){
         this.name = name;
