@@ -108,7 +108,7 @@ public class DeckController extends VBox implements NotificationController {
 	
 	public void setPower(int p, Power power) {
 		
-		for(int i=0; i<4; i++) {
+		for(int i=0; i<5; i++) {
 			Node child = powerStat[p].getChildren().get(i);
 			Text text = (Text) child;
 			if(i==0) {
@@ -119,7 +119,7 @@ public class DeckController extends VBox implements NotificationController {
 				text.setText("FIRE: " + Integer.toString(power.getFire()) + "/" + Integer.toString(power.getMaxFire()));
 			} else if(i==3) {
 				text.setText("AIR: " + Integer.toString(power.getAir()) + "/" + Integer.toString(power.getMaxAir()));
-			} else if(i==3) {
+			} else if(i==4) {
 				text.setText("ENERGY: " + Integer.toString(power.getEnergy()) + "/" + Integer.toString(power.getMaxEnergy()));
 			}
 		}

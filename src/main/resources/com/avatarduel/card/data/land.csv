@@ -3,8 +3,8 @@ id;name;element;description;imagepath
 2;Western Air Temple;AIR;One of the two temples exclusively housing female airbenders.;src/main/resources/com/avatarduel/card/image/land/Western Air Temple.png
 3;Southern Air Temple;AIR;One of the two temples exclusively housing male airbenders. Childhood home of Avatar Aang.;src/main/resources/com/avatarduel/card/image/land/Southern Air Temple.png
 4;Northern Air Temple;AIR;One of the two temples exclusively housing male airbenders.;src/main/resources/com/avatarduel/card/image/land/Northern Air Temple.png
-5;Foggy Swamp;WATER;Place for immigrants of the Southern Water Tribe with an extensive array of fauna and flora.;src/main/resources/com/avatarduel/card/image/land/Foggy Swamp.png
-6;Spirit Oasis;WATER;A verdant and lush garden located in a cave in the Northern Water Tribe's capital city at the North Pole.;src/main/resources/com/avatarduel/card/image/land/Spirit Oasis.png
+5;Foggy Swamp;ENERGY;Place for immigrants of the Southern Water Tribe with an extensive array of fauna and flora.;src/main/resources/com/avatarduel/card/image/land/Foggy Swamp.png
+6;Spirit Oasis;ENERGY;A verdant and lush garden located in a cave in the Northern Water Tribe's capital city at the North Pole.;src/main/resources/com/avatarduel/card/image/land/Spirit Oasis.png
 7;Northern Water Tribe;WATER;The largest division of its nation and is located on an island situated near the North Pole.;src/main/resources/com/avatarduel/card/image/land/Northern Water Tribe.png
 8;Southern Water Tribe;WATER;Minor division of the Water Tribe. Its people are scattered in tiny villages and settlements located on an island by the South Pole.;src/main/resources/com/avatarduel/card/image/land/Southern Water Tribe.png
 9;Si Wong Desert;EARTH;The largest desert in the world.;src/main/resources/com/avatarduel/card/image/land/Si Wong Desert.png
@@ -19,8 +19,8 @@ id;name;element;description;imagepath
 18;Western Air Temple;AIR;One of the two temples exclusively housing female airbenders.;src/main/resources/com/avatarduel/card/image/land/Western Air Temple.png
 19;Southern Air Temple;AIR;One of the two temples exclusively housing male airbenders. Childhood home of Avatar Aang.;src/main/resources/com/avatarduel/card/image/land/Southern Air Temple.png
 20;Northern Air Temple;AIR;One of the two temples exclusively housing male airbenders.;src/main/resources/com/avatarduel/card/image/land/Northern Air Temple.png
-21;Foggy Swamp;WATER;Place for immigrants of the Southern Water Tribe with an extensive array of fauna and flora.;src/main/resources/com/avatarduel/card/image/land/Foggy Swamp.png
-22;Spirit Oasis;WATER;A verdant and lush garden located in a cave in the Northern Water Tribe's capital city at the North Pole.;src/main/resources/com/avatarduel/card/image/land/Spirit Oasis.png
+21;Foggy Swamp;ENERGY;Place for immigrants of the Southern Water Tribe with an extensive array of fauna and flora.;src/main/resources/com/avatarduel/card/image/land/Foggy Swamp.png
+22;Spirit Oasis;ENERGY;A verdant and lush garden located in a cave in the Northern Water Tribe's capital city at the North Pole.;src/main/resources/com/avatarduel/card/image/land/Spirit Oasis.png
 23;Northern Water Tribe;WATER;The largest division of its nation and is located on an island situated near the North Pole.;src/main/resources/com/avatarduel/card/image/land/Northern Water Tribe.png
 24;Southern Water Tribe;WATER;Minor division of the Water Tribe. Its people are scattered in tiny villages and settlements located on an island by the South Pole.;src/main/resources/com/avatarduel/card/image/land/Southern Water Tribe.png
 25;Si Wong Desert;EARTH;The largest desert in the world.;src/main/resources/com/avatarduel/card/image/land/Si Wong Desert.png

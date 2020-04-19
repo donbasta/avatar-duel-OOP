@@ -22,8 +22,8 @@ public class Power{
     private int maxEnergy;
 
     public Power() {
-    	this.fire = this.water = this.air = this.earth = 0 = this.energy = 0;
-    	this.maxFire = this.maxWater = this.maxAir = this.maxEarth = 0 = this.maxEnergy = 0;
+    	this.fire = this.water = this.air = this.earth = this.energy = 0;
+    	this.maxFire = this.maxWater = this.maxAir = this.maxEarth = this.maxEnergy = 0;
     }
 
     public int getPower(Element element){
@@ -65,7 +65,7 @@ public class Power{
             this.maxEarth++;
         }
         else if(element == Element.ENERGY){
-            this.energy;
+            this.energy++;
             this.maxEnergy++;
         } else{
             System.out.println("errorrr input");
