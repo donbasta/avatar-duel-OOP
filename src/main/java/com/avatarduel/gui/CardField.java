@@ -77,5 +77,9 @@ public class CardField {
 		}
 	}
 	
+	public CardTable getCharacter() {
+		return this.character;
+	}
+	
 	
 }

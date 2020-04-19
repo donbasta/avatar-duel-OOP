@@ -31,6 +31,13 @@ public class CharacterCard extends Card {
         this.attack += x.getAttackIncrease();
         this.defense += x.getDefenseIncrease();
     }
+    
+    public void dropSkill(CardViewer a){
+        equipped.remove(a);
+        SkillCard x = ((SkillCard) a.getCard());
+        this.attack -= x.getAttackIncrease();
+        this.defense -= x.getDefenseIncrease();
+    }
 
     public ArrayList<CardViewer> getEquippedSkill(){
         return this.equipped;
@@ -59,6 +66,10 @@ public class CharacterCard extends Card {
     public void powerUp(CardViewer a){
         equipped.add(a);
         this.powerup = true;
+    }
+    
+    public void setPowerUp(boolean powerup) {
+    	this.powerup = powerup;
     }
 
     public Boolean isPowerup(){

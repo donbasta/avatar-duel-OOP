@@ -149,4 +149,8 @@ public class CardController extends GridPane {
 		event.consume();
 	}
 	
+	public CardField getField(int player) {
+		return this.field[player];
+	}
+	
 }

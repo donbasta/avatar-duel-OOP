@@ -7,7 +7,6 @@ import com.avatarduel.phase.*;
 import com.avatarduel.state.Player;
 import com.avatarduel.state.State;
 
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.input.MouseEvent;
@@ -15,9 +14,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Modality;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -111,12 +110,57 @@ public class Controller {
 			} else if(currentClicked.getClass().getSimpleName().equals("CardFieldViewer")) {
 				//buang kartunya, kurangin yg ada di deck jangan lupa
 				Card card = currentClicked.card;
-				if(card.getClass().getSimpleName().equals("CharacterCard")) {
-					cardController.removeCharacter(currentClicked);
-				} else if(card.getClass().getSimpleName().equals("SkillCard")) {
-					cardController.removeSkill(currentClicked);
+				if(card.getClass().getSimpleName().equals("SkillCard")) {
+					SkillCard scd = (SkillCard) card;
+					
+					if(scd.getType().contentEquals("aura")) {	
+						
+						CardFieldViewer cfviewer = null;
+						
+						for(int i=1; i<=2; i++) {
+							CardTable findCard = cardController.getField(i).getCharacter();
+							for(Node child : findCard.getChildren()){
+								CardFieldViewer cv = (CardFieldViewer) child;
+								CharacterCard chcard = (CharacterCard) cv.getCard();
+								if(chcard != null && chcard.getEquippedSkill().contains(currentClicked)) {
+									//ubah textnya
+									cfviewer = cv;
+								}
+							}
+						}
+						
+						if(cfviewer != null) {
+							cardController.removeCharacter(cfviewer);
+							((CharacterCard) cfviewer.getCard()).dropSkill(currentClicked);
+							cardController.addCardToField(cfviewer.getOwner(), ((CharacterCard) cfviewer.getCard()));	
+							cardController.removeSkill(currentClicked);
+							player[currentTurn].getDecks().removeCardFromField(card);
+						}
+
+						
+					} else if(scd.getType().contentEquals("powerup")) {
+						
+						for(int i=1; i<=2; i++) {
+							for(Card chcard : player[i].getDecks().getCharacterCard()) {
+								CharacterCard charcard = (CharacterCard) chcard;
+								if(charcard.getEquippedSkill().contains(currentClicked)) {
+									charcard.getEquippedSkill().remove(currentClicked);
+									charcard.setPowerUp(false);
+									for(CardViewer equipcard : charcard.getEquippedSkill()) {
+										if(((SkillCard) equipcard.getCard()).getType().equals("powerup")) {
+											charcard.setPowerUp(true);
+										}
+									}
+								}
+							}
+						}
+						
+						cardController.removeSkill(currentClicked);
+						player[currentTurn].getDecks().removeCardFromField(card);
+					}
+					
 				}
-				player[currentTurn].getDecks().removeCardFromField(currentClicked.card);
+				
 			}
 			
 		}
@@ -427,23 +471,23 @@ public class Controller {
 	}
 	
 	public void endGame(int player) {
-		Stage popupwindow=new Stage();
-		popupwindow.initModality(Modality.APPLICATION_MODAL);
-		popupwindow.setTitle("Game Over");
+		Stage gameOverPopup=new Stage();
+		gameOverPopup.initModality(Modality.APPLICATION_MODAL);
+		gameOverPopup.setTitle("Game Over");
 		Label label1= new Label("Player "+Integer.toString(3-player)+" win!");
 		Button button1= new Button("Close to Exit the Game");
 		button1.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
 			Window stage = mainPane.getScene().getWindow();
 			this.gameOver = true;
-			popupwindow.close();
+			gameOverPopup.close();
 			((Stage) stage).close();
 		});
 		VBox layout= new VBox(10);
 		layout.getChildren().addAll(label1, button1);
 		layout.setAlignment(Pos.CENTER);
 		Scene scene1= new Scene(layout, 300, 250);
-		popupwindow.setScene(scene1);
-		popupwindow.showAndWait();
+		gameOverPopup.setScene(scene1);
+		gameOverPopup.showAndWait();
 	}
 
 }
