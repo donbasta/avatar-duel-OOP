@@ -1,12 +1,18 @@
 package com.avatarduel.gui;
 
 import com.avatarduel.cards.Card;
+
 import com.avatarduel.cards.LandCard;
 import com.avatarduel.model.Element;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
+/**
+ * CardController is FXML controller for the cards.
+ *
+ * @author 
+ */
 public class CardController extends GridPane {
 	
 	@FXML private CardTable player1;
@@ -33,6 +39,9 @@ public class CardController extends GridPane {
     	this.controller = controller;
     }
 	
+    /**
+     * FXML Controller init method
+     */
 	@FXML
 	void initialize() {
 		hand = new CardTable[3];
@@ -52,32 +61,63 @@ public class CardController extends GridPane {
 		field[2] = new CardField(fieldChar2, fieldSkill2);
 	}
 	
+    /**
+     * Adds card to field
+     * @param p player index
+     * @param c card to be added
+     */
 	public void addCardToField(int p, Card c) {
 		field[p].addCard(c, controller, p);
 	}
-
+	
+    /**
+     * Adds SkillCard to field
+     * @param p player index
+     * @param c card to be added
+     */
 	public CardFieldViewer addSkillToField(int p, Card c){
 		return field[p].addSkillCard(c, controller, p);
 	}
 	
+    /**
+     * Adds card to hand
+     * @param p player index
+     * @param c card to be added
+     */
 	public void addCardToHand(int p, Card c) {
 		hand[p].addCardToHand(c, controller, p);
 	}
-
+	
+    /**
+     * Removes card from hand
+     * @param p player index
+     * @param c card to be added
+     */
 	public void removeCard(CardViewer c, int p){
 		hand[p].removeCard(c);
 	}
-
+	
+    /**
+     * Removes a SkillCard from a CardViewer
+     * @param c CardViewer containing SkillCard to be removed
+     */
 	public void removeSkill(CardViewer c){
 		int owner = c.getOwner();
 		field[owner].removeSkill(c, controller, owner);
 	}
-
+	
+    /**
+     * Removes a CharacterCard from a CardViewer
+     * @param c CardViewer containing CharacterCard to be removed
+     */
 	public void removeCharacter(CardViewer c){
 		int owner = c.getOwner();
 		field[owner].removeCharacter(c, controller, owner);
 	}
-
+	
+    /**
+     * Checks if there is a CharacterCard in the field
+     */
 	public Boolean characterNotEmpty(){
 		return (field[1].countCharacter() > 0 || field[2].countCharacter() > 0);
 	}

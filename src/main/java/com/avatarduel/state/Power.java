@@ -2,6 +2,13 @@ package com.avatarduel.state;
 
 import com.avatarduel.model.Element;
 
+/**
+ * Power describes the current
+ * power of all the element a 
+ * player has.
+ *
+ * @author 
+ */
 public class Power{
     private int fire;
     private int water;

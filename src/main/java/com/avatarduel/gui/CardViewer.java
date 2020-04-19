@@ -10,6 +10,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
+/**
+ * CardViewer is FXML custom component
+ * which inherits StackPane, functions
+ * as the container of the card
+ *
+ * @author 
+ */
 public class CardViewer extends StackPane {
 
 	protected boolean isAda;
@@ -73,6 +80,7 @@ public class CardViewer extends StackPane {
 	}
 	
     String getText(Card card) {
+    	
     	String description = "";
 		if(card.getClass().getSimpleName().equals("LandCard")) {
 			description = "LAND";
@@ -99,9 +107,11 @@ public class CardViewer extends StackPane {
 			}
 		}
 		return description;
+		
     }
     
 	Color getColor(Card cd) {
+		
 		Color warna = Color.TRANSPARENT;
 		if(cd.getElement() == Element.WATER) {
 			warna = Color.LIGHTBLUE;
@@ -113,6 +123,7 @@ public class CardViewer extends StackPane {
 			warna = Color.LIGHTYELLOW;
 		}
 		return warna;
+		
 	}
 	
 }

@@ -25,6 +25,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Main Program
+ *
+ * @author 
+ */
 public class Main extends Application {
   private static final String LAND_CSV_FILE_PATH = "../card/data/land.csv";
   private static final String CHARACTER_CSV_FILE_PATH = "../card/data/character.csv";

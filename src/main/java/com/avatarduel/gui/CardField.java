@@ -2,8 +2,17 @@ package com.avatarduel.gui;
 
 import com.avatarduel.cards.Card;
 
+
+
 import javafx.scene.Node;
 
+/**
+ * CardField is a custom class containing
+ * all cards information in the field including
+ * SkillCard and CharacterCard.
+ *
+ * @author 
+ */
 public class CardField {
 	
 	private CardTable character;

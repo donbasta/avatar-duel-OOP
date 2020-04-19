@@ -12,52 +12,41 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
-
+/**
+ * FXML controller for the custom
+ * component deck.fxml, which shows
+ * information of the players
+ *
+ * @author 
+ */
 public class DeckController extends VBox {
 	
-    @FXML
-    private Rectangle deck1;
+    @FXML private Rectangle deck1;
 
-    @FXML
-    private Rectangle deck2;
+    @FXML private Rectangle deck2;
     
-    @FXML
-    private Text hpText1;
+    @FXML private Text hpText1;
     
-    @FXML
-    private Text hpText2;
+    @FXML private Text hpText2;
     
-    @FXML
-    private ProgressBar hpBar1;
+    @FXML private ProgressBar hpBar1;
     
-    @FXML
-    private ProgressBar hpBar2;
+    @FXML private ProgressBar hpBar2;
     
-    @FXML
-    private Text currentTurnText;
+    @FXML private Text currentTurnText;
     
-    @FXML
-    private Text numCardDeck1;
+    @FXML private Text numCardDeck1;
 
-    @FXML
-    private Text numCardDeck2;
+    @FXML private Text numCardDeck2;
     
-    @FXML
-    private VBox power1;
+    @FXML private VBox power1;
     
-    @FXML
-    private VBox power2;
+    @FXML private VBox power2;
     
     private ProgressBar[] hpBar;
     private Text[] numCardDeck, hpText;
     private VBox[] powerStat;
-//    private DoubleProperty[] healthUpdater;
-    
     private Controller controller;
-    
-    public void setController(Controller controller) {
-    	this.controller = controller;
-    }
 	
     @FXML
 	void initialize() {
@@ -77,14 +66,6 @@ public class DeckController extends VBox {
 		hpBar[2] = hpBar2;
 		hpBar[1].setStyle("-fx-accent: red;");
 		hpBar[2].setStyle("-fx-accent: blue;");
-		
-//		healthUpdater = new DoubleProperty[3];
-//		healthUpdater[1] = new SimpleDoubleProperty(.0);
-//		healthUpdater[2] = new SimpleDoubleProperty(.0);
-		
-//		for(int i=1; i<=2; i++) {
-//			playerHealth[i].progressProperty().bind(healthUpdater[i]);
-//		}
 
 		powerStat = new VBox[3];
 		powerStat[1] = power1;
@@ -104,6 +85,10 @@ public class DeckController extends VBox {
 		controller.handleDrawCard(player);
 	}
 	
+    public void setController(Controller controller) {
+    	this.controller = controller;
+    }
+	
 	public void setNumCardDeck(int player, int numRemainingCard) {
 		numCardDeck[player].setText(Integer.toString(numRemainingCard));
 	}
@@ -114,8 +99,6 @@ public class DeckController extends VBox {
 	
 	public void setProgressBarHp(int player, int curHp) {
 		System.out.println("lololol");
-//		healthUpdater[player].set(((double) curHp)/80.00);
-//		playerHealth[player].progressProperty().bind(healthUpdater[player]);
 		hpBar[player].setProgress(((double) curHp)/80.00);
 	}
 	

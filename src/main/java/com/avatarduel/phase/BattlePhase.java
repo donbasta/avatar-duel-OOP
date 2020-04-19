@@ -1,6 +1,11 @@
 package com.avatarduel.phase;
 
-
+/**
+ * BattlePhase implements the battle phase 
+ * of the game
+ *
+ * @author 
+ */
 import com.avatarduel.state.*;
 import com.avatarduel.cards.CharacterCard;
 import com.avatarduel.exceptions.*;

@@ -2,6 +2,14 @@ package com.avatarduel.state;
 
 import com.avatarduel.model.Element;
 
+
+
+/**
+ * Player gives informations needed
+ * for each player at the game
+ *
+ * @author 
+ */
 public class Player{
     private int health;
     private Decks cards;

@@ -5,6 +5,14 @@ import java.util.*;
 import com.avatarduel.model.Element;
 import com.avatarduel.exceptions.*;
 
+/**
+ * Decks keeps track of all
+ * the cards a player currently 
+ * has, in the deck, hand, and 
+ * field
+ * 
+ * @author 
+ */
 public class Decks{
     private List<Card> hand;
     private List<Card> skillCard;

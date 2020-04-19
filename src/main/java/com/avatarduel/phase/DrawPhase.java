@@ -1,15 +1,14 @@
 package com.avatarduel.phase;
 
-
-import com.avatarduel.state.*;
-
+/**
+ * DrawPhase implements the draw phase 
+ * of the game
+ *
+ * @author 
+ */
 public class DrawPhase extends Phase {
-    private Decks decks;
-    private Power power;
 
     public DrawPhase(){
-        //this.decks = deck;
-
 
         /* reset power atau enggak */
         resetPower = true;

@@ -9,6 +9,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
+/**
+ * FXML Controller of cardhover.fxml 
+ *
+ * @author 
+ */
 public class CardHoverController extends StackPane {
 	
 	@FXML

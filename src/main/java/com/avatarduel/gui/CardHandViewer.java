@@ -5,6 +5,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
+
+/**
+ * CardHandViewer is a card viewer for cards currently
+ * in hand
+ *
+ * @author 
+ */
 public class CardHandViewer extends CardViewer{
 	
 	private boolean isUp;

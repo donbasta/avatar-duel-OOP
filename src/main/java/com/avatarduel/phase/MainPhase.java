@@ -1,5 +1,11 @@
 package com.avatarduel.phase;
 
+/**
+ * Mainphase implements the main phase 
+ * of the game
+ *
+ * @author 
+ */
 public class MainPhase extends Phase {
 	
 	private boolean canUseLandCard;

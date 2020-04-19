@@ -4,6 +4,13 @@ import com.avatarduel.cards.*;
 
 import javafx.scene.layout.HBox;
 
+/**
+ * CardTable is a custom FXML
+ * component which contains a row
+ * of cards
+ *
+ * @author 
+ */
 public class CardTable extends HBox {
 	
 	public void addCardToHand(Card card, Controller controller, int p) {

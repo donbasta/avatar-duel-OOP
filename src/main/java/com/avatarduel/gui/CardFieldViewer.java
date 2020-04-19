@@ -1,11 +1,16 @@
 package com.avatarduel.gui;
 
-import com.avatarduel.cards.Card;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
+/**
+ * CardFieldViewer is a card viewer for cards currently
+ * in field
+ *
+ * @author 
+ */
 public class CardFieldViewer extends CardViewer {
 	
 	public CardFieldViewer(Controller controller, int p) {
@@ -53,17 +58,6 @@ public class CardFieldViewer extends CardViewer {
 		
 		text.setText("???");
 		
-	}
-	
-	public void setAda(boolean b) {
-		this.isAda = b;
-	}
-	
-	public void setCard(Card card) {
-		this.isAda = true;
-		this.card = card;
-		((Rectangle) this.getChildren().get(0)).setFill(getColor(card));
-		((Text) this.getChildren().get(1)).setText(this.getText(card));
 	}
 
 }
