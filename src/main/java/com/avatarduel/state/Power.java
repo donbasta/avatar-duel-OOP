@@ -14,14 +14,16 @@ public class Power{
     private int water;
     private int air;
     private int earth;
+    private int energy;
     private int maxFire;
     private int maxWater;
     private int maxAir;
     private int maxEarth;
-    
+    private int maxEnergy;
+
     public Power() {
-    	this.fire = this.water = this.air = this.earth = 0;
-    	this.maxFire = this.maxWater = this.maxAir = this.maxEarth = 0;
+    	this.fire = this.water = this.air = this.earth = 0 = this.energy = 0;
+    	this.maxFire = this.maxWater = this.maxAir = this.maxEarth = 0 = this.maxEnergy = 0;
     }
 
     public int getPower(Element element){
@@ -36,8 +38,10 @@ public class Power{
         }
         else if(element == Element.EARTH){
             return this.earth;
-        }
-        else{
+        } 
+        else if(element == Element.ENERGY){
+            return this.energy;
+        } else{
             System.out.println("errorrr input");
             return 0;
         }
@@ -60,7 +64,10 @@ public class Power{
             this.earth++;
             this.maxEarth++;
         }
-        else{
+        else if(element == Element.ENERGY){
+            this.energy;
+            this.maxEnergy++;
+        } else{
             System.out.println("errorrr input");
         }
     }
@@ -78,7 +85,9 @@ public class Power{
 	      else if(element == Element.EARTH){
 	          this.earth -= amount;
 	      }
-	      else{
+          else if(element == Element.ENERGY){
+	          this.energy -= amount;
+	      } else{
 	          System.out.println("errorrr input");
 	      }
     }
@@ -88,6 +97,7 @@ public class Power{
         this.water = this.maxWater;
         this.air = this.maxAir;
         this.earth = this.maxEarth;
+        this.energy = this.maxEnergy;
     }
     
     public int getFire() {
@@ -120,6 +130,14 @@ public class Power{
     
     public int getMaxAir() {
     	return this.maxAir;
+    }
+
+    public int getEnergy(){
+        return this.energy;
+    }
+
+    public int getMaxEnergy(){
+        return this.maxEnergy;
     }
     
 }
