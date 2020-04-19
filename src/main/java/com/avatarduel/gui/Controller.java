@@ -285,6 +285,7 @@ public class Controller {
 								player[skill.getOwner()].getDecks().removeCardFromField(skill.getCard());
 							}
         					cardController.removeCharacter(c);
+							player[opponent].getDecks().removeCardFromField(c.getCard());
         				}
         				deckController.setHpText(opponent, player[opponent].getHealth());
         				deckController.setProgressBarHp(opponent, player[opponent].getHealth());
@@ -322,6 +323,7 @@ public class Controller {
 				}
 				//ancurin kartu di field
 				cardController.removeCharacter(c);
+				player[c.getOwner()].getDecks().removeCardFromField(c.getCard());
 				player[this.state.getTurn()].getDecks().removeCardFromField(c.getCard());
 				this.state.getPhase().destroyActive = false;
 			}
