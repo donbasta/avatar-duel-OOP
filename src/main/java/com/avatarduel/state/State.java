@@ -35,5 +35,4 @@ public class State {
     public int getTurn(){
         return this.turn;
     }
-
 }

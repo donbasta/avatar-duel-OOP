@@ -7,11 +7,20 @@ import com.avatarduel.phase.*;
 import com.avatarduel.state.Player;
 import com.avatarduel.state.State;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
+import javafx.stage.Popup;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 
 /**
  * FXML main controller
@@ -42,6 +51,7 @@ public class Controller {
     
     protected Player[] player;
     public State state;
+    public boolean gameOver;
     
     @FXML
     public void initialize() {
@@ -76,7 +86,14 @@ public class Controller {
 		this.state.setPhase(a);
 		this.update();
 		deckController.setCurrentTurn(this.state.getTurn());
+		
+		if(this.player[this.state.getTurn()].getDecks().getDeck().isEmpty()) {
+			// KALAH
+			this.endGame(this.state.getTurn());
+		}
+		
 		this.switchHide();
+		
 	}
 	
 	@FXML
@@ -117,6 +134,10 @@ public class Controller {
 					((BattlePhase) ph).attackDirectly(player[opponent]);
 					deckController.setHpText(opponent, player[opponent].getHealth());
 					deckController.setProgressBarHp(opponent, player[opponent].getHealth());
+					if(player[opponent].getHealth() <= 0) {
+    					// KALAH
+						this.endGame(opponent);
+    				}
 				} catch (Exception e) {
 					System.out.println(e.toString());
 				}
@@ -295,6 +316,10 @@ public class Controller {
         				}
         				deckController.setHpText(opponent, player[opponent].getHealth());
         				deckController.setProgressBarHp(opponent, player[opponent].getHealth());
+        				if(player[opponent].getHealth() <= 0) {
+        					// KALAH
+        					this.endGame(opponent);
+        				}
     				}
     			} catch (Exception e) {
     				System.out.println(e.getMessage());
@@ -400,5 +425,25 @@ public class Controller {
 	public void updateView(Card card){
 		cardHoverController.updateView(card);
 	}
-   
+	
+	public void endGame(int player) {
+		Stage popupwindow=new Stage();
+		popupwindow.initModality(Modality.APPLICATION_MODAL);
+		popupwindow.setTitle("Game Over");
+		Label label1= new Label("Player "+Integer.toString(3-player)+" win!");
+		Button button1= new Button("Close to Exit the Game");
+		button1.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+			Window stage = mainPane.getScene().getWindow();
+			this.gameOver = true;
+			popupwindow.close();
+			((Stage) stage).close();
+		});
+		VBox layout= new VBox(10);
+		layout.getChildren().addAll(label1, button1);
+		layout.setAlignment(Pos.CENTER);
+		Scene scene1= new Scene(layout, 300, 250);
+		popupwindow.setScene(scene1);
+		popupwindow.showAndWait();
+	}
+
 }

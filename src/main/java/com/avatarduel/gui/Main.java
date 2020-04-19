@@ -38,6 +38,8 @@ public class Main extends Application {
   private ArrayList<Card> cardData1, cardData2;
   private Player hojun, qila;
   private State state;
+  public static Scene mainScene;
+  private Controller controller;
 
   public void loadCards() throws IOException, URISyntaxException {
 
@@ -105,7 +107,7 @@ public class Main extends Application {
     Parent root = loader.load();
     
     //set initial variables
-	Controller controller = loader.<Controller>getController();
+	controller = loader.<Controller>getController();
 	controller.setPlay(qila, hojun, state);
 
     // Setup new scene
@@ -114,9 +116,10 @@ public class Main extends Application {
     // Set stage to the scene
     stage.setTitle("Avatar the legend of jun");
     stage.setScene(scene);
-    stage.show();    
+    stage.show();  
 
   }
+
 
   public static void main(String[] args) {
     launch();
