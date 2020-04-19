@@ -121,6 +121,8 @@ public class CardViewer extends StackPane {
 			warna = Color.LIGHTGREEN;
 		} else if(cd.getElement() == Element.AIR) {
 			warna = Color.LIGHTYELLOW;
+		} else if(cd.getElement() == Element.ENERGY) {
+			warna = Color.CADETBLUE;
 		}
 		return warna;
 		
