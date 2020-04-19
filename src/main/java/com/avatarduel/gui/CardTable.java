@@ -4,6 +4,8 @@ import com.avatarduel.cards.*;
 
 import javafx.scene.layout.HBox;
 
+import javafx.scene.Node;
+
 /**
  * CardTable is a custom FXML
  * component which contains a row
@@ -30,6 +32,13 @@ public class CardTable extends HBox {
 			this.getChildren().remove(c);
 			this.addCardToField(controller, p);
 		} 
+	}
+
+	public void hide(){
+		for(Node child : this.getChildren()){
+			CardHandViewer a = (CardHandViewer) child;
+			a.change();
+		}
 	}
 	 
 }

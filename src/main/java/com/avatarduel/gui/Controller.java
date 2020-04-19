@@ -41,7 +41,7 @@ public class Controller {
 	@FXML private Button btnDirectAttack;
     
     protected Player[] player;
-    protected State state;
+    public State state;
     
     @FXML
     public void initialize() {
@@ -74,7 +74,7 @@ public class Controller {
 		this.state.setPhase(a);
 		this.update();
 		deckController.setCurrentTurn(this.state.getTurn());
-	
+		this.switchHide();
 	}
 	
 	@FXML
@@ -153,6 +153,8 @@ public class Controller {
 				cardController.fieldSkill[j].addCardToField(this, j);
 			}
 		}
+
+		this.hideOpponentCard();
 		
 		for(int i=1; i<=2; i++) {
 			deckController.setNumCardDeck(i, player[i].getDecks().getDeck().size());
@@ -160,6 +162,14 @@ public class Controller {
     	
 		this.update();
     }
+
+	public void hideOpponentCard(){
+		cardController.hide(this.state.getTurn());
+	}
+
+	public void switchHide(){
+		cardController.switchHide();
+	}
     
     public void handleDrawCard(int p) {
 		if(this.state.getTurn() == p && this.state.getPhase().canDraw){

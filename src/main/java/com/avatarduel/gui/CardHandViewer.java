@@ -4,7 +4,7 @@ import com.avatarduel.cards.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-
+import javafx.scene.paint.Color;
 
 /**
  * CardHandViewer is a card viewer for cards currently
@@ -48,12 +48,29 @@ public class CardHandViewer extends CardViewer{
 			}
 		});
 		rect.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
-	        controller.updateView(this.card);
+			if(this.getOwner() == controller.state.getTurn()){
+	        	controller.updateView(this.card);
+			}
 	    });
 		rect.setFill(getColor(card));
 		
 		text.setText(this.getText(card));
 	
+	}
+
+	public void change(){
+
+		Rectangle rect = (Rectangle) this.getChildren().get(0);
+		Text text = (Text) this.getChildren().get(1);
+
+		
+		if(text.getText() == ""){
+			rect.setFill(getColor(this.getCard()));
+			text.setText(this.getText(this.getCard()));
+		} else {
+			rect.setFill(Color.TRANSPARENT);
+			text.setText("");
+		}
 	}
 	
 	public boolean getUp() {

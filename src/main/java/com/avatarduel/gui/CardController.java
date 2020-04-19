@@ -87,6 +87,19 @@ public class CardController extends GridPane {
 	public void addCardToHand(int p, Card c) {
 		hand[p].addCardToHand(c, controller, p);
 	}
+
+	public void hide(int p){
+		if(p == 1){
+			hand[2].hide();
+		} else {
+			hand[1].hide();
+		}
+	}
+
+	public void switchHide(){
+		hand[1].hide();
+		hand[2].hide();
+	}
 	
     /**
      * Removes card from hand
