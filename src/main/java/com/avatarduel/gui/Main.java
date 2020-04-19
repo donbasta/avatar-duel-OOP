@@ -36,6 +36,12 @@ public class Main extends Application {
   private static final String SKILL_CSV_FILE_PATH = "../card/data/skill.csv";
 
   private ArrayList<Card> cardData1, cardData2;
+  private ArrayList<Card> landCardData1; 
+  private ArrayList<Card> landCardData2;
+  private ArrayList<Card> skillCardData1; 
+  private ArrayList<Card> skillCardData2; 
+  private ArrayList<Card> characterCardData1; 
+  private ArrayList<Card> characterCardData2; 
   private Player hojun, qila;
   private State state;
   public static Scene mainScene;
@@ -58,22 +64,26 @@ public class Main extends Application {
     skillReader.setSkipHeader(true);
     List<String[]> skillRows = skillReader.read();
     
-    cardData1 = new ArrayList<Card>();
-    cardData2 = new ArrayList<Card>();
+    landCardData1 = new ArrayList<Card>();
+    landCardData2 = new ArrayList<Card>();
+    skillCardData1 = new ArrayList<Card>();
+    skillCardData2 = new ArrayList<Card>();
+    characterCardData1 = new ArrayList<Card>();
+    characterCardData2 = new ArrayList<Card>();
 
     for(String[] row : landRows) {
-      cardData1.add(new LandCard(row[1], row[3], Element.valueOf(row[2]), row[4]));
-      cardData2.add(new LandCard(row[1], row[3], Element.valueOf(row[2]), row[4]));
+    	landCardData1.add(new LandCard(row[1], row[3], Element.valueOf(row[2]), row[4]));
+    	landCardData2.add(new LandCard(row[1], row[3], Element.valueOf(row[2]), row[4]));
     }
 
     for(String[] row : characterRows){
-      cardData1.add(new CharacterCard(row[1], row[3], Element.valueOf(row[2]), Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]), row[4]));
-      cardData2.add(new CharacterCard(row[1], row[3], Element.valueOf(row[2]), Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]), row[4]));
+    	characterCardData1.add(new CharacterCard(row[1], row[3], Element.valueOf(row[2]), Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]), row[4]));
+    	characterCardData2.add(new CharacterCard(row[1], row[3], Element.valueOf(row[2]), Integer.parseInt(row[5]), Integer.parseInt(row[6]), Integer.parseInt(row[7]), row[4]));
     }
 
     for(String[] row : skillRows){
-      cardData1.add(new SkillCard(row[1], row[3], Element.valueOf(row[2]), row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]), row[4]));
-      cardData2.add(new SkillCard(row[1], row[3], Element.valueOf(row[2]), row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]), row[4]));
+    	skillCardData1.add(new SkillCard(row[1], row[3], Element.valueOf(row[2]), row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]), row[4]));
+    	skillCardData2.add(new SkillCard(row[1], row[3], Element.valueOf(row[2]), row[5], Integer.parseInt(row[6]), Integer.parseInt(row[7]), Integer.parseInt(row[8]), row[4]));
     }
   }
 
@@ -89,15 +99,34 @@ public class Main extends Application {
 	  
 	qila = new Player();
     hojun = new Player();
-      
-    Collections.shuffle(cardData1);
-    for(Card card : cardData1) {
-    	qila.getDecks().addToDeck(card);
+     
+    Collections.shuffle(landCardData1);
+    for(int i=0; i<25; i++) {
+    	qila.getDecks().addToDeck(landCardData1.get(i));
     }
-    Collections.shuffle(cardData2);
-    for(Card card : cardData2) {
-    	hojun.getDecks().addToDeck(card);
+    Collections.shuffle(skillCardData1);
+    for(int i=0; i<20; i++) {
+    	qila.getDecks().addToDeck(skillCardData1.get(i));
     }
+    Collections.shuffle(characterCardData1);
+    for(int i=0; i<30; i++) {
+    	qila.getDecks().addToDeck(characterCardData1.get(i));
+    }
+    Collections.shuffle(qila.getDecks().getDeck());
+    Collections.shuffle(landCardData2);
+    for(int i=0; i<25; i++) {
+    	hojun.getDecks().addToDeck(landCardData2.get(i));
+    }
+    Collections.shuffle(skillCardData2);
+    for(int i=0; i<20; i++) {
+    	hojun.getDecks().addToDeck(skillCardData2.get(i));
+    }
+    Collections.shuffle(characterCardData2);
+    for(int i=0; i<30; i++) {
+    	hojun.getDecks().addToDeck(characterCardData2.get(i));
+    }
+    Collections.shuffle(hojun.getDecks().getDeck());
+    
     DrawPhase a = new DrawPhase();
     state = new State(1, qila, hojun, a);	  
 	  
