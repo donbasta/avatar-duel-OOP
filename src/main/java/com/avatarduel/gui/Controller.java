@@ -280,6 +280,10 @@ public class Controller {
         				BattlePhase bph = (BattlePhase) ph;
         				boolean removed = bph.attack((CharacterCard) c.getCard(), player[opponent]);
         				if(removed) {
+							for(CardViewer skill : ((CharacterCard) card).getEquippedSkill()){
+								cardController.removeSkill(skill);
+								player[skill.getOwner()].getDecks().removeCardFromField(skill.getCard());
+							}
         					cardController.removeCharacter(c);
         				}
         				deckController.setHpText(opponent, player[opponent].getHealth());
@@ -314,7 +318,7 @@ public class Controller {
 				//ancurin semua equip
 				for(CardViewer skill : ((CharacterCard) card).getEquippedSkill()){
 					cardController.removeSkill(skill);
-					player[this.state.getTurn()].getDecks().removeCardFromField(skill.getCard());
+					player[skill.getOwner()].getDecks().removeCardFromField(skill.getCard());
 				}
 				//ancurin kartu di field
 				cardController.removeCharacter(c);
