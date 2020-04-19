@@ -21,7 +21,7 @@ public class Power{
     
     public Power() {
     	this.fire = this.water = this.air = this.earth = 0;
-    	this.maxFire = this.maxWater = this.maxAir = this.maxEarth = 0;
+    	this.maxFire = this.maxWater = this.maxAir = this.maxEarth = 100;
     }
 
     public int getPower(Element element){

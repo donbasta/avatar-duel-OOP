@@ -56,7 +56,8 @@ public class CharacterCard extends Card {
     	this.hasAttacked = true;
     }
 
-    public void powerUp(){
+    public void powerUp(CardViewer a){
+        equipped.add(a);
         this.powerup = true;
     }
 

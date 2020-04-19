@@ -226,6 +226,7 @@ public class Controller {
 				SkillCard scd = (SkillCard) card;
 				if(scd.getType().equals("destroy")){
 					if(player[currentTurn].getPower().getPower(scd.getElement()) >= scd.getPower()){
+						player[currentTurn].getDecks().removeCardFromHand(scd);
 						player[currentTurn].usePower(scd.getElement(), scd.getPower());
 						deckController.setPower(currentTurn, player[currentTurn].getPower());
 						this.state.getPhase().destroyActive = true;
@@ -233,7 +234,7 @@ public class Controller {
 					}
 				} else if(scd.getType().equals("aura")){
 					if(player[currentTurn].getPower().getPower(scd.getElement()) >= scd.getPower() && cardController.characterNotEmpty()){
-						System.out.println("AURA");
+						player[currentTurn].getDecks().removeCardFromHand(scd);
 						player[currentTurn].usePower(scd.getElement(), scd.getPower());
 						deckController.setPower(currentTurn, player[currentTurn].getPower());
 						this.state.getPhase().skillActive = true;
@@ -242,9 +243,11 @@ public class Controller {
 					}
 				} else if(scd.getType().equals("powerup")){
 					if(player[currentTurn].getPower().getPower(scd.getElement()) >= scd.getPower()){
+						player[currentTurn].getDecks().removeCardFromHand(scd);
 						player[currentTurn].usePower(scd.getElement(), scd.getPower());
 						deckController.setPower(currentTurn, player[currentTurn].getPower());
 						this.state.getPhase().powerupActive = true;
+						this.state.getPhase().activeSkill = (SkillCard) card;
 						cardController.removeCard(c, this.state.getTurn());
 					}
 				}
@@ -339,14 +342,19 @@ public class Controller {
 					cardController.removeCharacter(c);
 					CardFieldViewer a = cardController.addSkillToField(this.state.getTurn(), this.state.getPhase().activeSkill);
 					cha.useSkill(a);
-					cardController.addCardToField(c.getOwner(), cha); // masih salah
+					cardController.addCardToField(c.getOwner(), cha);
 					this.state.getPhase().activeSkill = null;
 					this.state.getPhase().skillActive = false;
 				}
 			} else {
 				if(this.state.getPhase().powerupActive){
-					CharacterCard cha = (CharacterCard) card;
-					cha.powerUp();
+					if(type.equals("CharacterCard")){
+						CharacterCard cha = (CharacterCard) card;
+						CardFieldViewer a = cardController.addSkillToField(this.state.getTurn(), this.state.getPhase().activeSkill);
+						cha.powerUp(a);
+						this.state.getPhase().activeSkill = null;
+						this.state.getPhase().powerupActive = false;
+					}
 				} else {
 					// change position of card
 					if(c.getOwner() == this.state.getTurn() && !this.state.getPhase().canAttack) {
