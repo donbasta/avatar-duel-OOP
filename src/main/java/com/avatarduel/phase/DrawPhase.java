@@ -30,6 +30,8 @@ public class DrawPhase extends Phase {
 
         destroyActive = false;
 
+        powerupActive = false;
+
         /* tombol apa saja yang bisa di klik */
         drawBtn = false;
         mainBtn = false;

@@ -241,9 +241,12 @@ public class Controller {
 						cardController.removeCard(c, this.state.getTurn());
 					}
 				} else if(scd.getType().equals("powerup")){
-					
-					//TO DO: power up
-					
+					if(player[currentTurn].getPower().getPower(scd.getElement()) >= scd.getPower()){
+						player[currentTurn].usePower(scd.getElement(), scd.getPower());
+						deckController.setPower(currentTurn, player[currentTurn].getPower());
+						this.state.getPhase().powerupActive = true;
+						cardController.removeCard(c, this.state.getTurn());
+					}
 				}
 			}
 		}
@@ -341,19 +344,24 @@ public class Controller {
 					this.state.getPhase().skillActive = false;
 				}
 			} else {
-				// change position of card
-				if(c.getOwner() == this.state.getTurn() && !this.state.getPhase().canAttack) {
-					if(type.equals("CharacterCard")) { 
-						Rectangle rect = (Rectangle) c.getChildren().get(0);
-						CharacterCard chcard = (CharacterCard) card;
-						if(chcard.getPosition().equals("ATTACK")) {
-							rect.setHeight(69);
-							rect.setWidth(84);
-							chcard.setPosition("DEFENCE");
-						} else if(chcard.getPosition().equals("DEFENCE")) {
-							rect.setHeight(84);
-							rect.setWidth(69);
-							chcard.setPosition("ATTACK");
+				if(this.state.getPhase().powerupActive){
+					CharacterCard cha = (CharacterCard) card;
+					cha.powerUp();
+				} else {
+					// change position of card
+					if(c.getOwner() == this.state.getTurn() && !this.state.getPhase().canAttack) {
+						if(type.equals("CharacterCard")) { 
+							Rectangle rect = (Rectangle) c.getChildren().get(0);
+							CharacterCard chcard = (CharacterCard) card;
+							if(chcard.getPosition().equals("ATTACK")) {
+								rect.setHeight(69);
+								rect.setWidth(84);
+								chcard.setPosition("DEFENCE");
+							} else if(chcard.getPosition().equals("DEFENCE")) {
+								rect.setHeight(84);
+								rect.setWidth(69);
+								chcard.setPosition("ATTACK");
+							}
 						}
 					}
 				}

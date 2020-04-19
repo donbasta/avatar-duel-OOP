@@ -21,6 +21,8 @@ public abstract class Phase {
 
 	public Boolean destroyActive;
 
+	public Boolean powerupActive;
+
 	public SkillCard activeSkill;
 	public CharacterCard activeAttackingCard;
 	public CardViewer activeAttackingCardViewer;

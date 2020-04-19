@@ -33,6 +33,8 @@ public class BattlePhase extends Phase {
 
         destroyActive = false;
 
+        powerupActive = false;
+
         /* tombol apa saja yang bisa di klik */
         drawBtn = false;
         mainBtn = false;
@@ -77,6 +79,9 @@ public class BattlePhase extends Phase {
                     // Jika nilai attack kartu kita lebih besar daripada defense kartu musuh, maka kartu musuh dihilangkan
                     if (this.activeAttackingCard.getAttack() > enemyCard.getDefense()) {
                     	this.activeAttackingCard.setHasAttacked();
+                        if(this.activeAttackingCard.isPowerup()){
+                            opponent.setHealth(opponent.getHealth() - (this.activeAttackingCard.getAttack() - enemyCard.getDefense()));
+                        }
                     	enemyRemoved = true;
 //                      opponent.removePlayerCardFromField(enemyCard);
                     }
