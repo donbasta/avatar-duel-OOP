@@ -68,6 +68,8 @@ public class Controller {
 			ph.activeAttackingCardViewer = null;
 			ph.activeAttackingCard = null;
 		}
+
+		cardController.resetAttacked(this.state.getTurn());
 		
 		this.state.changeTurn();
 		DrawPhase a = new DrawPhase();

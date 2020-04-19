@@ -1,6 +1,6 @@
 package com.avatarduel.gui;
 
-import com.avatarduel.cards.Card;
+import com.avatarduel.cards.*;
 
 
 
@@ -66,6 +66,16 @@ public class CardField {
 		return cnt;
 	}
 	
+	public void resetAttacked(){
+		for(Node child : character.getChildren()){
+			CardFieldViewer a = (CardFieldViewer) child;
+			CharacterCard b = (CharacterCard) a.getCard();
+			
+			if(b != null){
+				b.resetHasAttacked();
+			}
+		}
+	}
 	
 	
 }

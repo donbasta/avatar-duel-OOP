@@ -100,6 +100,10 @@ public class CardController extends GridPane {
 		hand[1].hide();
 		hand[2].hide();
 	}
+
+	public void resetAttacked(int p){
+		field[p].resetAttacked();
+	}
 	
     /**
      * Removes card from hand

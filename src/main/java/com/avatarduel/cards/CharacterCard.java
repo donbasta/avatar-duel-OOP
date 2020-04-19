@@ -18,7 +18,7 @@ public class CharacterCard extends Card {
         this.attack = attack;
         this.defense = defense;
         this.power = power;
-        this.hasAttacked = false;
+        this.hasAttacked = true;
         this.position = "ATTACK";
         equipped = new ArrayList<CardViewer>();
     }
@@ -52,6 +52,10 @@ public class CharacterCard extends Card {
 
     public void setHasAttacked() {
     	this.hasAttacked = true;
+    }
+
+    public void resetHasAttacked(){
+        this.hasAttacked = false;
     }
 
     public String getPosition() {
